@@ -168,6 +168,25 @@
     </script>
     <hr>
 
+    <h3>Задача 17. Замена стиля инпута при клике на баттон</h3>
+    <input type="submit" value="1111111" onclick="func17()" id="input17">
+    <input type="submit" value="2222222" onclick="func171()" id="input171" style="display: none;">
+    <script>
+        function func17() {
+            const input = document.getElementById('input17');
+            const input2 = document.getElementById('input171');
+            input.disabled = true;
+            input2.style.display = 'block';
+        }
+        function func171() {
+            const input = document.getElementById('input17');
+            const input2 = document.getElementById('input171');
+            input.disabled = false;
+            input2.style.display = 'none';
+        }
+    </script>
+    <hr>
+
     
 
 </body>
