@@ -249,6 +249,25 @@
     </script>
     <hr>
 
+    <h3>Задача 23. По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута. Если введено не
+        число - должна показаться ошибка.</h3>
+    <input type="text" value="" id="input23">
+    <input type="text" value="" id="input231" disabled>
+    <button onclick="func23()">11111111</button>
+    <script>
+        function func23() {
+            const input1 = document.getElementById('input23');
+            if (!isNaN(parseInt(input1.value))) {
+                const sqr = +input1.value * +input1.value;
+                const input2 = document.getElementById('input231');
+                input2.value = sqr;
+            } else {
+                alert('not number');
+            }
+        }
+    </script>
+    <hr>
+
     
 
 </body>
