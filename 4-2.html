@@ -279,7 +279,20 @@
     </script>
     <hr>
 
-
+    <h3>Задача 25. При нажатии на разные баттоны - всё в один инпут</h3>
+    <input type="text" value="" id="input25">
+    <button onclick="func25('1')" id="but25">1</button>
+    <button onclick="func25('2')" id="but25">2</button>
+    <button onclick="func25('3')" id="but25">3</button>
+    <button onclick="func25('4')" id="but25">4</button>
+    <button onclick="func25('5')" id="but25">5</button>
+    
+    <script>
+    function func25(arg) {
+        const input = document.getElementById('input25');
+        input.value += arg;
+    }
+    </script>
 
 </body>
 
