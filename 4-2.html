@@ -115,6 +115,19 @@
     </script>
     <hr>
 
+    <h3>Задача 13. Смена картинки по наведению</h3>
+    <img src="http://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/2.jpg" onmouseover="func13(this)"
+        onmouseout="func131(this)" id="img" width="100px">
+    <script>
+        function func13(elem) {
+            elem.src = 'http://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg';
+        }
+        function func131(elem) {
+            elem.src = 'http://code.mu/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/2.jpg';
+        }
+    </script>
+    <hr>
+
     
 
 </body>
