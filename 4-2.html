@@ -219,6 +219,22 @@
     </script>
     <hr>
 
+    <h3>Задача 21. Смена значение инпутов при клике на баттон</h3>
+    <input type="text" value="aaaaa" id="input21">
+    <input type="text" value="bbbb" id="input211">
+    <button onclick="func21()">11111111</button>
+    <script>
+        function func21() {
+            const input1 = document.getElementById('input21');
+            const input2 = document.getElementById('input211');
+            input1New = input2.value;
+            input2New = input1.value;
+            input2.value = input2New;
+            input1.value = input1New;
+        }
+    </script>
+    <hr>
+
     
 
 </body>
