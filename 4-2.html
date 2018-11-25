@@ -235,6 +235,20 @@
     </script>
     <hr>
 
+    <h3>Задача 22. По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута.</h3>
+    <input type="text" value="" id="input22">
+    <input type="text" value="" id="input221" disabled>
+    <button onclick="func22()">11111111</button>
+    <script>
+        function func22() {
+            const input1 = document.getElementById('input22');
+            const input2 = document.getElementById('input221');
+            const sqr = input1.value * input1.value;
+            input2.value = sqr;
+        }
+    </script>
+    <hr>
+
     
 
 </body>
