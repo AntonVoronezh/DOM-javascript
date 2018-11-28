@@ -49,7 +49,18 @@
     <hr>
 
 
-
+    <h3>Задача 3. Изменение span на h3 при нажатии на кнопку без изменения текста</h3>
+    <span id="test3">11112222</span>
+    <button onclick="btnClick3()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick3() {
+            const getElem = document.getElementById('test3');
+            getElem.outerHTML = `<h3>${getElem.innerHTML}</h3>`;
+        }
+    </script>
+    <hr>
 
 
 
