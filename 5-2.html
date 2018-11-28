@@ -80,6 +80,27 @@
     </script>
     <hr>
 
+    <h2>Метод getElementsByTagName</h2>
+
+    <h3>Задача 5. Изменение текста в абзацах при нажатии на кнопку</h3>
+    <p>1111111111111</p>
+    <p>444444444444</p>
+    <p>777777777</p>
+    <h4>ggggg</h4>
+    <button onclick="btnClick5()">
+        нажать
+    </button>
+    <script>
+        function btnClick5() {
+            const getElem = document.getElementsByTagName('p');
+            for (let i = 0; i < getElem.length; i += 1) {
+                getElem[i].innerHTML = 'ffffffffff';
+            }
+        }
+    </script>
+    <hr>
+
+    <h2>Метод getElementsByClassName</h2>
 
 
 
