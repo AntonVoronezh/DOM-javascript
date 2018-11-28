@@ -220,7 +220,23 @@
     </script>
     <hr>
 
-
+    <h3>Задача 12. Печатается текст в спане, который набирается в инпуте</h3>
+    <a href="http://google.com" class="link">link 1</a><br>
+    <a href="http://yahoo.com" class="link">link 2</a><br>
+    <a href="http://bing.com" class="link">link 3</a><br>
+    <button onclick="btnClick12()">
+        нажать
+    </button>
+    <script>
+        function btnClick12() {
+            const getlinks = document.querySelectorAll('.link');
+            for (let i = 0; i < getlinks.length; i += 1) {
+                const getAttrHref = getlinks[i].getAttribute('href');
+                getlinks[i].innerHTML += ` (${getAttrHref}) `;
+            }
+        }
+    </script>
+    <hr>
 
 
 
