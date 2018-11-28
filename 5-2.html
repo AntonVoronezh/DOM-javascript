@@ -182,7 +182,31 @@
     </script>
     <hr>
 
+    <h3>Задача 10. При нажатии на кнопку выводится алерт с названием класса абзаца. При нажатии на 2-ю кнопку убирается
+        класс у абзаца</h3>
+    <p class="my-class2  class" id="10">Абзац с class="my-class class". Класс "my-class" задает красный цвет.</p>
+    <button onclick="btnClick10()">
+        нажать
+    </button>
+    <button onclick="btnClick101()">
+        нажать
+    </button>
+    <script>
+        function btnClick10() {
+            const getElem = document.getElementById('10');
+            const getAttr = getElem.getAttribute('class');
+            alert(getAttr);
+        }
 
+        function btnClick101() {
+            const getElem = document.getElementById('10');
+            const delAttr = getElem.removeAttribute('class');
+            alert('Класс удалён');
+        }
+    </script>
+    <hr>
+
+    <h2>Задачи</h2>
 
 
 
