@@ -208,6 +208,17 @@
 
     <h2>Задачи</h2>
 
+    <h3>Задача 11. Печатается текст в спане, который набирается в инпуте</h3>
+    <input type="text" value="" id="11" placeholder="введите текст" onkeyup="btnClick11()">
+    <span id="111"></span>
+    <script>
+        function btnClick11() {
+            const getInput = document.getElementById('11');
+            const getSpan = document.getElementById('111');
+            getSpan.innerHTML = getInput.value;
+        }
+    </script>
+    <hr>
 
 
 
