@@ -120,7 +120,26 @@
     </script>
     <hr>
 
- 
+    <h2>Метод querySelectorAll</h2>
+
+    <h3>Задача 7. Поменяйте содержимое абзацев с классом www на их порядковый номер в коде.</h3>
+    <h2 class="www">Заголовок с классом www, не поменяется.</h2>
+    <p class="www">Абзац с классом www.</p>
+    <p class="www">Абзац с классом www.</p>
+    <p class="www">Абзац с классом www.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="btnClick7()">
+        нажать
+    </button>
+    <script>
+        function btnClick7() {
+            const getElem = document.querySelectorAll('p.www');
+            for (let i = 0; i < getElem.length; i += 1) {
+                getElem[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+    <hr>
 
 
 
