@@ -158,6 +158,29 @@
     <hr>
 
 
+    <h3>Задача 9. При нажатии на кнопку выводится алерт с названием класса абзаца. При нажатии на 2-ю кнопку убирается
+        класс у абзаца</h3>
+    <p class="my-class2" id="9">Абзац с классом my-class</p>
+    <button onclick="btnClick9()">
+        нажать
+    </button>
+    <button onclick="btnClick91()">
+        нажать
+    </button>
+    <script>
+        function btnClick9() {
+            const getElem = document.getElementById('9');
+            const getAttr = getElem.getAttribute('class');
+            alert(getAttr);
+        }
+
+        function btnClick91() {
+            const getElem = document.getElementById('9');
+            const delAttr = getElem.removeAttribute('class');
+            alert('Класс удалён');
+        }
+    </script>
+    <hr>
 
 
 
