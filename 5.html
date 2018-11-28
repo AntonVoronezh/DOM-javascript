@@ -28,7 +28,19 @@
             span.innerHTML = '22222';
         }
     </script>
-
+    <hr>
+    <h3>Задача 2. Замена span на тег i без изменения текста</h3>
+    <span id="test2">1111</span>
+    <button onclick="btnClick2()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick2() {
+            const span = document.getElementById('test2');
+            span.outerHTML = '<i>' + span.innerHTML + '</i>';
+        }
+    </script>
+    <hr>
 
 
 
