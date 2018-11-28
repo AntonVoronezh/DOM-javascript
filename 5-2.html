@@ -238,7 +238,22 @@
     </script>
     <hr>
 
-
+    <h2>Закрепление пройденного</h2>
+    <h3>Задача 13. Замена текста в абзаце при нажатии на кнопку</h3>
+    <p class="cl13">aaaaaaaaaaaaaa</p>
+    <button onclick="btnClick13()" class="cl131">
+        нажать
+    </button>
+    <script>
+        function btnClick13() {
+            const getElemP = document.querySelector('.cl13');
+            const getElemButton = document.querySelector('.cl131');
+            getElemP.style.color = 'red';
+            getElemP.innerHTML = 'fffffffffff';
+            getElemButton.setAttribute('disabled', 'true');
+        }
+    </script>
+    <hr>
 
  
 
