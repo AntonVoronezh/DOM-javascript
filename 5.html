@@ -59,7 +59,23 @@
     </script>
     <hr>
 
-
+    <h3>Задача 4. Замена содержимого элементов с классом zzz на их порядковый номер в коде.</h3>
+    <h2 class="zzz">Заголовок с классом zzz.</h2>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="btnClick4()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick4() {
+            const elems = document.getElementsByClassName('zzz');
+            for (let i = 0; i < elems.length; i += 1) {
+                elems[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+    <hr>
 
 
 
