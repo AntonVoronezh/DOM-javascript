@@ -42,7 +42,22 @@
     </script>
     <hr>
 
-
+    <h3>Задача 3. Замена содержимого абзацев на их порядковый номер в коде.</h3>
+    <p>Абзац, поменяется.</p>
+    <p>Абзац, поменяется.</p>
+    <p>Абзац, поменяется.</p>
+    <button onclick="btnClick3()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick3() {
+            const pElems = document.getElementsByTagName('p');
+            for (let i = 0; i < pElems.length; i += 1) {
+                pElems[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+    <hr>
 
 
 
