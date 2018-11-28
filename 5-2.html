@@ -62,7 +62,23 @@
     </script>
     <hr>
 
-
+    <h3>Задача 4. Изменение span при нажатии на кнопку с получением содержимого инпутов</h3>
+    <input type="text" value="" id="4" placeholder="num 1"> +
+    <input type="text" value="" id="41" placeholder="num 2"> =
+    <button onclick="btnClick4()">
+        sum
+    </button>
+    <span id="42"></span>
+    <script>
+        function btnClick4() {
+            const getValue1 = document.getElementById('4');
+            const getValue2 = document.getElementById('41');
+            const getOutElem = document.getElementById('42');
+            const result = Number(getValue1.value) + Number(getValue2.value);
+            getOutElem.innerHTML = result;
+        }
+    </script>
+    <hr>
 
 
 
