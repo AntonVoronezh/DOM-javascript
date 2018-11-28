@@ -102,7 +102,23 @@
 
     <h2>Метод getElementsByClassName</h2>
 
-
+    <h3>Задача 6. Поменяйте содержимое элементов с классом www на их порядковый номер в коде.</h3>
+    <h2 class="www">Заголовок с классом www.</h2>
+    <p class="www">Абзац с классом www.</p>
+    <p class="www">Абзац с классом www.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="btnClick6()">
+        нажать
+    </button>
+    <script>
+        function btnClick6() {
+            const getElem = document.getElementsByClassName('www');
+            for (let i = 0; i < getElem.length; i += 1) {
+                getElem[i].innerHTML = 'ffffffffff';
+            }
+        }
+    </script>
+    <hr>
 
  
 
