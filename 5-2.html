@@ -277,7 +277,25 @@
     <hr>
 
 
-
+    <h3>Задача 15. При нажатии на кнопку текст в каждом абзаце поменяется - спереди добавится порядковый номер абзаца</h3>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <p class="cl15">aaaaaaaaaaaaaa</p>
+    <button onclick="btnClick15()" class="cl151">
+        нажать
+    </button>
+    <script>
+        function btnClick15() {
+            const getAllElemP = document.querySelectorAll('p.cl15');
+            for (let i = 0; i < getAllElemP.length; i += 1) {
+                getAllElemP[i].innerHTML = `${i}. ${getAllElemP[i].innerHTML}`;
+            }
+        }
+    </script>
 
 </body>
 
