@@ -141,7 +141,21 @@
     </script>
     <hr>
 
+    <h2>Методы setAttribute, getAttribute, removeAttribute, hasAttribute</h2>
 
+    <h3>Задача 8. При нажатии на кнопку выводится алерт с названием класса абзаца</h3>
+    <p class="my-class" id="8">Абзац с классом my-class</p>
+    <button onclick="btnClick8()">
+        нажать
+    </button>
+    <script>
+        function btnClick8() {
+            const getElem = document.getElementById('8');
+            const getAttr = getElem.getAttribute('class');
+            alert(getAttr);
+        }
+    </script>
+    <hr>
 
 
 
