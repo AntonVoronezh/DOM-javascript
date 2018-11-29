@@ -199,7 +199,40 @@
     </script>
     <hr>
 
+    <h3>Задача 8. Создайте отсчет до полуночи</h3>
+    <p>До полуночи осталось:</p>
+    <br>
+    <span class="span8"></span>
+    <script>
+        const getSpan8 = document.querySelector('.span8');
 
+        const addZero2 = argNum => {
+            if (argNum <= 9) {
+                argNum = '0' + argNum;
+            }
+            return argNum;
+        }
+
+        window.setInterval(() => {
+            const date8 = new Date();
+
+            const dateFor8 = new Date(
+                date8.getFullYear(),
+                date8.getMonth(),
+                date8.getDate() + 1,
+                0, 0, 0
+            )
+
+            let diff = Math.ceil((Date.parse(dateFor8) - date8.getTime()) / 1000);
+            let minutes = diff / 60;
+            let hours = minutes / 60;
+            let hoursOut = Math.floor(hours);
+            let minutesOut = Math.floor(minutes - (Math.floor(hours) * 60));
+            let secondsOut = diff % 60;
+
+            getSpan8.innerHTML = `${hoursOut}:${addZero2(minutesOut)}:${addZero2(secondsOut)}`;
+        }, 1000);
+    </script>
 
 
 </body>
