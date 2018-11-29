@@ -62,6 +62,24 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Создайте тикающие часики</h3>
+    <span class="span3"></span>
+    <script>
+        const getSpan3 = document.querySelector('.span3');
+
+        const addZero = argNum => {
+            if (argNum <= 9) {
+                argNum = '0' + argNum;
+            }
+            return argNum;
+        }
+
+        window.setInterval(() => {
+            const date = new Date();
+            getSpan3.innerHTML = `${date.getHours()}:${addZero(date.getMinutes())}:${addZero(date.getSeconds())}`;
+        }, 1000);
+    </script>
+    <hr>
 
 
 
