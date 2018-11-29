@@ -125,6 +125,41 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Карусель по баттону</h3>
+    <img src="" class="img-6-1">
+    <img src="" class="img-6-2">
+    <img src="" class="img-6-3">
+    <button class="button-6">start</button>
+
+    <script>
+        const getButton6 = document.querySelector('.button-6');
+        const getImg61 = document.querySelector('.img-6-1');
+        const getImg62 = document.querySelector('.img-6-2');
+        const getImg63 = document.querySelector('.img-6-3');
+
+        const arrCarouselImg = [
+            'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png',
+            'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png',
+            'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png'
+        ];
+
+        const startCarousel = () => {
+            getButton6.disabled = true;
+
+            window.setInterval(() => {
+                arrCarouselImg.push(arrCarouselImg.shift());
+
+                getImg61.src = arrCarouselImg[0];
+                getImg62.src = arrCarouselImg[1];
+                getImg63.src = arrCarouselImg[2];
+            }, 1000);
+
+        }
+
+        getButton6.addEventListener('click', startCarousel);
+
+    </script>
+    <hr>
 
 
 
