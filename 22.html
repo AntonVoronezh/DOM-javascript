@@ -161,6 +161,43 @@
     </script>
     <hr>
 
+    <h3>Задача 7. Карусель по баттону и остановка по баттону</h3>
+
+    <img src="" class="img-7-1">
+    <img src="" class="img-7-2">
+    <img src="" class="img-7-3">
+    <button class="button-7-1">start</button>
+    <button class="button-7-2">end</button>
+    <script>
+        const getButton7Start = document.querySelector('.button-7-1');
+        const getButton7End = document.querySelector('.button-7-2');
+        const getImg71 = document.querySelector('.img-7-1');
+        const getImg72 = document.querySelector('.img-7-2');
+        const getImg73 = document.querySelector('.img-7-3');
+
+        let imgCount7 = 1;
+        let id7;
+
+        function start7() {
+            id7 = window.setInterval(() => {
+                getImg71.src = 'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + imgCount7 + '.png';
+                getImg72.src = 'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + (imgCount7 + 1) + '.png';
+                getImg73.src = 'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + (imgCount7 + 2) + '.png';
+                imgCount7 += 1;
+                if (imgCount7 === 4) {
+                    imgCount7 = 1;
+                }
+            }, 1000);
+        };
+
+        function end7() {
+            window.clearInterval(id7);
+        };
+
+        getButton7Start.addEventListener('click', start7);
+        getButton7End.addEventListener('click', end7);
+    </script>
+    <hr>
 
 
 
