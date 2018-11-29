@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>#1 AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>#1 AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Повторите страницы по образцу</h2>
+    <h3>Задача 1. Создайте отсчет от 0 до бесконечности</h3>
+    <p class="elem-1"></p>
+    <button class="button-1">start</button>
+    <script>
+        const getElemP = document.querySelector('.elem-1');
+        const getElemButton = document.querySelector('.button-1');
+
+        let id1;
+
+        getElemButton.addEventListener('click', () => {
+            id1 = window.setInterval(() => {
+                getElemP.innerHTML = Number(getElemP.innerHTML) + 1;
+            }, 1000);
+        });
+
+    </script>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
