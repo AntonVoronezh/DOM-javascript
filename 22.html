@@ -81,7 +81,33 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Создайте таймер обратного отсчета</h3>
+    <div class="task4">
+        <span class="span4"></span>
+        <button class="button-4">start</button>
+    </div>
+    <script>
+        const getButton4 = document.querySelector('.button-4');
+        const getDiv4 = document.querySelector('.task4');
 
+        getButton4.addEventListener('click', timer);
+
+        function timer() {
+            const getSpan4 = document.querySelector('.span4');
+            if (getSpan4.innerHTML === '') {
+                getSpan4.innerHTML = 11;
+            }
+            if (Number(getSpan4.innerHTML) > 0) {
+                getSpan4.innerHTML = Number(getSpan4.innerHTML) - 1;
+            }
+            if (Number(getSpan4.innerHTML) === 0) {
+                getButton4.outerHTML = 'Обратный отсчет завершен.';
+            }
+
+            window.setTimeout(timer, 500);
+        }
+    </script>
+    <hr>
 
 
 
