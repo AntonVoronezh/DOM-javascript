@@ -109,7 +109,21 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Создайте простой слайдер</h3>
+    <img src="" class="img-5">
+    <script>
+        const getImg5 = document.querySelector('.img-5');
+        let imgCount = 1;
 
+        window.setInterval(() => {
+            getImg5.src = 'http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + imgCount + '.png'
+            imgCount += 1;
+            if (imgCount === 6) {
+                imgCount = 1;
+            }
+        }, 1000);
+    </script>
+    <hr>
 
 
 
