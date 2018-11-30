@@ -101,6 +101,26 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Привяжите всем инпутам следующее событие - по потери
+        фокуса каждый инпут выводит свое value в абзац с id="test".</h3>
+
+    <input type="text" class="task5"> <br>
+    <input type="text" class="task5"> <br>
+    <input type="text" class="task5">
+    <p id="test5"></p>
+    <script>
+        const getInput5 = document.querySelectorAll('.task5');
+        const getP5 = document.querySelector('#test5');
+
+        for (let i = 0; i < getInput5.length; i += 1) {
+            getInput5[i].addEventListener('blur', func5);
+        }
+
+        function func5() {
+            getP5.innerHTML = getP5.innerHTML + this.value;
+        }
+    </script>
+    <hr>
 
 
 
