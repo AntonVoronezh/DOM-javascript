@@ -68,7 +68,27 @@
         }
     </script>
 
- 
+    <h2>Работа с CSS</h2>
+    <h3>Задание 7. Дан элемент #elem. Сделайте его красного цвета, размером 30px, добавьте ему границу.
+        Решите задачу с помощью свойства cssText.</h3>
+    <p class="elem7">hhhh</p>
+    <script>
+        const getP7 = document.querySelector('.elem7');
+        getP7.style.cssText = 'width: 50px; height: 50px; background-color: red; border: 1px solid green;';
+    </script>
+    <hr>
+
+    <h2>Свойство tagName</h2>
+    <h3>Задание 8. Дан элемент #elem. По клику на него выведите название его тега.</h3>
+    <p class="elem8">hhhh</p>
+    <script>
+        const getP8 = document.querySelector('.elem8');
+        getP8.addEventListener('click', function () {
+            console.log(this.tagName);
+        });
+    </script>
+    <hr>
+
 
 
 
