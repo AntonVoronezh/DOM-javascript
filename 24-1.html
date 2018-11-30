@@ -89,7 +89,16 @@
     </script>
     <hr>
 
+    <h3>Задание 9. Дан элемент #elem. По клику на него выведите название его тега в нижнем регистре.</h3>
+    <p class="elem9">hhhh</p>
+    <script>
+        const getP9 = document.querySelector('.elem9');
 
+        getP9.addEventListener('click', function () {
+            console.log(this.tagName.toLowerCase());
+        });
+    </script>
+    <hr>
 
 
 
