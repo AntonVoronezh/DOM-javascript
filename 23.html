@@ -161,6 +161,31 @@
     </script>
     <hr>
 
+    <h3>Задача 8. Даны инпуты. Сделайте так, чтобы все инпуты по потери
+        фокуса проверяли свое содержимое на правильное количество символов.
+        Сколько символов должно быть в инпуте, указывается в атрибуте data-length.
+        Если вбито правильное количество, то граница инпута становится
+        зеленой, если неправильное - красной</h3>
+
+    <input type="text" class="task8" value="" data-length="1"> <br>
+    <input type="text" class="task8" value="" data-length="2"> <br>
+    <input type="text" class="task8" value="" data-length="3">
+    <script>
+        const getInput8 = document.querySelectorAll('.task8');
+
+        for (let i = 0; i < getInput8.length; i += 1) {
+            getInput8[i].addEventListener('blur', func8);
+        }
+
+        function func8() {
+            if (Number(this.dataset.length) === Number(this.value.length)) {
+                this.style.border = '3px solid green';
+            } else {
+                this.style.border = '3px solid red';
+            }
+        }
+    </script>
+    <hr>
 
 
 
