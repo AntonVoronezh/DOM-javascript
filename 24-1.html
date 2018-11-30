@@ -116,7 +116,21 @@
     </script>
     <hr>
 
+    <h2>Вставка элементов через appendChild</h2>
+    <h3>Задание 11 .Дан ol. Вставьте ему в конец li с текстом 'пункт'.</h3>
+    <ol class="task11">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <script>
+        const getOl11 = document.querySelector('.task11');
+        const makeLi11 = document.createElement('li');
 
+        makeLi11.innerHTML = 'пункт';
+        getOl11.appendChild(makeLi11);        
+    </script>
+    <hr>
 
 
 
