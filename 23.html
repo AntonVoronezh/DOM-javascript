@@ -81,6 +81,25 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дополните предыдущую задачу: после первого наведению
+        на ссылку следует отвязать от нее событие, которое добавляет
+        href в конец текста.</h3>
+    <a href="http://aaa.com" class="task4">aaa4</a> <br>
+    <a href="http://bbb.com" class="task4">bbb4</a> <br>
+    <a href="http://ccc.com" class="task4">ccc4</a>
+    <script>
+        const getA4 = document.querySelectorAll('.task4');
+
+        for (let i = 0; i < getA4.length; i += 1) {
+            getA4[i].addEventListener('mouseover', func4);
+        }
+
+        function func4() {
+            this.innerHTML = this.innerHTML + `(${this.href})`;
+            this.removeEventListener('mouseover', func4);
+        }
+    </script>
+    <hr>
 
 
 
