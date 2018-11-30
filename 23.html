@@ -43,6 +43,25 @@
     </script>
     <hr>
 
+    <h2>На addEventListener, removeEventListener</h2>
+    <h3>Задача 2. Даны ссылки. Привяжите всем ссылкам событие -
+        по наведению на ссылку в атрибут title запишется ее текст.</h3>
+
+    <a href="http://aaa.com">aaa2</a>
+    <a href="http://bbb.com">bbb2</a>
+    <a href="http://ccc.com">ccc2</a>
+    <script>
+        const getA = document.querySelectorAll('a');
+
+        for (let i = 0; i < getA.length; i += 1) {
+            getA[i].addEventListener('mouseover', func2);
+        }
+
+        function func2() {
+            this.title = this.innerHTML;
+        }
+    </script>
+    <hr>
 
 
 
