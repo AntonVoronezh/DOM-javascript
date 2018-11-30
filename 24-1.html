@@ -100,7 +100,21 @@
     </script>
     <hr>
 
+    <h3>Задание 10. Даны элементы с классом www. Добавьте каждому элементу в конец название его тега в нижнем регистре</h3>
+    <p class="elem10">hhhh</p>
+    <span class="elem10">hhhh</span>
+    <div class="elem10">hhhh</div>
+    <script>
+        const getP10 = document.querySelectorAll('.elem10');
 
+        for (let i = 0; i < getP10.length; i += 1) {
+
+            getP10[i].addEventListener('click', function () {
+                this.innerHTML = this.innerHTML + ' -> ' + this.tagName.toLowerCase();
+            });
+        }
+    </script>
+    <hr>
 
 
 
