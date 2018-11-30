@@ -132,7 +132,21 @@
     </script>
     <hr>
 
+    <h3>Задание 12 . Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так,
+        чтобы каждый элемент стоял в своем li.</h3>
+    <ul class="task12"></ul>
+    <script>
+        const arr12 = ['g', 'hh', 'jjj', 'kkkkk'];
 
+        const getUl12 = document.querySelector('.task12');
+        
+        for (let i = 0; i < arr12.length; i += 1) {
+          const makeLi12 = document.createElement('li');  
+          makeLi12.innerHTML = arr12[i];
+          getUl12.appendChild(makeLi12);
+        }
+    </script>
+<hr>
 
 <!-- ====================================================================================================================== -->
 
