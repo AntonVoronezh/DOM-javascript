@@ -122,6 +122,25 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Для всех инпутов сделайте так, чтобы они выводили свой
+        value алертом при нажатии на любой из них, но только по первому
+        нажатию. Повторное нажатие на инпут не должно вызывать реакции.</h3>
+    <input type="submit" value="1111111" class="task6">
+    <input type="submit" value="2222222" class="task6">
+    <input type="submit" value="3333333" class="task6">
+    <script>
+        const getInput6 = document.querySelectorAll('.task6');
+
+        for (let i = 0; i < getInput6.length; i += 1) {
+            getInput6[i].addEventListener('click', func6);
+        }
+
+        function func6() {
+            alert(this.value);
+            this.removeEventListener('click', func6);
+        }
+    </script>
+    <hr>
 
 
 
