@@ -142,6 +142,25 @@
     </script>
     <hr>
 
+    <h3>Задача 7. Даны абзацы с числами. По нажатию на абзац в нем должен
+        появится квадрат числа, которое он содержит</h3>
+    <p class="task7">2</p>
+    <p class="task7">3</p>
+    <p class="task7">4</p>
+    <p class="task7">5</p>
+    <script>
+        const getP7 = document.querySelectorAll('.task7');
+
+        for (let i = 0; i < getP7.length; i += 1) {
+            getP7[i].addEventListener('click', func7);
+        }
+
+        function func7() {
+            this.innerHTML = Number(this.innerHTML) * Number(this.innerHTML);
+        }
+    </script>
+    <hr>
+
 
 
 
