@@ -187,6 +187,33 @@
     </script>
     <hr>
 
+    <h3>Задача 9. Даны дивы. По первому нажатию на каждый див он красится красным фоном,
+        по второму красится обратно и так далее каждый клик происходит чередование фона.
+        Сделайте так, чтобы было две функции: одна красит в красный цвет, другая в
+        зеленый и они сменяли друг друга через removeEventListener</h3>
+    <div class="task9">1</div>
+    <div class="task9">2</div>
+    <div class="task9">3</div>
+    <script>
+        const getDiv9 = document.querySelectorAll('.task9');
+
+        for (let i = 0; i < getDiv9.length; i += 1) {
+            getDiv9[i].addEventListener('click', func9);
+        }
+
+        function func9() {
+            this.style.backgroundColor = 'red';
+            this.addEventListener('click', func91);
+            this.removeEventListener('click', func9);
+        }
+        function func91() {
+            this.style.backgroundColor = 'yellow';
+            this.addEventListener('click', func9);
+            this.removeEventListener('click', func91);
+        }
+
+    </script>
+    <hr>
 
 
 
