@@ -63,6 +63,23 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Привяжите всем ссылкам событие - по наведению на
+        ссылку в конец ее текста дописывается ее href в круглых скобках</h3>
+    <a href="http://aaa.com" class="task3">aaa3</a> <br>
+    <a href="http://bbb.com" class="task3">bbb3</a> <br>
+    <a href="http://ccc.com" class="task3">ccc3</a>
+    <script>
+        const getA3 = document.querySelectorAll('.task3');
+
+        for (let i = 0; i < getA3.length; i += 1) {
+            getA3[i].addEventListener('mouseover', func3);
+        }
+
+        function func3() {
+            this.innerHTML = this.innerHTML + `(${this.href})`;
+        }
+    </script>
+    <hr>
 
 
 
