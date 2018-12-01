@@ -51,7 +51,29 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Выведите на экран текущую дату-время в формате '12:59:59 31.12.2014'.</h3>
+    <button onclick="func4()">click</button>
+    <span class="task4"></span>
+    <script>
+        const addZero = (argNum) => {
+            if (argNum <= 9) {
+                argNum = '0' + argNum;
+            }
+            return argNum;
+        }
 
+        function func4() {
+            const getSpan = document.querySelector('.task4');
+            const result = `${addZero(date.getHours())}:
+                            ${addZero(date.getMinutes())}:
+                            ${addZero(date.getSeconds())}
+                            ${date.getDate()}.
+                            ${date.getMonth() + 1}.
+                            ${date.getFullYear()}`;
+            getSpan.innerHTML = result;
+        }
+    </script>
+    <hr>
 
 
 
