@@ -145,6 +145,23 @@
     </script>
     <hr>
 
+    <h2>Разность между датами</h2>
+    <h3>Задача 10. Выведите на экран количество секунд с начала дня до настоящего момента времени</h3>
+    <button onclick="func10()">click</button>
+    <span class="task10"></span>
+    <script>
+        function func10() {
+            const getSpan = document.querySelector('.task10');
+            const dateFor10 = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate(),
+                0, 0, 0
+            )
+            getSpan.innerHTML = (date.getTime() - Date.parse(dateFor10)) / 1000;
+        }
+    </script>
+    <hr>
 
 
 
