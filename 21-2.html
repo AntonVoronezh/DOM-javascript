@@ -131,6 +131,20 @@
     <hr>
 
 
+    <h2>Работа с Date.parse</h2>
+    <h3>Задача 9. Выведите на экран количество часов, прошедшее между
+        1 марта 1988 года и текущим моментом с помощью Date.parse</h3>
+    <button onclick="func9()">click</button>
+    <span class="task9"></span>
+    <script>
+        function func9() {
+            const getSpan = document.querySelector('.task9');
+            const dateFor9 = new Date('1988-03-01T00:00:00')
+            getSpan.innerHTML = (date.getTime() - Date.parse(dateFor9)) / 1000 / 60 / 60;
+        }
+    </script>
+    <hr>
+
 
 
 
