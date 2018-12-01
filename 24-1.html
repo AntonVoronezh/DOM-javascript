@@ -180,6 +180,21 @@
 
     <hr>
 
+    <h2>Вставка элементов через insertBefore</h2>
+    <h3>Задание 14 . Дан элемент ul, а в нем li #elem. Вставьте перед
+        элементом #elem новую li с текстом '!!!'.</h3>
+    <ul class="task14">
+        <li class="task142">ttt</li>
+    </ul>
+    <script>
+        const getUl14 = document.querySelector('.task14');
+        const getli14 = document.querySelector('.task142');
+
+        const makeLi14 = document.createElement('li');
+        makeLi14.innerHTML = '!!!';
+        getUl14.insertBefore(makeLi14, getli14);
+    </script>
+    <hr>
 
 
 
