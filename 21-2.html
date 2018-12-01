@@ -118,6 +118,17 @@
     </script>
     <hr>
 
+    <h2>Работа с getTime</h2>
+    <h3>Задача 8. Выведите на экран количество минут с 1-го января 1970 года до настоящего момента времени.</h3>
+    <button onclick="func8()">click</button>
+    <span class="task8"></span>
+    <script>
+        function func8() {
+            const getSpan = document.querySelector('.task8');
+            getSpan.innerHTML = date.getTime() / 1000 / 60;
+        }
+    </script>
+    <hr>
 
 
 
