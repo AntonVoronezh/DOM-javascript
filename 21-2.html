@@ -106,7 +106,17 @@
     </script>
     <hr>
 
-
+    <h3>Задача 7. Узнайте, какой был 7-го января 2015 года</h3>
+    <button onclick="func7()">click</button>
+    <span class="task7"></span>
+    <script>
+        const dateFor7 = new Date(2015, 0, 8);
+        function func7() {
+            const getSpan = document.querySelector('.task7');
+            getSpan.innerHTML = showDay(dateFor7.getDay());
+        }
+    </script>
+    <hr>
 
 
 
