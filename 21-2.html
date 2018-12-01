@@ -87,6 +87,24 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Выведите на экран текущий день недели (словом, по-русски).
+        Создайте для этого вспомогательную функцию showDay, которая параметром принимает число,
+        а возвращает день недели по-русски.</h3>
+    <button onclick="func6()">click</button>
+    <span class="task6"></span>
+    <script>
+        const daysList = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+
+        const showDay = argNum => {
+            return daysList[argNum];
+        };
+
+        function func6() {
+            const getSpan = document.querySelector('.task6');
+            getSpan.innerHTML = showDay(date.getDay());
+        }
+    </script>
+    <hr>
 
 
 
