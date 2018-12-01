@@ -29,7 +29,16 @@
     </script>
     <hr>
 
-
+    <h3>Задача 2. Выведите на экран текущий месяц</h3>
+    <button onclick="func2()">click</button>
+    <span class="task2"></span>
+    <script>
+        function func2() {
+            const getSpan = document.querySelector('.task2');
+            getSpan.innerHTML = date.getMonth() + 1;
+        }
+    </script>
+    <hr>
 
 
 
