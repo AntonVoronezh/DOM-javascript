@@ -163,7 +163,22 @@
     </script>
     <hr>
 
-
+    <h3>Задача 11. Выведите на экран количество секунд, которое осталось до конца дня</h3>
+    <button onclick="func11()">click</button>
+    <span class="task11"></span>
+    <script>
+        function func11() {
+            const getSpan = document.querySelector('.task11');
+            const dateFor10 = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() + 1,
+                0, 0, 0
+            )
+            getSpan.innerHTML = (Date.parse(dateFor10) - date.getTime()) / 1000;
+        }
+    </script>
+    <hr>
 
 
 
