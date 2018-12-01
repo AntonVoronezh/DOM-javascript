@@ -152,7 +152,34 @@
 
 
 
- 
+    <h2>Привязывание событий при вставке</h2>
+    <h3>Задание 13 . Дан ul. Дан массив. Вставьте элементы этого массива
+        в конец ul так, чтобы каждый элемент стоял в своем li.
+        Сделайте так, чтобы к вставляемым li было привязано следующее
+        событие: по нажатию на li она должна вывести на экран свой текст.</h3>
+    <ul class="task13">
+        <li>1111</li>
+        <li>li2222</li>
+    </ul>
+    <script>
+        const arr13 = ['-----g', '-----hh', '-----jjj', '-----kkkkk'];
+
+        const getUl13 = document.querySelector('.task13');
+
+        for (let i = 0; i < arr13.length; i += 1) {
+            const makeLi13 = document.createElement('li');
+            makeLi13.innerHTML = arr13[i];
+            makeLi13.addEventListener('click', func13);
+            getUl13.appendChild(makeLi13);
+        }
+
+        function func13() {
+            alert(this.innerHTML);
+        }
+    </script>
+
+    <hr>
+
 
 
 
