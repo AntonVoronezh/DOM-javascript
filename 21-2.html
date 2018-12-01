@@ -180,7 +180,29 @@
     </script>
     <hr>
 
+    <h3>Задача 12. Создайте инпут, в который пользователь вводит дату своего рождения в
+        формате '2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом
+        сколько дней осталось до его дня рождения. Воспользуйтесь методом Date.parse.</h3>
+    <input type="text" id="text12" value="" onblur="func12()">
+    <span class="task12"></span>
+    <script>
+        function func12() {
+            const getSpan = document.querySelector('.task12');
+            const getInput = document.querySelector('#text12');
+            const getInputSplit = getInput.value.split('-');
 
+            let result;
+            let dateFor12 = new Date(date.getFullYear(), getInputSplit[1] - 1, getInputSplit[2]);
+            if (dateFor12 > date) {
+                result = Date.parse(dateFor12) - Date.parse(date);
+            } else {
+                dateFor12 = new Date(date.getFullYear() + 1, getInputSplit[1] - 1, getInputSplit[2]);
+                result = Date.parse(dateFor12) - Date.parse(date);
+            }
+            getSpan.innerHTML = Math.ceil(result / 1000 / 60 / 60 / 24);
+        }
+    </script>
+    <hr>
 
 
 </body>
