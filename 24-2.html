@@ -142,6 +142,26 @@
     </script>
     <hr>
 
+    <h2>Клонирование</h2>
+    <h3>Задание 27. Дан элемент #parent, внутри него дан элемент #child.
+        Дана кнопка. По нажатию на эту кнопку удалите элемент #child.</h3>
+    <p class="elem27">
+        ffff <br>
+        <span class="elem271">bbbbbbb</span>
+    </p>
+    <button class="btn27">removeChild</button>
+    <script>
+        const getBtn27 = document.querySelector('.btn27');
+        const getP27 = document.querySelector('.elem27');
+        const getSpan27 = document.querySelector('.elem271');
+
+        getBtn27.addEventListener('click', func27);
+
+        function func27() {
+            getP27.removeChild(getSpan27);
+        };
+    </script>
+    <hr>
 
 
 
