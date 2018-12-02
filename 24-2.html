@@ -92,6 +92,20 @@
     </script>
     <hr>
 
+    <h3>Задание 24. Дан элемент #elem. Найдите его соседа снизу его соседа
+        снизу (следующий элемент за соседним) и добавьте ему в конец текст '!'. </h3>
+    <p class="elem24">
+        <span class="elem241">aaaaaaa</span>
+        <span>bbbbbbb</span>
+        <span>sssssss</span>
+    </p>
+    <script>
+        const getSpan24 = document.querySelector('.elem241');
+        const elem24 = getSpan24.nextElementSibling;
+        const elem24Next = elem24.nextElementSibling;
+        elem24Next.innerHTML = `${elem24Next.innerHTML}?`;
+    </script>
+    <hr>
 
 
 
