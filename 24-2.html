@@ -193,6 +193,25 @@
     </script>
     <hr>
 
+    <h3>Задание 30. Дан ol, а внутри него li. Сделайте так, чтобы по нажатию на любую li эта li удалялась. </h3>
+    <ol class="task30">
+        <li class="task301">1</li>
+        <li class="task301">2</li>
+        <li class="task301">3</li>
+    </ol>
+    <script>
+        const getLiList30 = document.querySelectorAll('.task301');
+
+        for (let i = 0; i < getLiList30.length; i += 1) {
+            getLiList30[i].addEventListener('click', func30);
+        }
+
+        function func30() {
+            const getParent30 = this.parentElement;
+            getParent30.removeChild(this);
+        };
+    </script>
+    <hr>
 
 
 
