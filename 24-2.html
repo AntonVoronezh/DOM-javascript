@@ -231,6 +231,27 @@
     <hr>
 
 
+    <h3>Задание 32. Дан массив. Создайте ul через createElement, затем вставьте
+        каждый элемент этого массива в отдельную li внутри этой ul, затем вставьте
+        эту ul в конец body. </h3>
+    <div class="task32"></div>
+    <script>
+        const getDiv32 = document.querySelector('.task32');
+
+        const arr32 = ['a', 's', 'd']
+
+        const createUl = document.createElement('ul');
+
+        for (let i = 0; i < arr32.length; i += 1) {
+            const createLi = document.createElement('li');
+            createLi.innerHTML = arr32[i];
+            createUl.appendChild(createLi);
+        }
+
+        getDiv32.appendChild(createUl);
+
+    </script>
+    <hr>
 
 
 
