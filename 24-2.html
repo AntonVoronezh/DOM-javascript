@@ -213,6 +213,22 @@
     </script>
     <hr>
 
+    <h2>Клонирование</h2>
+    <h3>Задание 31. Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.</h3>
+    <input type="search" name="sss" id="id31" value="aaaaaaaa">
+    <input type="submit" value="clone" class="btn31">
+    <script>
+        const getInput31 = document.querySelector('#id31');
+        const getBtn31 = document.querySelector('.btn31');
+
+        getBtn31.addEventListener('click', func31);
+
+        function func31() {
+            const clone31 = getInput31.cloneNode(true);
+            console.log(clone31);
+        };
+    </script>
+    <hr>
 
 
 
