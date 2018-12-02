@@ -179,6 +179,19 @@
     </script>
     <hr>
 
+    <h3>Задание 29. Дан элемент. Сделайте так, чтобы по нажатию по нему этот элемент удалялся. </h3>
+    <button class="btn29">remove this button</button>
+    <script>
+        const getBtn29 = document.querySelector('.btn29');
+
+        getBtn29.addEventListener('click', func29);
+
+        function func29() {
+            const getParent29 = getBtn29.parentElement;
+            getParent29.removeChild(getBtn29);
+        };
+    </script>
+    <hr>
 
 
 
