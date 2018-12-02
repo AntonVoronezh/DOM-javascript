@@ -295,7 +295,21 @@
     </script>
     <hr>
 
+    <h3>Задание 35. Дана кнопка. Сделайте так, чтобы по нажатию на эту кнопку,
+        скрывался родитель этой кнопки.</h3>
+    <div class="task35">
+        <button class="btn35">push</button>
+    </div>
+    <script>
+        const getBtn35 = document.querySelector('.btn35');
+        const getDiv35 = document.querySelector('.task35');
 
+        getBtn35.addEventListener('click', func35);
+
+        function func35() {
+            getBtn35.parentElement.style.opacity = '0';
+        };
+    </script>
 
 
 
