@@ -163,6 +163,21 @@
     </script>
     <hr>
 
+    <h3>Задание 28. Дан ol. По нажатию на кнопку получите его последнего потомка и удалите его.</h3>
+    <ol class="task28">
+        <li class="task281">1</li>
+        <li class="task281">2</li>
+        <li class="task281">3</li>
+    </ol>
+    <button class="btn28">removeChild</button>
+    <script>
+        const getBtn28 = document.querySelector('.btn28');
+        const getOl28 = document.querySelector('.task28');
+        const getLast = getOl28.lastElementChild;
+
+        getOl28.removeChild(getLast);
+    </script>
+    <hr>
 
 
 
