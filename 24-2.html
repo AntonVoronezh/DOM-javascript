@@ -63,7 +63,20 @@
     </script>
     <hr>
 
-
+    <h2>Соседи</h2>
+    <h3>Задание 22. Дан элемент #elem. Найдите его соседа сверху и добавьте ему
+        в конец текст '!'. </h3>
+    <p class="elem22">
+        <span>aaaaaaa</span>
+        <span class="elem221">bbbbbbb</span>
+        <span>sssssss</span>
+    </p>
+    <script>
+        const getSpan22 = document.querySelector('.elem221');
+        const elem22 = getSpan22.previousElementSibling;
+        elem22.innerHTML = `${elem22.innerHTML}!`;
+    </script>
+    <hr>
 
 
 
