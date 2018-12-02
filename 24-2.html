@@ -253,6 +253,22 @@
     </script>
     <hr>
 
+    <h3>Задание 33. Дан инпут. Рядом с ним находится кнопочка "+".
+        По нажатию на эту кнопку под нашим инпутом должен появится
+        еще один пустой инпут. </h3>
+    <input type="text" class="task33">
+    <input type="button" value="+" class="btn33">
+    <script>
+        const getInput33 = document.querySelector('.task33');
+        const getButton33 = document.querySelector('.btn33');
+
+        getButton33.addEventListener('click', func33);
+
+        function func33() {
+            getInput33.insertAdjacentHTML('afterEnd', '<input type="text" class="task33">');
+        };
+    </script>
+    <hr>
 
 
 
