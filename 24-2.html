@@ -46,6 +46,22 @@
     </script>
     <hr>
 
+    <h3>Задание 21. Дан элемент #elem. Найдите всех потомков этого элемента и
+        добавьте им в конец текст '!'.</h3>
+    <p class="elem21">
+        <span>aaaaaaa</span>
+        <span>bbbbbbb</span>
+        <span>sssssss</span>
+    </p>
+    <script>
+        const getP21 = document.querySelector('.elem21');
+        const elems = getP21.children;
+
+        for (let i = 0; i < elems.length; i += 1) {
+            elems[i].innerHTML = `${elems[i].innerHTML}!`;
+        }
+    </script>
+    <hr>
 
 
 
