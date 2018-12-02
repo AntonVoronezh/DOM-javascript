@@ -270,6 +270,30 @@
     </script>
     <hr>
 
+    <h3>Задание 34. Дан инпут. В него вводится число. По потери фокуса сделайте так,
+        чтобы каждая цифра вставилась в новый инпут. Инпутов для цифр изначально
+        не существует, они должны создаться в процессе работы скрипта </h3>
+    <input type="text" class="task34">
+    <div class="for34"></div>
+    <script>
+        const getInput34 = document.querySelector('.task34');
+        const getDiv34 = document.querySelector('.for34');
+
+        getInput34.addEventListener('blur', func34);
+
+        function func34() {
+            const arr34 = this.value.split('');
+
+            for (let i = 0; i < arr34.length; i += 1) {
+                const createInput = document.createElement('input');
+                createInput.type = 'text';
+                createInput.value = arr34[i];
+                getDiv34.appendChild(createInput);
+            }
+
+        };
+    </script>
+    <hr>
 
 
 
