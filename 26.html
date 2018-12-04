@@ -32,7 +32,21 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дана кнопка. По нажатию на эту кнопку прокрутите окно браузера до самого низа</h3>
+    <button class="btn2">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn2 = document.querySelector('.btn2');
 
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+            let scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            window.scrollBy(0, scroll);
+        }
+    </script>
+    <hr>
 
 
     <hr>
