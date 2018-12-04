@@ -132,7 +132,28 @@
     </script>
     <hr>
 
+    <h3>Задача 7. Дан элемент. Сделайте так, чтобы при клике на него и нажатой клавише Ctrl
+        - в его текст записывалось '1', при нажатой клавише Alt - '2',
+        а при нажатой клавише Shift - '3'.</h3>
+    <div class="task7"></div>
+    <script>
+        const getSpan7 = document.querySelector('.task7');
 
+        getSpan7.addEventListener('click', func7);
+
+        function func7(event) {
+            if (event.ctrlKey) {
+                getSpan7.innerHTML = 1;
+            } else if (event.altKey) {
+                getSpan7.innerHTML = 2;
+            } else if (event.shiftKey) {
+                getSpan7.innerHTML = 3;
+            } else {
+                console.log('fuck');
+            }
+        };
+    </script>
+    <hr>
 
 
 
