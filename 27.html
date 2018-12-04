@@ -116,6 +116,21 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Дан элемент. Сделайте так, чтобы по клику на него он красился
+        в красный цвет, но только если в момент клика нажата клавиша Ctrl.</h3>
+    <div class="task6"></div>
+    <script>
+        const getSpan6 = document.querySelector('.task6');
+
+        getSpan6.addEventListener('click', func6);
+
+        function func6(event) {
+            if (event.ctrlKey) {
+                getSpan6.style.backgroundColor = 'green';
+            }
+        };
+    </script>
+    <hr>
 
 
 
