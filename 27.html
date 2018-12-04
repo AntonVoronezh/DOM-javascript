@@ -155,7 +155,25 @@
     </script>
     <hr>
 
-
+    <h3>Задача 8.  Дан инпут. В него вводится текст и нажимается клавиша Enter 
+        (ее код имеет номер 13). Сделайте так, чтобы по нажатию Enter введенный текст
+         попадал в абзац под инпутом, а содержимое инпута очищалось</h3>
+         <input type="text" value="" class="inp8">
+        <p class="task8"></p>
+        <script>
+            const getP6 = document.querySelector('.task8');
+            const getInput8 = document.querySelector('.inp8');
+    
+            window.addEventListener('keypress', func8);
+    
+            function func8(event) {
+                if(event.keyCode === 13) {
+                    getP6.innerHTML = getInput8.value;
+                    getInput8.value = '';
+                }
+            };
+        </script>
+        <hr>
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
