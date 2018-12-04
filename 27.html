@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            /* padding-left: 30px; */
+            /* position: relative; */
+            margin: 0;
+            /* padding: 0; */
+        }
+        .task2 {
+            position: absolute;
+            border: 1px solid red;
+            width: 50px;
+            height: 50px;
+        }
+        .task3 {
+            position: absolute;
+            border: 1px solid green;
+            width: 50px;
+            height: 50px;
+        }
+
+                .task6, .task7 {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на основы работы с объектом Event в JavaScript</h2>
+    <br>
+    <h3>Задача 1. Покажите координаты курсора.</h3>
+    <span class="task1"></span>
+    <script>
+        const getSpan1 = document.querySelector('.task1');
+
+        window.addEventListener('mousemove', func1);
+
+        function func1(event) {
+            getSpan1.innerHTML = `${event.clientX}:${event.clientY}`;
+        };
+
+    </script>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>6
