@@ -85,7 +85,21 @@
     </script>
     <hr>
 
+    <h2>На клавиши</h2>
+    <h3>Задача 4. Вывести код нажатой клавиши</h3>
+    <input type="text" class="task4">
+    <span class="span4"></span>
+    <script>
+        const getInput4 = document.querySelector('.task4');
+        const getSpan4 = document.querySelector('.span4');
 
+        getInput4.addEventListener('keypress', func4);
+
+        function func4(event) {
+            getSpan4.innerHTML = event.keyCode;
+        };
+    </script>
+    <hr>
 
 
 
