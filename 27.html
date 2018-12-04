@@ -101,7 +101,20 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Вывести перевод кода нажатой клавиши</h3>
+    <input type="text" class="task5">
+    <span class="span5"></span>
+    <script>
+        const getInput5 = document.querySelector('.task5');
+        const getSpan5 = document.querySelector('.span5');
 
+        getInput5.addEventListener('keypress', func5);
+
+        function func5(event) {
+            getSpan5.innerHTML = String.fromCharCode(event.keyCode);
+        };
+    </script>
+    <hr>
 
 
 
