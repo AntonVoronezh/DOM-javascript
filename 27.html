@@ -52,7 +52,20 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Квадрат в место по клику</h3>
+    <div class="task2"></div>
+    <script>
+        const getDiv2 = document.querySelector('.task2');
 
+        window.addEventListener('click', func2);
+
+        function func2(event) {
+            getDiv2.style.left = event.clientX + 'px';
+            getDiv2.style.top = event.clientY + 'px';
+        };
+
+    </script>
+    <hr>
 
 
 
