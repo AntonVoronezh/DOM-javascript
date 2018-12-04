@@ -67,7 +67,23 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Квадрат в место по клику (мышь в середине)</h3>
+    <div class="task3"></div>
+    <script>
+        const getDiv3 = document.querySelector('.task3');
 
+        window.addEventListener('click', func3);
+
+        function func3(event) {
+            const getDivWidth = getDiv3.clientWidth;
+            const getDivHeight = getDiv3.clientHeight;
+            // elem.style.left = (event.clientX - parseInt(window.getComputedStyle(elem, "").width) / 2)+'px';
+            getDiv3.style.left = (event.clientX - (getDivWidth / 2)) + 'px';
+            getDiv3.style.top = (event.clientY + (getDivHeight / 2)) + 'px';
+        };
+
+    </script>
+    <hr>
 
 
 
