@@ -104,7 +104,77 @@
     </script>
     <hr>
 
-    
+    <h3>Задача 3. Дана таблица с колонками 'имя', 'фамилия', 'удалить'.
+        Сделайте под ней 2 инпута и кнопку. Если ввести в эти инпуты имя
+        и фамилию и нажать на кнопку - в таблицу должен добавиться новый ряд.
+        В каждом ряду должна быть кнопочка 'удалить' (третий столбец),
+        по нажатию на которую этот ряд удалится.
+
+        Также сделайте так, чтобы можно было поредактировать любую ячейку с
+        именем и фамилией - по клику на ячейку в ней должен появиться инпут
+        с текстом этой ячейки, этот текст можно поменять, нажать Enter -
+        и инпут исчезнет, а информация в ячейке обновится.</h3>
+
+    <table class="task3">
+        <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>удалить</td>
+        </tr>
+    </table>
+
+    <input type="text" class="name">
+    <input type="text" class="name2">
+    <input type="submit" class="submit3">
+
+    <script>
+        const getTable3 = document.querySelector('.task3');
+        const getInput3 = document.querySelector('.name');
+        const getInput32 = document.querySelector('.name2');
+        const getSubmit3 = document.querySelector('.submit3');
+
+        getSubmit3.addEventListener('click', func3);
+        getTable3.addEventListener('click', func32);
+        
+
+        function func33(event) {
+            if (event.keyCode === 13) {
+                event.target.closest('td').innerHTML = event.target.value;
+            }
+        };
+
+        function func32(event) {
+            const createInput = document.createElement('input');
+            createInput.type = 'text';
+            createInput.addEventListener('keypress', func33);
+
+            event.target.appendChild(createInput);
+        };
+
+        function func3() {
+            const createTr = document.createElement('tr');
+
+            const createBtn = document.createElement('button');
+            createBtn.innerHTML = 'delete';
+            createBtn.addEventListener('click', function (event) {
+                getTable3.removeChild(event.target.closest('tr'));
+            });
+
+            const createName = document.createElement('td');
+            createName.innerHTML = getInput3.value;
+
+            const createName2 = document.createElement('td');
+            createName2.innerHTML = getInput32.value;
+
+            createTr.appendChild(createName);
+            createTr.appendChild(createName2);
+            createTr.appendChild(createBtn);
+
+            getTable3.appendChild(createTr);
+        };
+
+
+    </script>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
