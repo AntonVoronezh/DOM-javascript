@@ -49,7 +49,60 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дана таблица с юзерами с двумя колонками: имя и фамилия.
+        Под таблицей сделайте форму, с помощью которой можно будет добавить
+        нового юзера в таблицу. Сделайте так, чтобы при клике на любую ячейку
+        появлялся prompt, с помощью которого можно изменить текст ячейки.
+        Задачу решите с помощью делегирования (то есть событие должно быть
+        навешано на table).</h3>
 
+    <table class="task2">
+        <tr>
+            <td>Иван</td>
+            <td>Иванов</td>
+        </tr>
+        <tr>
+            <td>Петр</td>
+            <td>Петров</td>
+        </tr>
+    </table>
+    <br>
+    <form class="form2">
+        <input type="text" class="form2__firstname" name="firstname">
+        <input type="text" class="form2__lastname" name="lastname">
+        <input type="submit" value="добавить" name="submit">
+    </form>
+    <script>
+        const getForm2 = document.querySelector('.form2');
+        const getTable2 = document.querySelector('.task2');
+
+
+        getForm2.submit.addEventListener('click', func2);
+        getTable2.addEventListener('click', func22);
+
+        function func22(event) {
+            const newValue = prompt("Исправить " + event.target.innerHTML, '');
+            event.target.innerHTML = newValue;
+        };
+
+        function func2(event) {
+            event.preventDefault();
+
+            const createTdFirst = document.createElement('td');
+            createTdFirst.innerHTML = getForm2.firstname.value;
+
+            const createTdLast = document.createElement('td');
+            createTdLast.innerHTML = getForm2.lastname.value;
+
+            const createTr = document.createElement('tr');
+            createTr.appendChild(createTdFirst);
+            createTr.appendChild(createTdLast);
+
+            getTable2.appendChild(createTr);
+        };
+
+    </script>
+    <hr>
 
     
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
