@@ -241,7 +241,20 @@
         getSelectForMonth.addEventListener('change', eventHandle);
         getSelectForDay.addEventListener('change', eventHandle);
 
+        function eventHandle() {
+            const isCon = checkDate(
+                Number(getSelectForYear.value),
+                Number(getSelectForMonth.value),
+                Number(getSelectForDay.value)
+            );
 
+            if (!isCon) {
+                getP6.innerHTML = 'Неcуществующая дата <br> Попробуйте заново';
+                this.value = '1';
+            } else {
+                getP6.innerHTML = '';
+            }
+        };
 
 
 
