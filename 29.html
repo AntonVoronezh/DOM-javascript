@@ -237,7 +237,12 @@
         const createMonth = makeSelectFromArray(getSelectForMonth, MonthsArray, date.getMonth());
         const createDay = makeSelectFromArray(getSelectForDay, DaysArray, date.getDate());
 
- 
+        getSelectForYear.addEventListener('change', eventHandle);
+        getSelectForMonth.addEventListener('change', eventHandle);
+        getSelectForDay.addEventListener('change', eventHandle);
+
+
+
 
 
 
