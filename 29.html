@@ -198,6 +198,11 @@
 
         getSelectForCountry.addEventListener('change', func6);
 
+        function func6() {
+            getSelectForSitys.innerHTML = '';
+            const sities = sity2[this.value];
+            makeSelectFromArray(getSelectForSitys, sities);
+        };
 
 
     </script>
