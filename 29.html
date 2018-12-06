@@ -108,6 +108,27 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно
+        было ввести число, нажать на кнопку и в селекте становился выбранным пункт с этим номером.</h3>
+    <select name="sel4" id="" class="sel4">
+        <option value="1" class="opt4">select 1</option>
+        <option value="2" class="opt4">select 2</option>
+        <option value="3" class="opt4">select 3</option>
+        <option value="4" class="opt4">select 4</option>
+    </select>
+    <input type="text" class="inp4">
+    <button class="btn4">
+        нажми на меня
+    </button>
+    <script>
+        const getSelect4 = document.querySelector('.sel4');
+        const getInput4 = document.querySelector('.inp4');
+        const getBtn4 = document.querySelector('.btn4');
+
+        getBtn4.addEventListener('click', func4);
+
+    </script>
+    <hr>
 
 
 
