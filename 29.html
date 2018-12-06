@@ -97,7 +97,13 @@
 
         getSelect3.addEventListener('change', func3);
 
-
+        function func3() {
+            for (let i = 0; i < getSelect3.options.length; i += 1) {
+                if (getSelect3.options[i].selected) {
+                    getInput3.value = getSelect3.options[i].text;
+                }
+            }
+        };
 
     </script>
     <hr>
