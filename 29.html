@@ -156,6 +156,20 @@
 
         getSelect5.addEventListener('change', func5);
 
+        function func5() {
+            getDivt5.innerHTML = '';
+            const getSity = sity[getSelect5.selectedIndex];
+
+            const makeSelect = document.createElement('select');
+
+            for (let i = 0; i < getSity.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = getSity[i];
+                makeSelect.appendChild(makeOption);
+            }
+
+            getDivt5.appendChild(makeSelect);
+        };
 
     </script>
     <hr>
