@@ -247,12 +247,12 @@
                 Number(getSelectForMonth.value),
                 Number(getSelectForDay.value)
             );
-
-            if (!isCon) {
+            
+            if(!isCon){
                 getP6.innerHTML = 'Неcуществующая дата <br> Попробуйте заново';
                 this.value = '1';
             } else {
-                getP6.innerHTML = '';
+               getP6.innerHTML = ''; 
             }
         };
 
@@ -275,7 +275,10 @@
             }
         };
 
-
+        function checkDate(argYear, argMonth, argDay) {
+            const date = new Date(argYear, argMonth - 1, argDay);
+            return date.getFullYear() === argYear && date.getMonth() === argMonth - 1 && date.getDate() === argDay;
+        };
     </script>
 
 
