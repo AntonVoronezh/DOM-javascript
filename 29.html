@@ -264,7 +264,16 @@
             return result;
         };
 
-
+        function makeSelectFromArray(argElem, argArr, argVar) {
+            for (let i = 0; i < argArr.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = argArr[i];
+                if (argArr[i] === argVar) {
+                    makeOption.selected = true;
+                }
+                argElem.appendChild(makeOption);
+            }
+        };
 
 
     </script>
