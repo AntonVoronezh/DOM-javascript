@@ -127,6 +127,12 @@
 
         getBtn4.addEventListener('click', func4);
 
+        function func4() {
+            const num = Number(getInput4.value);
+            if (num <= getSelect4.options.length - 1) {
+                getSelect4.options[num].selected = true;
+            }
+        };
     </script>
     <hr>
 
