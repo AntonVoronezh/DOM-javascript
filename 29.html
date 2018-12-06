@@ -204,7 +204,13 @@
             makeSelectFromArray(getSelectForSitys, sities);
         };
 
-
+        function makeSelectFromArray(elem, arr) {
+            for (let i = 0; i < arr.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = arr[i];
+                elem.appendChild(makeOption);
+            }
+        };
     </script>
     <hr>
 
