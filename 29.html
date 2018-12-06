@@ -233,7 +233,11 @@
         const MonthsArray = makeCustomArrayFromNumbers(1, 12);
         const DaysArray = makeCustomArrayFromNumbers(1, 31);
 
-   
+        const createYear = makeSelectFromArray(getSelectForYear, YearsArray, date.getFullYear());
+        const createMonth = makeSelectFromArray(getSelectForMonth, MonthsArray, date.getMonth());
+        const createDay = makeSelectFromArray(getSelectForDay, DaysArray, date.getDate());
+
+ 
 
 
 
