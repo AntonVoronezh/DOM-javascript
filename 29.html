@@ -136,6 +136,29 @@
     </script>
     <hr>
 
+    <h3>Задача 5. (мой вариант) Дан селект со списком стран. Сделайте так, чтобы при
+        выборе страны рядом появлялся еще и селект со списком городов из этой страны.</h3>
+    <select name="sel5" id="" class="sel5">
+        <option value="1" class="opt5">Россия</option>
+        <option value="2" class="opt5">Германия</option>
+        <option value="3" class="opt5">Франция</option>
+    </select>
+    <p class="div5"></p>
+    <script>
+        const sity = {
+            0: ['москва', 'питер', 'воронеж'],
+            1: ['берлин', 'гамбург', 'ДРЕЗДЕН'],
+            2: ['париж', 'прованс', 'бургундия']
+        };
+
+        const getSelect5 = document.querySelector('.sel5');
+        const getDivt5 = document.querySelector('.div5');
+
+        getSelect5.addEventListener('change', func5);
+
+
+    </script>
+    <hr>
 
 
 
