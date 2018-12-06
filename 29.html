@@ -34,6 +34,15 @@
     <script>
         const getBtn1 = document.querySelector('.btn1');
 
+        getBtn1.addEventListener('click', () => {
+            const getForm1 = document.querySelector('.form1');
+
+            let sum = 0;
+            for (let i = 0; i < getForm1.elements.length; i += 1) {
+                sum += Number(getForm1.elements[i].value);
+            }
+            console.log(sum);
+        });
 
 
     </script>
