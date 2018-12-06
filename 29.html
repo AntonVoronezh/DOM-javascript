@@ -187,6 +187,17 @@
             'франция': ['париж', 'прованс', 'бургундия']
         };
 
+        const getSelectForCountry = document.querySelector('.sel61');
+        const getSelectForSitys = document.querySelector('.sel62');
+
+        const countries = Object.keys(sity2);
+        const defaultSities = sity2[countries[0]];
+
+        makeSelectFromArray(getSelectForCountry, countries);
+        makeSelectFromArray(getSelectForSitys, defaultSities);
+
+        getSelectForCountry.addEventListener('change', func6);
+
 
 
     </script>
