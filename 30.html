@@ -83,6 +83,22 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Задача :
+
+        Дан див с комментарием:
+
+        \div>\!--comment-->\span>span\/span> text \/div>
+        Поменяйте текст комментария на восклицательный знак.</h3>
+    <div class="div6">
+        <!--comment--><span>span</span> text </div>
+    <script>
+        const getDiv6 = document.querySelector('.div6');
+        getDiv6.firstChild.data = '!';
+        console.log('6->' + getDiv6.firstChild.data);
+
+    </script>
+    <hr>
+
 
 
 
