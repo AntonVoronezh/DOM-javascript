@@ -168,6 +168,21 @@
     </script>
     <hr>
 
+    <h3>Задача 11. Дан див:
+
+        \div>\span>1\/span> 2 \span>3\/span>\span>4\/span> 5\/div>
+        Получите span с числом 3 внутри. Выведите на экран текст его правого и левого узла-соседа.</h3>
+    <div class="div11"><span>1</span> 2 <span>3</span><span>4</span> 5</div>
+    <script>
+        const getDiv11 = document.querySelector('.div11');
+        for (let i = 0; i < getDiv11.childNodes.length; i += 1) {
+            if (+getDiv11.childNodes[i].textContent === 3) {
+                console.log('11 (left)->' + getDiv11.childNodes[i].previousSibling.textContent);
+                console.log('11 (right)->' + getDiv11.childNodes[i].nextSibling.textContent);
+            }
+        }
+    </script>
+    <hr>
 
 
 
