@@ -121,7 +121,20 @@
     </script>
     <hr>
 
+    <h3>Задача 8. Дан див:
 
+        \div> 1 \span>2\/span> 3 \span>4\/span>\/div>
+        Выведите на экран содержимого второго (если начинать отсчет с единицы) узла-потомка нашего дива.</h3>
+    <div class="div8"> 1 <span>2</span> 3 <span>4</span></div>
+    <script>
+        const getDiv8 = document.querySelector('.div8');
+        for (let i = 0; i < getDiv8.childNodes.length; i += 1) {
+            if (i === 1) {
+                console.log('8 (childNodes)->' + getDiv8.childNodes[i].textContent);
+            }
+        }
+    </script>
+    <hr>
 
 
 
