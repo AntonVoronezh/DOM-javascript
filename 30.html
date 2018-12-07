@@ -257,6 +257,23 @@
     <hr>
 
 
+    <h3>Задача 17. Даны абзацы. Получите их в виде HTMLCollection, а затем преобразуйте этот HTMLCollection в массив.</h3>
+    <div class="task17">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+
+    <script>
+        const getDiv17 = document.querySelector('.task17');
+
+        console.log('17 ->' + getDiv17.children.length);
+
+        const makeArr2 = [...getDiv17.children];
+
+        console.log('17 ->' + makeArr2);
+    </script>
+    <hr>
 
 
 
