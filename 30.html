@@ -152,6 +152,21 @@
     </script>
     <hr>
 
+    <h3>Задача 10. Дан див:
+
+        \div>\span>1\/span> 2 \span>3\/span>\span>4\/span> 5\/div>
+        Получите span с числом 3 внутри. Выведите на экран текст его правого и левого DOM-элемента-соседа.</h3>
+    <div class="div10"><span>1</span> 2 <span>3</span><span>4</span> 5</div>
+    <script>
+        const getDiv10 = document.querySelector('.div10');
+        for (let i = 0; i < getDiv10.children.length; i += 1) {
+            if (+getDiv10.children[i].textContent === 3) {
+                console.log('10 (right)->' + getDiv10.children[i].nextElementSibling.textContent);
+                console.log('10 (left)->' + getDiv10.children[i].previousElementSibling.textContent);
+            }
+        }
+    </script>
+    <hr>
 
 
 
