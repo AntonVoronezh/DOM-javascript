@@ -43,6 +43,18 @@
     <hr>
 
 
+    <h3>Задача 3. Дан див. Внутри него вначале находится просто текст, а затем span:
+
+        \div> text \span>span\/span> \/div> Поменяйте текст на восклицательный
+        знак.</h3>
+    <div class="div3"> text <span>span</span></div>
+    <script>
+        const getDiv3 = document.querySelector('.div3');
+        getDiv3.firstChild.data = getDiv3.firstChild.data + '!';
+        getDiv3.firstChild.nodeValue = getDiv3.firstChild.nodeValue + '@';
+        getDiv3.firstChild.textContent = getDiv3.firstChild.textContent + '#';
+    </script>
+    <hr>
 
 
 
