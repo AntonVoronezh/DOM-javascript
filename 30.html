@@ -306,7 +306,18 @@
     </script>
     <hr>
 
-  
+    <h2>Удаление текстовых узлов на JavaScript</h2>
+    <h3>Задача 20. Дан див:
+
+        \div> text \span>span\/span>\/div>
+        Удалите из него текстовый узел ' text '.</h3>
+    <div class="task20"> text <span>span</span></div>
+    <script>
+        const getDiv20 = document.querySelector('.task20');
+        getDiv20.removeChild(getDiv20.childNodes[0]);
+    </script>
+    <hr>
+
 
 
 </html
