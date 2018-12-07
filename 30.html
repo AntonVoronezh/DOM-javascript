@@ -29,6 +29,18 @@
     </script>
     <hr>
 
+    <h2>Текстовый узел и узел-комментарий</h2>
+    <h3>Задача 2. Дан див. Внутри него вначале находится просто текст, а затем span:
+
+        \div> text \span>span\/span> \/div> Выведите на экран находящийся в начале дива текст.</h3>
+    <div class="div2"> text <span>span</span></div>
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        console.log('2->' + getDiv2.firstChild.data);
+        console.log('2->' + getDiv2.firstChild.nodeValue);
+        console.log('2->' + getDiv2.firstChild.textContent);
+    </script>
+    <hr>
 
 
 
