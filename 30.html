@@ -236,6 +236,25 @@
     </script>
     <hr>
 
+    <h2>Преобразование NodeList или HTMLCollection в массив JavaScript</h2>
+    <h3>Задача 16. Даны абзацы. Получите их в виде NodeList, а затем преобразуйте этот NodeList в массив.</h3>
+    <div class="task16">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+
+    <script>
+        const getDiv16 = document.querySelector('.task16');
+
+        console.log('16 ->' + getDiv16.childNodes.length);
+
+        const makeArr = Array.from(getDiv16.childNodes);
+
+        console.log('16 ->' + makeArr);
+    </script>
+
+    <hr>
 
 
 
