@@ -318,6 +318,29 @@
     </script>
     <hr>
 
+    <h2>Различаем в цикле узлы разного типа</h2>
+    <h3>Задача 21. Дан див:
 
+        <div>
+            \!--comment-->\span>\b>bold\/b>span\/span> text \/div>
+            Переберите циклом все его узлы и выведите на экран для текстовых узлов и
+            комментариев их текст, а для узлов-DOM-элементов - их innerHTML.</h3>
+    <div class="task21">
+        <!--comment--><span><b>bold</b>span</span> text </div>
+    <script>
+        const getDiv21 = document.querySelector('.task21');
+        const arr21 = [...getDiv21.childNodes];
+
+        arr21.forEach(elem => {
+            if (elem.nodeType === 3 || elem.nodeType === 8) {
+                console.log('21 (forEach)->' + elem.textContent);
+            }
+            else if (elem.nodeType === 1) {
+                console.log('21 (forEach)->' + elem.innerHTML);
+            }
+        });
+    </script>
+    <hr>
+</body>
 
 </html
