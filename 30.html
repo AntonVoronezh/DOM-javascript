@@ -184,6 +184,20 @@
     </script>
     <hr>
 
+    <h3>Задача 12. Дан див:
+
+        \div>\span>1\/span> 2 \span>3\/span>\span>4\/span> 5\/div>
+        Получите текстовый узел с числом 3 внутри. Выведите на экран текст его правого соседа.</h3>
+    <div class="div12"><span>1</span> 2 <span>3</span><span>4</span> 5</div>
+    <script>
+        const getDiv12 = document.querySelector('.div12');
+        for (let i = 0; i < getDiv12.childNodes.length; i += 1) {
+            if (+getDiv12.childNodes[i].textContent === 3) {
+                console.log('12 (right)->' + getDiv12.childNodes[i].nextSibling.textContent);
+            }
+        }
+    </script>
+    <hr>
 
 
 
