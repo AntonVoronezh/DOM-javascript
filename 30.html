@@ -137,6 +137,20 @@
     <hr>
 
 
+    <h3>Задача 9. Дан див:
+
+        \div> 1 \span>2\/span> 3 \span>4\/span>\/div>
+        Выведите на экран содержимого второго (если начинать отсчет с единицы) DOM-элемента-потомка нашего дива.</h3>
+    <div class="div9"> 1 <span>2</span> 3 <span>4</span></div>
+    <script>
+        const getDiv9 = document.querySelector('.div9');
+        for (let i = 0; i < getDiv9.children.length; i += 1) {
+            if (i === 1) {
+                console.log('9 (children)->' + getDiv9.children[i].textContent);
+            }
+        }
+    </script>
+    <hr>
 
 
 
