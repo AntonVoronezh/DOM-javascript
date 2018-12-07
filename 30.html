@@ -199,7 +199,21 @@
     </script>
     <hr>
 
+    <h2>Работа с nodeType на JavaScript</h2>
+    <h3>Задача 13. Дан див:
 
+        \div>\!--comment-->\span>span\/span> text \/div>
+        Переберите циклом все его узлы, получите их текст, выведите текст на экран,
+        а рядом с каждый текстом - тип соответствующего узла.</h3>
+    <div class="div13">
+        <!--comment--><span>span</span> text </div>
+    <script>
+        const getDiv13 = document.querySelector('.div13');
+        for (let i = 0; i < getDiv13.childNodes.length; i += 1) {
+            console.log('13 ->' + getDiv13.childNodes[i].textContent + '-' + getDiv13.childNodes[i].nodeType);
+        }
+    </script>
+    <hr>
 
 
 
