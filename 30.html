@@ -291,6 +291,20 @@
     </script>
     <hr>
 
+    <h3>Задача 19. Дан див:
+
+        \div> text \span>span\/span>\/div>
+        Вставьте после слова text новый текстовый узел с текстом '!!!'..</h3>
+    <div class="task19"> text <span>span</span></div>
+    <script>
+        const getDiv19 = document.querySelector('.task19');
+
+        const makeText2 = document.createTextNode('@@@');
+
+        console.log(getDiv19.childNodes[0]);
+        getDiv19.insertBefore(makeText2, getDiv19.childNodes[1]);
+    </script>
+    <hr>
 
   
 
