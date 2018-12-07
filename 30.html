@@ -99,6 +99,27 @@
     </script>
     <hr>
 
+    <h2>Разница между nextSibling и nextElementSibling, childNodes и children, firstChild и firstElementChild,
+        lastChild и lastElementChild</h2>
+    <h3>Задача 7. Задача :
+
+        Дан див:
+
+        \div> 1 \span>2\/span> 3 \span>4\/span>\/div>
+        Переберите циклом всех потомков дива сначала через childNodes, а потом через children.</h3>
+    <div class="div7"> 1 <span>2</span> 3 <span>4</span></div>
+    <script>
+        const getDiv7 = document.querySelector('.div7');
+        console.log(getDiv7.childNodes);
+        console.log(getDiv7.children);
+        getDiv7.childNodes.forEach(element => {
+            console.log('7 (childNodes)->' + element.textContent);
+        });
+        for (let i = 0; i < getDiv7.children.length; i += 1) {
+            console.log('7 (children)->' + getDiv7.children[i].textContent);
+        }
+    </script>
+    <hr>
 
 
 
