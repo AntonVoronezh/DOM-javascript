@@ -56,6 +56,19 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дан див. Внутри него вначале находится span, а затем просто текст:
+
+        \div>\span>span\/span> text \/div>
+        Поменяйте текст на восклицательный знак.</h3>
+    <div class="div4"><span>span</span> text </div>
+    <script>
+        const getDiv4 = document.querySelector('.div4');
+        getDiv4.lastChild.textContent = '!';
+        console.log('4->' + getDiv4.lastChild.textContent);
+        console.log('4->' + getDiv4.lastElementChild.textContent);
+
+    </script>
+    <hr>
 
 
 
