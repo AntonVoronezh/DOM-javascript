@@ -275,6 +275,21 @@
     </script>
     <hr>
 
+    <h2>Метод createTextNode для создания текстового узла</h2>
+    <h3>Задача 18. Дан див:
+
+        \div>\span>span\/span> text \/div>
+        Вставьте перед спеном текст '!!!', создав его предварительно как текстовый узел с помощью createTextNode.</h3>
+    <div class="task18"><span>span</span> text </div>
+    <script>
+        const getDiv18 = document.querySelector('.task18');
+
+        const makeText = document.createTextNode('@@@');
+
+        getDiv18.insertBefore(makeText, getDiv18.firstChild);
+
+    </script>
+    <hr>
 
 
   
