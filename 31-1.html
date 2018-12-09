@@ -121,6 +121,27 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Дан инпут. В него вводится ФИО через пробел.
+        По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты </h3>
+    <input type="text" class="task5">
+    <div class="div5"></div>
+    <script>
+        const getInp5 = document.querySelector('.task5');
+        const getDiv5 = document.querySelector('.div5');
+
+        getInp5.addEventListener('blur', func5);
+
+        function func5() {
+            const arrFromValue = getInp5.value.split(' ');
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                const createInput = document.createElement('input');
+                createInput.value = arrFromValue[i];
+                getDiv5.appendChild(createInput);
+            }
+        };
+    </script>
+    <hr>
 
 
 
