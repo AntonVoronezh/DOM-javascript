@@ -177,6 +177,21 @@
     </script>
     <hr>
 
+    <h3>Задача 7. Дан инпут. В него вводится текст.
+        По потери фокуса узнайте количество слов в этом тексте.</h3>
+    <input type="text" class="task7">
+    <script>
+        const getInp7 = document.querySelector('.task7');
+
+        getInp7.addEventListener('blur', func7);
+
+        function func7() {
+            const arrFromValue = getInp7.value.split(' ');
+            console.log('7 -> ' + arrFromValue.length);
+        };
+    </script>
+    <hr>
+
 
 
 
