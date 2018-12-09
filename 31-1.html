@@ -143,6 +143,39 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Дан инпут. В него вводится ФИО через пробел.
+        ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери
+        фокуса инпутом, введенные фамилия, имя и отчество автоматически
+        стали записанными с большой буквы (в том же инпуте)</h3>
+    <input type="text" class="task6">
+    <script>
+        const getInp6 = document.querySelector('.task6');
+
+        getInp6.addEventListener('blur', func6);
+
+        const makeFirstUpper = argStr => {
+            // const arrFromValue = argStr.split('');
+            const arrFromValue = [...argStr];
+            arrFromValue[0] = arrFromValue[0].toUpperCase();
+            return arrFromValue.join('');
+        };
+
+        function func6() {
+            const arrFromValue = getInp6.value.split(' ');
+
+            let result = '';
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                result += makeFirstUpper(arrFromValue[i]) + ' ';
+            }
+            console.log(result);
+
+        };
+
+
+
+    </script>
+    <hr>
 
 
 
