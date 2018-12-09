@@ -238,7 +238,27 @@
     </script>
     <hr>
 
+    <h3>Задача 10. Дан инпут. В него вводится год рождения пользователя.
+        По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.</h3>
+    <input type="text" class="task10">
+    <p class="p10"></p>
+    <input type="submit" value="hhhhhh" class="sub10">
+    <script>
+        const getInp10 = document.querySelector('.task10');
+        const getP10 = document.querySelector('.p10');
+        const getSub10 = document.querySelector('.sub10');
 
+        getSub10.addEventListener('click', func10);
+
+        function func10() {
+            const date = new Date();
+            const year = +getInp10.value;
+            const result = date.getFullYear() - year;
+
+            getP10.innerHTML = result;
+        };
+    </script>
+    <hr>
 
 
 
