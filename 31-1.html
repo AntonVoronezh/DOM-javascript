@@ -193,6 +193,34 @@
     <hr>
 
 
+    <h3>Задача 8. Дан инпут. В него вводится текст. По потери фокуса узнайте
+        количество символов в самом длинном слове в этом тексте. </h3>
+    <input type="text" class="task8">
+    <script>
+        const getInp8 = document.querySelector('.task8');
+
+        getInp8.addEventListener('blur', func8);
+
+        const getSymbolsCount = argStr => {
+            const arrFromArg = [...argStr];
+            return arrFromArg.length;
+        };
+
+        function func8() {
+            const arrFromValue = getInp8.value.split(' ');
+
+            let result = 0;
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                const getsymbolsCount = getSymbolsCount(arrFromValue[i]);
+                if (getsymbolsCount > result) {
+                    result = getsymbolsCount;
+                }
+            }
+            console.log('8 -> ' + result);
+        };
+    </script>
+    <hr>
 
 
 
