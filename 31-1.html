@@ -48,6 +48,36 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Даны N инпутов с классом .num и кнопка.
+        По нажатию на кнопку получите числа, стоящие в этих
+        инпутах и запишите их сумму в абзац с id="result"</h3>
+    <div class="div2">
+        <input type="text" class="num">
+        <input type="text" class="num">
+        <input type="text" class="num">
+        <button class="btn">ок</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getInp2 = getDiv2.querySelectorAll('.num');
+        const getBtn2 = getDiv2.querySelector('.btn');
+        const getP2 = document.getElementById('result');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+
+            let sum = 0;
+            for (let i = 0; i < getInp2.length; i += 1) {
+                sum += Number(getInp2[i].value);
+            }
+
+            getP2.innerHTML = sum;
+        };
+
+    </script>
+    <hr>
 
 
 
