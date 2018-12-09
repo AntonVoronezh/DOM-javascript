@@ -99,6 +99,28 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дан инпут. В него вводятся числа через запятую.
+        По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество). </h3>
+    <input type="text" class="task4">
+    <script>
+        const getInp4 = document.querySelector('.task4');
+
+        getInp4.addEventListener('blur', func4);
+
+        function func4() {
+            const arrFromValue = getInp4.value.split(',');
+            let sum = 0;
+            let result = 0;
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                sum += Number(arrFromValue[i]);
+            }
+
+            result = sum / arrFromValue.length;
+            console.log('3 -> ' + result);
+        };
+    </script>
+    <hr>
+
 
 
 
