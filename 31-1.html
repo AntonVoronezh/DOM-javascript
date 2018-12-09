@@ -79,7 +79,25 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Дан инпут. В него вводится число.
+        По потери фокуса найдите сумму цифр этого числа.</h3>
+    <input type="text" class="task3">
+    <script>
+        const getInp3 = document.querySelector('.task3');
 
+        getInp3.addEventListener('blur', func3);
+
+        function func3() {
+            const arrFromValue = getInp3.value.split('');
+            let sum = 0;
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                sum += Number(arrFromValue[i]);
+            }
+            console.log('3 -> ' + sum);
+
+        };
+    </script>
+    <hr>
 
 
 
