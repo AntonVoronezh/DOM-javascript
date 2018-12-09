@@ -222,6 +222,22 @@
     </script>
     <hr>
 
+    <h3>Задача 9. Дан инпут. В него вводится дата в формате 31.12.2016.
+        По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31</h3>
+    <input type="text" class="task9">
+    <script>
+        const getInp9 = document.querySelector('.task9');
+
+        getInp9.addEventListener('blur', func9);
+
+        function func9() {
+            const arrFromValue = getInp9.value.split('.');
+            const out = `${arrFromValue[2]}-${arrFromValue[1]}-${arrFromValue[0]}`;
+            getInp9.value = out;
+        };
+    </script>
+    <hr>
+
 
 
 
