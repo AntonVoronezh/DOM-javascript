@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи для решения JavaScript</h2>
+    <h2>Урок #1</h2>
+
+    <h3>Задача 1. Даны 3 инпута и кнопка. По нажатию на кнопку
+        получите числа, стоящие в этих инпутах и запишите их
+        сумму в четвертый инпут.</h3>
+
+    <div class="div1">
+        <input type="text" class="inp1">
+        <input type="text" class="inp2">
+        <input type="text" class="inp3">
+        <button class="btn">ок</button>
+        <input type="text" class="inp4">
+    </div>
+    <script>
+        const getDiv1 = document.querySelector('.div1');
+        const getInp = getDiv1.querySelectorAll('input');
+        const getBtn = getDiv1.querySelector('.btn');
+
+        getBtn.addEventListener('click', func1);
+
+        function func1() {
+            let sum = 0;
+            for (let i = 0; i < getInp.length - 1; i += 1) {
+                sum += Number(getInp[i].value);
+            }
+
+            getDiv1.lastElementChild.value = sum;
+        };
+
+    </script>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============================================================================================================= -->
+
+
+</body>
+
+</html
