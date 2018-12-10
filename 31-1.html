@@ -428,6 +428,26 @@
     </script>
     <hr>
 
+    <h3>Задача 18. Даны N абзацев с числами. По нажатию на любой
+        абзац запишите в него квадрат числа, которое в нем находится.</h3>
+    <div class="div18">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <script>
+        const getDiv18 = document.querySelector('.div18');
+
+        getDiv18.addEventListener('click', func18);
+
+        function func18(event) {
+            event.target.innerHTML = event.target.innerHTML * event.target.innerHTML;
+        };
+    </script>
+    <hr>
+
 
 
 
