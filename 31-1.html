@@ -467,6 +467,34 @@
     </script>
     <hr>
 
+    <h3>Задача 20. Даны картинки. По первому нажатию на любую картинку
+        увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.</h3>
+
+    <div class="div20">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <script>
+        const getDiv20 = document.querySelector('.div20');
+
+        getDiv20.addEventListener('click', func20);
+
+        function func20(event) {
+            const height = event.target.clientHeigth;
+            const width = event.target.clientWidth;
+
+            event.target.style.heigth = height * 2 + 'px';
+            event.target.style.width = width * 2 + 'px';
+
+            event.target.addEventListener('click', function () {
+                this.style.heigth = height / 2 + 'px';
+                this.style.width = width / 2 + 'px';
+            });
+        };
+    </script>
+    <hr>
+
 
 
 
