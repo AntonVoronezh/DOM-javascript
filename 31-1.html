@@ -495,6 +495,31 @@
     </script>
     <hr>
 
+    <h3>Задача 21. Даны N картинок размера 30px. По нажатию на картинку под ними
+        эта картинка появляется размером в 50px. </h3>
+    <div class="div21">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <div class="div212"></div>
+    <script>
+        const getDiv21 = document.querySelector('.div21');
+        const getDiv212 = document.querySelector('.div212');
+
+        getDiv21.addEventListener('click', func21);
+
+        function func21(event) {
+            const createImg = document.createElement('img');
+            createImg.src = event.target.src;
+            createImg.style.width = '50px';
+
+            getDiv212.innerHTML = '';
+            getDiv212.appendChild(createImg);
+
+        };
+    </script>
+    <hr>
 
 
 
