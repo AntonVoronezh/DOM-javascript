@@ -401,6 +401,32 @@
     </script>
     <hr>
 
+    <h3>Задача 17. Даны ссылки. По загрузке страницы, если ссылка начинается
+        с http://, то добавьте ей в конец стрелку → (делается так: &rarr;). </h3>
+
+    <div class="div17">
+        <a href="http://1.com">1</a> <br>
+        <a href="2.com">2</a> <br>
+        <a href="http://3.com">3</a><br>
+        <a href="1.html">4</a> <br>
+        <a href="http://2.com">5</a> <br>
+        <a href="http://3.com">6</a><br>
+    </div>
+    <script>
+        const getDiv17 = document.querySelector('.div17');
+
+        document.addEventListener('DOMContentLoaded', func17);
+
+        function func17() {
+            const getAllA = getDiv17.querySelectorAll('a');
+
+            getAllA.forEach(elem => {
+                if (elem.href.substr(0, 7) === 'http://')
+                    elem.innerHTML = elem.innerHTML + '&rarr;';
+            });
+        };
+    </script>
+    <hr>
 
 
 
