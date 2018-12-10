@@ -521,7 +521,31 @@
     </script>
     <hr>
 
+    <h3>Задача 22. Дан инпут. Реализуйте кнопочки +1, -1, которые будут
+        увеличивать или уменьшать на 1 значение инпута. Сделайте так,
+        чтобы это значение не могло стать меньше нуля. </h3>
+    <input type="text" class="inp22" value="0">
+    <br> <br>
+    <input type="submit" value="+1" class="sub22Plus">
+    <input type="submit" value="-1" class="sub22Minus">
 
+    <script>
+        const getInp22 = document.querySelector('.inp22');
+        const getInpPlus = document.querySelector('.sub22Plus');
+        const getMinus = document.querySelector('.sub22Minus');
+
+        getInpPlus.addEventListener('click', func221);
+        getMinus.addEventListener('click', func222);
+
+        function func221() {
+            getInp22.value = +getInp22.value + 1;
+        };
+
+        function func222() {
+            if (+getInp22.value > 0)
+                getInp22.value = +getInp22.value - 1;
+        };
+    </script>
 
 
 
