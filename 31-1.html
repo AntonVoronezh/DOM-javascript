@@ -352,7 +352,35 @@
     </script>
     <hr>
 
+    <h3>Задача 15. Даны N абзацев с числами. По нажатию на кнопку
+        выведите эти числа в инпут через запятую в порядке возрастания.</h3>
+    <div class="div15">
+        <p>1</p>
+        <p>5</p>
+        <p>2</p>
+        <p>4</p>
+        <p>3</p>
+    </div>
+    <button class="btn15">kkkk</button>
+    <input type="text" class="inp15">
+    <script>
+        const getDiv15 = document.querySelector('.div15');
+        const getBtn15 = document.querySelector('.btn15');
+        const getInp15 = document.querySelector('.inp15');
 
+        getBtn15.addEventListener('click', func15);
+
+        function func15() {
+            const getAllP = getDiv15.querySelectorAll('p');
+            const arr = [];
+
+            getAllP.forEach(elem => arr.push(+elem.innerHTML));
+            getInp15.value = arr.sort().join(', ');
+        };
+    </script>
+    <hr>
+
+  
 
 
 
