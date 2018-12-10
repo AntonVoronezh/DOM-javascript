@@ -380,7 +380,27 @@
     </script>
     <hr>
 
-  
+    <h3>Задача 16. Даны ссылки. По загрузке страницы добавьте в
+        конец каждой ссылки ее href в круглых скобках</h3>
+
+    <div class="div16">
+        <a href="http://1.com">1</a> <br>
+        <a href="http://2.com">2</a> <br>
+        <a href="http://3.com">3</a><br>
+    </div>
+    <script>
+        const getDiv16 = document.querySelector('.div16');
+
+        document.addEventListener('DOMContentLoaded', func16);
+
+        function func16() {
+            const getAllA = getDiv16.querySelectorAll('a');
+
+            getAllA.forEach(elem => elem.innerHTML = elem.innerHTML + ' ' + elem.href);
+        };
+    </script>
+    <hr>
+
 
 
 
