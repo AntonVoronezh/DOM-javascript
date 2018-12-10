@@ -278,16 +278,50 @@
         function func11() {
             const arr = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
             const arrFromValue = getInp11.value.split('.');
-            const date = new Date(+arrFromValue[2], addZero(+arrFromValue[1]) - 1, addZero(+arrFromValue[0]));
+            const date = new Date(+arrFromValue[2], addZero(+arrFromValue[1] - 1), addZero(+arrFromValue[0]));
 
             console.log('11 ->' + arr[date.getDay()]);
         };
     </script>
     <hr>
 
-<!-- ============================================================================================================= -->
+    <!-- ============================================================================================================= -->
+
+    <h3>Задача 12. Дан инпут. В него вводится слово. По нажатию на кнопку
+        проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).</h3>
+    <input type="text" class="task12">
+    <button class="btn12">kkkk</button>
+    <script>
+        const getInp12 = document.querySelector('.task12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', func12);
+
+        function func12() {
+            const arrFromStr = [...getInp12.value];
+
+            for (let i = 0; i < Math.ceil(arrFromStr.length / 2); i += 1) {
+                if (arrFromStr[i] !== arrFromStr.reverse()[i]) {
+                    console.log('не одинаково');
+                    return null;
+                }
+            }
+            console.log('одинаково');
+        };
+    </script>
+    <hr>
 
 
+
+
+
+
+
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
 
 </html
