@@ -327,6 +327,31 @@
     </script>
     <hr>
 
+    <h3>Задача 14. Даны N абзацев и кнопка. По нажатию на кнопку
+        запишите в конец каждого абзаца его порядковый номер.</h3>
+
+    <div class="div14">
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+    </div>
+    <button class="btn14">kkkk</button>
+    <script>
+        const getDiv14 = document.querySelector('.div14');
+        const getBtn14 = document.querySelector('.btn14');
+
+        getBtn14.addEventListener('click', func14);
+
+        function func14() {
+            const getAllP = getDiv14.querySelectorAll('p');
+
+            getAllP.forEach((elem, num) => elem.innerHTML = elem.innerHTML + ' ' + num);
+        };
+    </script>
+    <hr>
+
 
 
 
