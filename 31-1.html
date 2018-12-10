@@ -449,6 +449,23 @@
     <hr>
 
 
+    <h3>Задача 19. Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза</h3>
+    <div class="div19">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <script>
+        const getDiv19 = document.querySelector('.div19');
+
+        getDiv19.addEventListener('click', func19);
+
+        function func19(event) {
+            event.target.style.heigth = event.target.clientHeigth * 2 + 'px';
+            event.target.style.width = event.target.clientWidth * 2 + 'px';
+        };
+    </script>
+    <hr>
 
 
 
