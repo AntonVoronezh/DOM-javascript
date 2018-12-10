@@ -311,6 +311,23 @@
     </script>
     <hr>
 
+    <h3>Задача 13. Дан инпут. В него вводится число. Проверьте по вводу,
+        что это число содержит внутри себя цифру 3.</h3>
+    <input type="text" class="task13">
+    <script>
+        const getInp13 = document.querySelector('.task13');
+
+        getInp13.addEventListener('keypress', func13);
+
+        function func13(event) {
+            if (event.keyCode === 51) {
+                console.log('есть цифра 3');
+            }
+        };
+    </script>
+    <hr>
+
+
 
 
 
