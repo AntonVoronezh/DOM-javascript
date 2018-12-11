@@ -42,6 +42,26 @@
     </script>
     <hr>
 
+    <h3>Задача 24. Дан инпут. Выделите любой текст на странице.
+        По окончанию выделения этот текст должен записаться в этот инпут. </h3>
+
+    <div class="div2">
+        <input type="text" class="inp2">
+    </div>
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getInp2 = getDiv2.querySelector('input');
+
+
+        document.addEventListener('mouseup', func2);
+
+        function func2() {
+            getInp2.value = document.getSelection().toString();
+        };
+
+    </script>
+    <hr>
+
 
 
 
