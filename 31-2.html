@@ -257,6 +257,31 @@
     </script>
     <hr>
 
+    <h3>Задача 31. Дан инпут. В него вводится число. По потери фокуса сделайте так,
+        чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа.
+        Когда отсчет дойдет до нуля - он должен закончится. </h3>
+    <input type="text" class="inp31">
+
+
+    <script>
+        const getInp31 = document.querySelector('.inp31');
+
+        getInp31.addEventListener('blur', func31);
+
+        function func31() {
+
+            let num = +getInp31.value;
+
+            window.setInterval(() => {
+                if (num > 0) {
+                    num -= 1;
+                    getInp31.value = num;
+                }
+            }, 1000);
+        };
+
+    </script>
+    <hr>
 
 
 
