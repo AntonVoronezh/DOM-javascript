@@ -369,7 +369,38 @@
     <br>
 
 
-   
+    <h3>Задача 35. Даны инпуты с числами. Произвольное количетсво, пусть три.
+        В первый инпут запишите 1, через секунду во второй инпут запишите 2,
+        еще через секунду в третий инпут 3, потом через секунду в первый инпут
+        запишите 4, во второй 5 и так далее до бесконечности.</h3>
+    <input type="text" class="inp35">
+    <input type="text" class="inp35">
+    <input type="text" class="inp35">
+    <input type="text" class="inp35">
+    <script>
+        const getInp35 = document.querySelectorAll('.inp35');
+
+        const inpCount = getInp35.length - 1;
+
+        let num35 = 0;
+        let currentInp = 0;
+
+        window.setInterval(() => {
+
+            if (currentInp < inpCount) {
+                currentInp += 1;
+            } else {
+                currentInp = 0;
+            }
+
+            num35 = num35 + 1;
+
+            getInp35[currentInp].value = num35;
+
+        }, 1000);
+
+    </script>
+    <br>
 
 
 
