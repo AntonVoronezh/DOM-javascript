@@ -177,6 +177,43 @@
     </script>
     <hr>
 
+    <h3>Задача 29. Модифицируйте предыдущую задачу так, чтобы был еще
+        один инпут, в котором задается длина случайной строки.</h3>
+    <input type="text" class="inp29">
+    <input type="text" class="inp292">
+    <input type="submit" value="gen" class="sub29">
+    <script>
+        const getInp29 = document.querySelector('.inp29');
+        const getInp292 = document.querySelector('.inp292');
+        const getSub29 = document.querySelector('.sub29');
+
+        getSub29.addEventListener('click', func29);
+
+        const str2 = '1234567890qwertyuiopasdfghjklzxcvbnm';
+
+        function func29() {
+
+            let result = '';
+            const length = +getInp292.value
+
+            for (let i = 0; i < length; i += 1) {
+                result += [...str2][getRandomInt(0, 35)];
+
+            }
+
+            getInp29.value = '';
+            getInp29.value = result;
+
+        };
+
+        function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        };
+
+    </script>
+    <hr>
 
 
 
