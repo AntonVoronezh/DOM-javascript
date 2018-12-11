@@ -216,6 +216,46 @@
     <hr>
 
 
+    <h3>Задача 30. Модифицируйте предыдущую задачу так, чтобы был еще один инпут,
+        в котором задаются символы, из которых формируется эта случайна строка.
+        Символы задаются без всяких разделитетей, в одну строку</h3>
+    количество <input type="text" class="inp302"> <br>
+    символы <input type="text" class="inp303"> <br>
+    <input type="text" class="inp30">
+
+    <input type="submit" value="gen" class="sub30">
+    <script>
+        const getInp30 = document.querySelector('.inp30');
+        const getInp302 = document.querySelector('.inp302');
+        const getInp303 = document.querySelector('.inp303');
+        const getSub30 = document.querySelector('.sub30');
+
+        getSub30.addEventListener('click', func30);
+
+        function func30() {
+
+            const str3 = getInp303.value || '01234567890qwertyuiopasdfghjklzxcvbnm';
+
+            let result = '';
+            const length = +getInp302.value || 5;
+
+            for (let i = 0; i < length; i += 1) {
+                result += [...str3][getRandomInt(0, str3.length - 1)];
+            }
+
+            getInp30.value = '';
+            getInp30.value = result;
+
+        };
+
+        function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        };
+
+    </script>
+    <hr>
 
 
 
