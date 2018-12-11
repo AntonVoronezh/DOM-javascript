@@ -304,6 +304,36 @@
     </script>
     <br>
 
+    <h3>Задача 33. Дан абзац. Дан массив цветов ['red', 'green', 'blue'].
+        Сделайте так, чтобы каждую секунду абзац менял свой цвет на определенное
+        значение их массива: сначала 'red', потом 'green' и так далее.
+        Как только цвета в массиве закончатся - все начнется сначала.
+        Количество цветов в массиве может быть любым. </h3>
+    <p class="p33">f</p>
+
+    <script>
+        const getP33 = document.querySelector('.p33');
+        const arr = ['red', 'green', 'blue', 'yellow'];
+
+        let num = 0;
+
+        getP33.style.backgroundColor = arr[arr.length - 1];
+
+        window.setInterval(() => {
+
+            if (num <= arr.length - 2) {
+                num += 1;
+
+            } else {
+                num = 0;
+            }
+
+            getP33.style.backgroundColor = arr[num];
+
+        }, 1000);
+
+    </script>
+    <br>
 
  
 
