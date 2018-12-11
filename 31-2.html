@@ -62,6 +62,39 @@
     </script>
     <hr>
 
+    <h3>Задача 25. Даны абзацы с числами. По нажатию на кнопку найдите абзац,
+        в котором хранится максимальное число, и сделайте его красного цвета. </h3>
+
+    <div class="div25">
+        <p class="p25">10</p>
+        <p class="p25">2</p>
+        <p class="p25">30</p>
+        <p class="p25">4</p>
+    </div>
+    <button class="btn25">kkkk</button>
+    <script>
+        const getDiv25 = document.querySelector('.div25');
+        const getAllP25 = getDiv25.querySelectorAll('.p25');
+        const getBtn25 = document.querySelector('.btn25');
+
+        getBtn25.addEventListener('click', func25);
+
+        function func25() {
+            let biggest = 0;
+            let index;
+
+            [...getAllP25].map((elem, num) => {
+                if (+elem.innerHTML > biggest) {
+                    biggest = +elem.innerHTML;
+                    index = num;
+                }
+            });
+
+            getAllP25[index].style.backgroundColor = 'red';
+        };
+
+    </script>
+    <hr>
 
 
 
