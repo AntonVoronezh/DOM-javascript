@@ -335,7 +335,39 @@
     </script>
     <br>
 
- 
+    <h3>Задача 34. Дан абзац. Дан массив строк ['один', 'два', 'три'].
+        Под абзацем ссылка 'следующая строка'. По заходу на страницу в абзаце должен
+        стоять нулевой элемент этого массива, а по нажатию на ссылку - вставлятся следующий элемент.</h3>
+    <p class="p34"></p>
+    <a href="" class="a34">ffff</a>
+    <script>
+        const getP34 = document.querySelector('.p34');
+        const getA34 = document.querySelector('.a34');
+        const arr34 = ['один', 'два', 'три', '4'];
+
+        let num34 = 0;
+
+        getP34.innerHTML = arr34[0];
+
+        getA34.addEventListener('click', func34);
+
+        function func34(event) {
+            event.preventDefault();
+            if (num34 <= arr34.length - 2) {
+                num34 += 1;
+
+            } else {
+                num34 = 0;
+            }
+
+            getP34.innerHTML = arr34[num34];
+
+        };
+
+
+    </script>
+    <br>
+
 
    
 
