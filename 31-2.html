@@ -142,6 +142,40 @@
     </script>
     <hr>
 
+    <h3>Задача 28. Дан инпут и кнопка. По нажатию на кнопку сгенерируйте
+        случайную строку из 8-ми символов и запишите в инпут.</h3>
+    <input type="text" class="inp28">
+    <input type="submit" value="gen" class="sub28">
+    <script>
+        const getInp28 = document.querySelector('.inp28');
+        const getSub28 = document.querySelector('.sub28');
+
+        getSub28.addEventListener('click', func28);
+
+        const str = '1234567890qwertyuiopasdfghjklzxcvbnm';
+
+        function func28() {
+
+            let result = '';
+
+            for (let i = 0; i < 8; i += 1) {
+                result += [...str][getRandomInt(0, 35)];
+
+            }
+
+            getInp28.value = '';
+            getInp28.value = result;
+
+        };
+
+        function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        };
+
+    </script>
+    <hr>
 
 
 
