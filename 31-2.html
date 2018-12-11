@@ -283,6 +283,26 @@
     </script>
     <hr>
 
+    <h3>Задача 32. Дан абзац. Сделайте так, чтобы каждую секунду он менял
+        свой цвет с красного на зеленый и наоборот. </h3>
+
+    <p class="p32">f</p>
+
+    <script>
+        const getP32 = document.querySelector('.p32');
+
+        getP32.style.backgroundColor = 'red';
+
+        window.setInterval(() => {
+            if (getP32.style.backgroundColor === 'red') {
+                getP32.style.backgroundColor = 'green';
+            } else if (getP32.style.backgroundColor === 'green') {
+                getP32.style.backgroundColor = 'red';
+            }
+        }, 1000);
+
+    </script>
+    <br>
 
 
  
