@@ -96,7 +96,36 @@
     </script>
     <hr>
 
+    <h3>Задача 26. Дан инпут. Даны абзацы. Пусть в этот инпут записывается
+        суммарное количество нажатий по этим абзацам.</h3>
+    <div class="div26">
+        <p class="p26">+++</p>
+        <p class="p26">+++</p>
+        <p class="p26">+++</p>
+        <p class="p26">+++</p>
+    </div>
+    <input type="text" class="inp26">
+    <script>
+        const getDiv26 = document.querySelector('.div26');
+        const getAllP26 = getDiv26.querySelectorAll('.p26');
+        const getInp26 = document.querySelector('.inp26');
 
+        getAllP26.forEach(elem => elem.addEventListener('click', func26));
+        // getAllP26;
+
+        let count = 0;
+
+        function func26() {
+
+            count += 1;
+
+            getInp26.value = '';
+            getInp26.value = count;
+
+        };
+
+    </script>
+    <hr>
 
 
 
