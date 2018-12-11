@@ -127,7 +127,20 @@
     </script>
     <hr>
 
+    <h3>Задача 27. Дан инпут с числом. Сделайте так, чтобы каждую
+        секунду в нем появлялся квадрат того числа, которое в нем записано.</h3>
+    <input type="text" class="inp27" value="2">
+    <script>
+        const getInp27 = document.querySelector('.inp27');
 
+        window.setInterval(func27, 1000);
+
+        function func27() {
+            getInp27.value = getInp27.value * getInp27.value;
+        };
+
+    </script>
+    <hr>
 
 
 
