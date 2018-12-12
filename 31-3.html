@@ -63,6 +63,34 @@
     </script>
     <hr>
 
+    <h3>Задача 38. Спросите у пользователя какой язык (html, css, js, php)
+        он знает с помощью радио кнопочек. Выведите этот язык в абзац. </h3>
+    <form class="div38">
+        html<input type="radio" name="radio38" value="html"> <br>
+        css <input type="radio" name="radio38" value="css"><br>
+        js<input type="radio" name="radio38" value="js"><br>
+        php<input type="radio" name="radio38" value="php">
+    </form>
+    <p class="p38"></p>
+    <script>
+        const getDiv38 = document.querySelector('.div38');
+        const getAllInp38 = getDiv38.querySelectorAll('input');
+        const getP38 = document.querySelector('.p38');
+
+        getDiv38.addEventListener('click', func38);
+
+        function func38(element) {
+            getAllInp38.forEach(elem => {
+                if (element.target.checked = true) {
+                    getP38.innerHTML = '';
+                    getP38.innerHTML = element.target.value;
+                }
+            });
+        };
+
+    </script>
+    <hr>
+
 
 
 
