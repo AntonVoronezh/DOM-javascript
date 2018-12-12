@@ -400,7 +400,45 @@
     </script>
     <hr>
 
+    <h3>Задача 53. Реализуйте раскрывающийся список. По умолчанию есть список
+        стран (ul), по нажатию на страну внутри li со страной появляется список городов</h3>
+    <ul class="ul53">
+    </ul>
+    <script>
+        const obj53 = {
+            'Россия': ['1', '2', '3'],
+            'Германия': ['4', '5', '6'],
+            'Италия': ['7', '8', '9']
+        };
+        const getUl53 = document.querySelector('.ul53');
 
+        console.log(Object.keys(obj53).length);
+
+        document.addEventListener('DOMContentLoaded', func53);
+
+        function func53() {
+
+            Object.keys(obj53).forEach(elem => {
+
+                const createLi = document.createElement('li');
+                createLi.innerHTML = elem;
+
+                getUl53.appendChild(createLi);
+
+                createLi.addEventListener('click', func532);
+            });
+
+        };
+
+        function func532(event) {
+
+            let result =  obj53[event.target.innerHTML].join(', ');
+
+            event.target.innerHTML = event.target.innerHTML + ' -> ' + result;
+        };
+
+
+    </script>
 
 
 
