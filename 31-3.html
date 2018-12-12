@@ -202,6 +202,55 @@
     </script>
     <hr>
 
+    <h3>Задача 43. Дан абзац. Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'.
+        Если соответствующий чекбокс отмечен - заданное действие происходит
+        с абзацем (становится красным, например). Если чекбоксу снять отметку - действие отменяется. </h3>
+    <p class="p43">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, reiciendis.</p>
+    перечеркнуть <input type="checkbox" class="inp431" value="s"> <br>
+    сделать жирным <input type="checkbox" class="inp432" value="b"> <br>
+    сделать красным <input type="checkbox" class="inp433" value="red"> <br>
+    <script>
+        const getP43 = document.querySelector('.p43');
+
+        const getInp431 = document.querySelector('.inp431');
+        const getInp432 = document.querySelector('.inp432');
+        const getInp433 = document.querySelector('.inp433');
+
+        getInp431.addEventListener('click', func431);
+        getInp432.addEventListener('click', func432);
+        getInp433.addEventListener('click', func433);
+
+
+        function func431() {
+            if (isChecked(getInp431)) {
+                getP43.innerHTML = `<s>${getP43.innerHTML}</s>`;
+            } else {
+                getP43.innerHTML = getP43.lastChild.innerHTML;
+            }
+        };
+
+        function func432() {
+            if (isChecked(getInp432)) {
+                getP43.innerHTML = `<b>${getP43.innerHTML}</b>`;
+            } else {
+                getP43.innerHTML = getP43.lastChild.innerHTML;
+            }
+        };
+
+        function func433() {
+            if (isChecked(getInp433)) {
+                getP43.style.color = `red`;
+            } else {
+                getP43.style.color = `black`;
+            }
+        };
+
+        function isChecked(argElem) {
+            return argElem.checked === true;
+        };
+
+    </script>
+    <hr>
 
     
 
