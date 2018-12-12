@@ -58,6 +58,29 @@
     </script>
     <hr>
 
+    <h3>Задача 46. В инпут вводится страна и нажимается Enter.
+        По нажатию на Enter сделайте так, чтобы введенные страны записывались в абзац
+        под инпутом через запятую. То есть по каждому нажатию Enter в абзац будут добавляться
+        все новые и новые страны</h3>
+    <input type="text" class="inp46">
+    <p class="p46"></p>
+    <script>
+        const getInp46 = document.querySelector('.inp46');
+        const getP46 = document.querySelector('.p46');
+
+        document.addEventListener('keypress', func46);
+
+        function func46(event) {
+
+            if (event.keyCode === 13) {
+                getP46.innerHTML = getP46.innerHTML + ', ' + getInp46.value;
+                getInp46.value = '';
+            }
+
+        };
+
+    </script>
+    <hr>
 
 
 
