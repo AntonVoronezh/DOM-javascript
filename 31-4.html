@@ -82,6 +82,35 @@
     </script>
     <hr>
 
+    <h3>Задача 47. На странице есть дивы. В них есть текст. Обойдите все дивы и
+        обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10
+        символов. И добавьте троеточие в конец обрезанного текста</h3>
+    <section class="s47">
+        <div class="div47">Lorem ipsum adipisicing elit. .</div>
+        <div class="div47">Corporis , facere laudantium quaerat</div>
+        <div class="div47">ullam necessitatibus quo officiis incidunt numquam</div>
+        <div class="div47">totam quae dolor sit amet consectetur</div>
+    </section>
+    <script>
+        const getS47 = document.querySelector('.s47');
+        const getAllDiv47 = getS47.querySelectorAll('.div47');
+
+        getS47.addEventListener('click', func47);
+
+        function func47() {
+
+            getAllDiv47.forEach(elem => {
+
+                const cropElem = elem.innerHTML.substr(0, 10);
+
+                elem.innerHTML = cropElem + '...';
+
+            });
+
+        };
+
+    </script>
+    <hr>
 
 
 
