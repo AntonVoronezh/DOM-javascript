@@ -41,6 +41,27 @@
     </script>
     <hr>
 
+    <h3>Задача 37. Даны чекбокс. Дана кнопка. По нажатию на кнопку
+        сделайте все чекбоксы отмеченными.</h3>
+    <div class="div37">
+        <input type="checkbox" class="inp37">
+        <input type="checkbox" class="inp37">
+        <input type="checkbox" class="inp37">
+    </div>
+    <a href="#" class="link37">dddd</a>
+    <script>
+        const getDi37 = document.querySelector('.div37');
+        const getAllInp37 = getDi37.querySelectorAll('.inp37');
+        const getA37 = document.querySelector('.link37');
+
+        getA37.addEventListener('click', func37);
+
+        function func37() {
+            getAllInp37.forEach(elem => elem.checked = true);
+        };
+
+    </script>
+    <hr>
 
 
 
