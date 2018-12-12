@@ -200,6 +200,80 @@
     </script>
     <hr>
 
+    <h3>Задача 50. Дана таблица с числами. По нажатию на кнопку в последний ряд
+        таблицы в каждую ячейку запишите сумму чисел в столбце таблицы,
+        расположенном над определенной ячейкой.</h3>
+    <table class="tbl50">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <input type="submit" value="hhhhh" class="inp50">
+    <script>
+        const getInp50 = document.querySelector('.inp50');
+        const getTbl50 = document.querySelector('.tbl50');
+
+        getInp50.addEventListener('click', func50);
+
+        function func50() {
+
+            const getAllTr = getTbl50.querySelectorAll('tr');
+            let obj = {};
+
+            getAllTr.forEach((elem, num) => {
+
+                const getAllTd = elem.querySelectorAll('td');
+                let sum = 0;
+
+                getAllTd.forEach((elem, n) => {
+
+                    if (elem.innerHTML) {
+
+                        if (num === 0) {
+                            obj[n] = [];
+                        }
+
+                        obj[n].push(Number(elem.innerHTML));
+
+                    } else {
+                        elem.innerHTML = `<b>${getSum50(obj[n])}</b>`;
+                    }
+                });
+
+            });
+
+        };
+
+        function getSum50(argArr) {
+            let sum = 0;
+
+            argArr.forEach(elem => {
+                sum += +elem;
+            });
+
+            return sum;
+        };
+
+    </script>
+    <hr>
+
 
 
 
