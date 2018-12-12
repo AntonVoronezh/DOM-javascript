@@ -112,6 +112,53 @@
     </script>
     <hr>
 
+    <h3>Задача 48. Дана таблица с числами. По нажатию на кнопку найдите ячейку,
+        в которой хранится максимальное число, и сделайте ее фон красным.</h3>
+    <table class="tbl48">
+        <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>5</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2</td>
+            <td>10</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <input type="submit" value="hhhhh" class="inp48">
+    <script>
+        const getInp48 = document.querySelector('.inp48');
+        const getTbl48 = document.querySelector('.tbl48');
+        const getAllTd = getTbl48.querySelectorAll('td');
+
+        getInp48.addEventListener('click', func48);
+
+        function func48() {
+
+            let num = 0;
+            let index = 0;
+
+            [...getAllTd].map((elem, n) => {
+
+                if (+elem.innerHTML > num) {
+
+                    num = +elem.innerHTML
+                    index = n;
+                }
+
+            });
+
+            getAllTd[index].style.backgroundColor = 'red';
+
+        };
+
+    </script>
+    <hr>
+
+
 
 
 
