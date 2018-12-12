@@ -274,6 +274,84 @@
     </script>
     <hr>
 
+    <h3>Задача 51. Дана таблица с числами. По нажатию на ячейку она активируется и
+        становится красного цвета. Активировать можно много ячеек. Под таблицей кнопка.
+        По нажатию по этой кнопке в абзац ниже выведите сумма активированных ячеек.
+        Реализуйте кнопку 'сбросить активированные ячейки'.</h3>
+    <table class="tbl51">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+    </table>
+    <p class="p51"></p>
+    <input type="submit" value="sum" class="inp511">
+    <input type="submit" value="reset" class="inp512">
+    <script>
+        const getInpSum51 = document.querySelector('.inp511');
+        const getInpReset51 = document.querySelector('.inp512');
+        const getP51 = document.querySelector('.p51');
+        const getTbl51 = document.querySelector('.tbl51');
+
+        getTbl51.addEventListener('click', func51);
+        getInpReset51.addEventListener('click', func52);
+        getInpSum51.addEventListener('click', func53);
+
+        function func51(event) {
+
+            event.target.classList.add('red');
+
+        };
+
+        function func52() {
+
+            const getAllTd = getTbl51.querySelectorAll('td');
+
+            getAllTd.forEach(elem => elem.classList.remove('red'));
+
+            getP51.innerHTML = '';
+
+        };
+
+        function func53() {
+            // console.log(event.target.innerHTML);
+            const getAllTd = getTbl51.querySelectorAll('td');
+            let sum = 0;
+            getAllTd.forEach(elem => {
+
+                if (elem.classList.contains('red')) {
+                    sum += +elem.innerHTML;
+                }
+
+            });
+
+            getP51.innerHTML = '';
+            getP51.innerHTML = sum;
+
+        };
+
+    </script>
+    <hr>
 
 
 
