@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+        .red {
+            background-color: red;
+        }
+        .tbl52 td {
+            border: 1px solid #000000;
+            width: 200px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи для решения JavaScript</h2>
+    <h2>Урок #4</h2>
+
+    <h3>Задача 45. В инпут через запятую вводятся страны. По нажатию на кнопку
+        сделайте так, чтобы эти страны записались в ul под инпутом (каждая страна отдельный li).</h3>
+
+    <input type="text" class="inp45">
+    <ul class="ul45"></ul>
+    <button class="btn45">hhhhh</button>
+    <script>
+        const getInp45 = document.querySelector('.inp45');
+        const getUl45 = document.querySelector('.ul45');
+        const getBtn45 = document.querySelector('.btn45');
+
+        getBtn45.addEventListener('click', func45);
+
+        function func45() {
+
+            const arrFromValue = getInp45.value.split(',');
+
+            arrFromValue.map(elem => createLi45(elem));
+
+        };
+
+        function createLi45(argText) {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = argText;
+            getUl45.appendChild(createLi);
+
+        };
+
+    </script>
+    <hr>
+
+
+
+
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
