@@ -115,6 +115,35 @@
     </script>
     <hr>
 
+    <h3>Задача 40. Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс
+        отмечен - инпут видимый, если не отмечен - не видимый.</h3>
+    <input type="checkbox" class="inp40">
+    <input type="text" class="inp402">
+    <script>
+        const getInp40 = document.querySelector('.inp40');
+        const getInp402 = document.querySelector('.inp402');
+
+        getInp40.addEventListener('click', func40);
+        document.addEventListener('DOMContentLoaded', func402);
+
+        function func402() {
+
+            getInp402.style.display = 'none';
+
+        };
+
+        function func40() {
+
+            if (getInp40.checked) {
+                getInp402.style.display = 'inline-block';
+
+            } else {
+                getInp402.style.display = 'none';
+            }
+
+        };
+    </script>
+    <hr>
 
 
 
