@@ -145,6 +145,35 @@
     </script>
     <hr>
 
+    <h3>Задача 41. Даны чекбоксы. Под каждым чекбоксом размещен абзац.
+        Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый,
+        а если не отмечен - не видимый</h3>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">1111</p>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">2222</p>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">3333</p>
+    <script>
+        const getAllInp41 = document.querySelectorAll('.inp41');
+
+        getAllInp41.forEach(elem => elem.addEventListener('click', func41));
+
+        function func41() {
+
+            getAllInp41.forEach(elem => {
+                if (elem.checked) {
+                    elem.nextElementSibling.nextElementSibling.style.display = 'block';
+                } else {
+                    elem.nextElementSibling.nextElementSibling.style.display = 'none';
+                }
+            });
+
+        }
+
+    </script>
+    <hr>
+
 
 
     
