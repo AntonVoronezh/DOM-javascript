@@ -353,6 +353,52 @@
     </script>
     <hr>
 
+    <h3>Задача 52. Дана таблица. По нажатию на ячейку в ней появляется инпут с
+        содержимым этой ячейки и кнопка сохранить. Можно поредактировать
+        текст в инпуте, сохранить - и текст ячейки поменяется.</h3>
+    <table class="tbl52">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <script>
+        const getTbl52 = document.querySelector('.tbl52');
+
+        getTbl52.addEventListener('click', func52);
+
+        function func52(event) {
+
+            const createInput = document.createElement('input');
+            createInput.value = event.target.innerHTML;
+
+            event.target.innerHTML = '';
+            event.target.appendChild(createInput);
+
+            const createInput2 = document.createElement('input');
+            createInput2.type = 'submit';
+            createInput2.value = 'submit';
+
+            event.target.appendChild(createInput2);
+
+            createInput2.addEventListener('click', () => {
+
+                event.target.innerHTML = createInput.value;
+
+            });
+
+        };
+
+
+    </script>
+    <hr>
 
 
 
