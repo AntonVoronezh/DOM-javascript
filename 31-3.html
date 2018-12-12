@@ -252,7 +252,40 @@
     </script>
     <hr>
 
-    
+    <h3>Задача 44. Дан блок с кнопкой 'закрыть блок'. По нажатию на эту кнопку
+        блок должен исчезнуть. Кнопка размещается внутри блока и должна исчезнуть
+        вместе с ним. Блоков может быть любое количество, каждый из них закрывает своя кнопка. </h3>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <script>
+        const getAllDiv44 = document.querySelectorAll('.div44');
+
+        getAllDiv44.forEach(elem => {
+
+            const getInp44 = elem.querySelector('input');
+            getInp44.addEventListener('click', func44);
+
+        });
+
+        function func44() {
+            this.parentElement.style.display = 'none';
+        };
+
+    </script>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
