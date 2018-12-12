@@ -158,6 +158,48 @@
     </script>
     <hr>
 
+    <h3>Задача 49. Дана таблица с числами. По нажатию на кнопку в инпут под таблицей
+        выведите эти числа через запятую в порядке возрастания.</h3>
+    <table class="tbl49">
+        <tr>
+            <td>1</td>
+            <td>30</td>
+            <td>55</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>26</td>
+            <td>10</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <input type="text" class="inp491">
+    <input type="submit" value="hhhhh" class="inp492">
+
+    <script>
+        const getInp491 = document.querySelector('.inp491');
+        const getInp492 = document.querySelector('.inp492');
+        const getTbl49 = document.querySelector('.tbl49');
+        const getAllTd49 = getTbl49.querySelectorAll('td');
+
+        getInp492.addEventListener('click', func49);
+
+        function func49() {
+
+            const arr = [];
+
+            getAllTd49.forEach(elem => arr.push(+elem.innerHTML));
+
+            const arrSort = arr.sort((a, b) => a - b);
+
+            getInp491.value = arrSort.join(', ');
+
+        };
+
+    </script>
+    <hr>
+
 
 
 
