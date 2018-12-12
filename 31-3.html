@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи для решения JavaScript</h2>
+    <h2>Урок #3</h2>
+
+    <h3>Задача 36. Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте
+        состояние чекбокса с отмеченного на неотмеченное и наоборот.</h3>
+
+    <input type="checkbox" class="inp36">
+    <a href="#" class="link36">dddd</a>
+    <script>
+        const getInp36 = document.querySelector('.inp36');
+        const getA36 = document.querySelector('.link36');
+
+        getA36.addEventListener('click', func36);
+
+        function func36() {
+            if (getInp36.checked) {
+                getInp36.checked = false;
+
+            } else {
+                getInp36.checked = true;
+            }
+        };
+
+    </script>
+    <hr>
+
+
+
+
+
+
+    
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
