@@ -174,6 +174,33 @@
     </script>
     <hr>
 
+    <h3>Задача 42. Дан инпут. Даны li. В инпут пишется номер. Сделайте так,
+        чтобы по вводу числа, li с заданным номером покрасился в красный цвет. </h3>
+
+    <ul class="ul42">
+        <li class="li42">001</li>
+        <li class="li42">002</li>
+        <li class="li42">003</li>
+        <li class="li42">004</li>
+        <li class="li42">005</li>
+        <li class="li42">006</li>
+    </ul>
+    <input type="text" class="inp42">
+    <script>
+        const getUl42 = document.querySelector('.ul42');
+        const getAllLi42 = getUl42.querySelectorAll('.li42');
+        const getInp42 = document.querySelector('.inp42');
+
+        getInp42.addEventListener('blur', func42);
+
+        function func42() {
+
+            const num = +getInp42.value;
+            getAllLi42[num].style.color = 'red';
+        };
+
+    </script>
+    <hr>
 
 
     
