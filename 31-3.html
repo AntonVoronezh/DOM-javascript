@@ -91,6 +91,29 @@
     </script>
     <hr>
 
+    <h3>Задача 39. Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов.
+        Выбранные языки должны выводится в абзац ниже через запятую</h3>
+
+    <div class="div39">
+        html<input type="checkbox" class="inp39" value="html" name="inp39">
+        css<input type="checkbox" class="inp39" value="css" name="inp39">
+        js <input type="checkbox" class="inp39" value="js" name="inp39">
+        php<input type="checkbox" class="inp39" value="php" name="inp39">
+    </div>
+    <p class="p39"></p>
+    <script>
+        const getDiv39 = document.querySelector('.div39');
+        const getAllInp39 = getDiv39.querySelectorAll('input');
+        const getP39 = document.querySelector('.p39');
+
+        getDiv39.addEventListener('click', func39);
+
+        function func39(element) {
+            getP39.innerHTML = getP39.innerHTML + ', ' + element.target.value;
+        };
+
+    </script>
+    <hr>
 
 
 
