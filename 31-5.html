@@ -248,7 +248,20 @@
 
         };
 
+        function getSelectedOption56(argSelect) {
 
+            const getAll = argSelect.querySelectorAll('option');
+            let out = 0;
+
+            getAll.forEach((elem, num) => {
+
+                if (elem.selected) {
+                    out = num;
+                }
+
+            });
+            return out;
+        };
 
     </script>
     <hr>
