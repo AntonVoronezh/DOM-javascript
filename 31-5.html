@@ -140,6 +140,19 @@
 
 
 
+        function funcMakeDefault55(argParent, argValue) {
+
+            const getAll = argParent.querySelectorAll('option');
+
+            getAll.forEach((elem, num) => {
+
+                if (+argValue === +elem.innerHTML)
+
+                    getAll[num].selected = true;
+            });
+
+        };
+
   
     
 
