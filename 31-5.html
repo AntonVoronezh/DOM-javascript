@@ -289,7 +289,21 @@
             const getTr = +getSel571.value;
             const getTd = +getSel572.value;
 
-           
+            for (let i = 0; i < getTr; i += 1) {
+
+                const createTr = document.createElement('tr');
+
+                for (let j = 0; j < getTd; j += 1) {
+
+                    const createTd = document.createElement('td');
+
+                    createTr.append(createTd);
+
+                }
+
+                getTbl57.appendChild(createTr);
+
+            }
 
         };
 
