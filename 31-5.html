@@ -191,7 +191,49 @@
     </script>
     <hr>
 
+    <h3>Задача 56. Реализуйте калькулятор валют. Есть два селекта - селект с
+        исходной валюты, селект с той валютой, в которую мы хотим перевести
+        деньги, инпут, в который вводится сумма для обмена. Курсы валют храните в
+        массиве. Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты.</h3>
+    <select class="sel561">
+        <option value="usd">usd</option>
+        <option value="eur">eur</option>
+        <option value="gpf">gpf</option>
+        <option value="sfr">sfr</option>
+    </select>
+    <!-- disabled -->
+    <select class="sel562">
+        <option value="usd">usd</option>
+        <option value="eur">eur</option>
+        <option value="gpf">gpf</option>
+        <option value="sfr">sfr</option>
+    </select>
+    <input type="text" class="inp56">
+    <button class="btn56">ok</button>
+    <br>
+    <p class="p56"></p>
+    <script>
+        const arr = [
+            [0, 1.1, 1.5, 0.75],
+            [1.1, 0, 1.57, 0.59],
+            [0.9, 1.1, 0, 1.24],
+            [1.31, 1.1, 1.2, 0]
+        ];
 
+        const getSel561 = document.querySelector('.sel561');
+        const getSel562 = document.querySelector('.sel562');
+        const getInp56 = document.querySelector('.inp56');
+        const getBtn6 = document.querySelector('.btn56');
+        const getP6 = document.querySelector('.p56');
+
+        getBtn6.addEventListener('click', func56);
+
+ 
+
+
+
+    </script>
+    <hr>
 
    
 
