@@ -51,7 +51,17 @@
 
         getSel541.addEventListener('change', func541);
 
-  
+        function func541(event) {
+
+            getSel542.innerHTML = '';
+
+            arr54[+event.target.value].forEach(element => {
+
+                createOpt54(element);
+
+            });
+
+        };
 
  
 
