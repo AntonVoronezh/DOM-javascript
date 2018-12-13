@@ -28,6 +28,35 @@
     <h2>Задачи для решения JavaScript</h2>
     <h2>Урок #5</h2>
 
+    <h3>Задача 54. Даны два селекта. В первом находятся страны, во втором - города.
+        Сделайте так, чтобы когда выбирается определенная страна - в другом селекте
+        появлялись города этой страны. В абзац ниже пишите выбранную страну и город через запятую.</h3>
+
+    <select class="sel541">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <select class="sel542"></select>
+    <script>
+        const arr54 = {
+            1: ['1-1', '1-2', '1-3', '1-4'],
+            2: ['2-1', '2-2', '2-3', '2-4'],
+            3: ['3-1', '3-2', '3-3', '3-4'],
+            4: ['4-1', '4-2', '4-3', '4-4']
+        };
+        const getSel541 = document.querySelector('.sel541');
+        const getSel542 = document.querySelector('.sel542');
+
+        getSel541.addEventListener('change', func541);
+
+  
+
+ 
+
+    </script>
+    <hr>
 
 
 
