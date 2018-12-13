@@ -228,7 +228,25 @@
 
         getBtn6.addEventListener('click', func56);
 
- 
+        function func56() {
+
+            const getV1 = getSelectedOption56(getSel561);
+            const getV2 = getSelectedOption56(getSel562);
+
+            const getNal = arr[getV1][getV2];
+            let result;
+
+            if (getNal !== 0) {
+                result = Math.ceil(+getInp56.value * getNal);
+            } else {
+                result = 'выберите другую вторую валюту';
+            }
+
+
+            getP6.innerHTML = '';
+            getP6.innerHTML = result;
+
+        };
 
 
 
