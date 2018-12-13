@@ -138,7 +138,17 @@
             return out;
         };
 
+        function funcMakeOpt55() {
 
+            funcMakeNum55(2008, 2028).forEach(elem => createOpt55(elem, getSelY55));
+            funcMakeNum55(1, 12).forEach(elem => createOpt55(elem, getSelM55));
+            funcMakeNum55(1, 31).forEach(elem => createOpt55(elem, getSelD55));
+
+            funcMakeDefault55(getSelY55, date.getFullYear());
+            funcMakeDefault55(getSelM55, date.getMonth() + 1);
+            funcMakeDefault55(getSelD55, date.getDate());
+
+        };
 
         function funcMakeDefault55(argParent, argValue) {
 
