@@ -75,6 +75,78 @@
     </script>
     <hr>
 
+    <h3>Задача 55. Сделайте селекты день, мес, год. Сделайте так, чтобы не корректную
+        дату нельзя было выбрать (например, 30 февраля нельзя, а 30 марта можно или
+        29 февраля можно, но только в високосный год). </h3>
+    <div class="div55">
+        <select class="sel551"></select>
+        <select class="sel552"></select>
+        <select class="sel553"></select>
+    </div>
+
+    <script>
+        const getDiv55 = document.querySelector('.div55');
+        const getSelY55 = document.querySelector('.sel551');
+        const getSelM55 = document.querySelector('.sel552');
+        const getSelD55 = document.querySelector('.sel553');
+
+        document.addEventListener('DOMContentLoaded', funcMakeOpt55);
+        getDiv55.addEventListener('change', func55);
+
+        const date = new Date();
+
+        function func55() {
+
+            const getYearFromSelect = getSelectedOption55(getSelY55);
+            const getMonthFromSelect = getSelectedOption55(getSelM55);
+            const getDayFromSelect = getSelectedOption55(getSelD55);
+
+            if (!checkDate(getYearFromSelect, getMonthFromSelect, getDayFromSelect)) {
+
+                funcMakeDefault55(getSelY55, date.getFullYear());
+                funcMakeDefault55(getSelM55, date.getMonth() + 1);
+                funcMakeDefault55(getSelD55, date.getDate());
+
+                const createErr = document.createElement('div');
+                createErr.innerHTML = 'Не существует. Попробуйте еще раз.'
+
+                getDiv55.appendChild(createErr);
+            }
+
+        };
+
+        function checkDate(argYear, argMonth, argDay) {
+
+            const date = new Date(argYear, argMonth - 1, argDay);
+            return date.getFullYear() === argYear && date.getMonth() === argMonth - 1 && date.getDate() === argDay;
+
+        };
+
+        function getSelectedOption55(argSelect) {
+
+            const getAll = argSelect.querySelectorAll('option');
+            let out = 0;
+
+            getAll.forEach(elem => {
+
+                if (elem.selected) {
+
+                    out = +elem.innerHTML;
+                }
+
+            });
+            return out;
+        };
+
+
+
+  
+    
+
+
+    </script>
+    <hr>
+
 
 
    
