@@ -328,7 +328,27 @@
 
         getBtn58.addEventListener('click', func58);
 
-      
+        function func58() {
+
+            const getAllLi = getUl58.querySelectorAll('li');
+
+            getUl58.innerHTML = '';
+
+            const arr = [];
+
+            getAllLi.forEach(elem => arr.push(+elem.innerHTML));
+
+            arr.sort((a, b) => a - b).map(elem => {
+
+                const createLi = document.createElement('li');
+
+                createLi.innerHTML = elem;
+
+                getUl58.appendChild(createLi);
+
+            });
+
+        };
 
 
     </script>
