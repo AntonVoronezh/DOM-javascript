@@ -374,7 +374,20 @@
 
         function func59(event) {
 
-   
+            event.preventDefault();
+
+            const getAllA = getDiv59.querySelectorAll('a');
+
+            getAllA.forEach(elem => {
+                elem.classList.remove('red');
+            });
+
+            event.target.classList.add('red');
+
+            getP59.innerHTML = '';
+            getP59.innerHTML = event.target.innerHTML;
+        };
+
 
 
     </script>
