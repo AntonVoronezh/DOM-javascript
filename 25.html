@@ -185,6 +185,20 @@
     </script>
     <hr>
 
+    <h3>Задача 6. По нажатию на кнопку выведите его полную высоту без учета границы, но с padding</h3>
+    <div class="task3"></div>
+    <button class="btn6">click</button>
+    <script>
+        const getDiv6 = document.querySelector('.task3');
+        const getBtn6 = document.querySelector('.btn6');
+
+        getBtn6.addEventListener('click', func6);
+
+        function func6() {
+            alert(getDiv6.clientHeight);
+        };
+    </script>
+    <hr>
 
 
 
