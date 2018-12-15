@@ -428,7 +428,18 @@
     </script>
     <hr>
 
+    <h3>Задача 20. По нажатию на кнопку прокрутите страницу на 400px от текущего положения</h3>
+    <button class="btn20">click</button>
+    <script>
+        const getBtn20 = document.querySelector('.btn20');
 
+        getBtn20.addEventListener('click', func20);
+
+        function func20() {
+            window.scrollBy(0, 400);
+        };
+    </script>
+    <hr>
 
 
 
