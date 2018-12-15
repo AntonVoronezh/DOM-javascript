@@ -119,6 +119,23 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дан элемент #elem с границами.
+        По нажатию на кнопку выведите толщину его левой границы</h3>
+    <div class="task2"></div>
+    <button class="btn2">click</button>
+
+    <script>
+        const getDiv2 = document.querySelector('.task2');
+        const getBtn2 = document.querySelector('.btn2');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+            alert(getDiv2.clientLeft);
+        };
+    </script>
+    <hr>
+
 
 
 
