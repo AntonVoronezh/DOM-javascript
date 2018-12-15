@@ -153,6 +153,21 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дан элемент #elem с границами.
+        По нажатию на кнопку выведите его полную высоту с учетом границы и padding</h3>
+    <div class="task3"></div>
+    <button class="btn4">click</button>
+    <script>
+        const getDiv4 = document.querySelector('.task3');
+        const getBtn4 = document.querySelector('.btn4');
+
+        getBtn4.addEventListener('click', func4);
+
+        function func4() {
+            alert(getDiv4.offsetHeight);
+        };
+    </script>
+    <hr>
 
 
 
