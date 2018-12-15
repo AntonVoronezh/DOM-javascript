@@ -441,6 +441,22 @@
     </script>
     <hr>
 
+    <h3>Задача 21. По нажатию на кнопку проверьте, прокручена ли страница до самого низа.
+        Если это так - прокрутите ее в положение 100px от верхнего края.</h3>
+    <button class="btn21">click</button>
+    <script>
+        const getBtn21 = document.querySelector('.btn21');
+
+        getBtn21.addEventListener('click', func21);
+
+        function func21() {
+            const body = document.documentElement;
+            if (body.scrollHeight - body.scrollTop === body.clientHeight) {
+                window.scrollTo(0, 100);
+            }
+        };
+    </script>
+    <hr>
 
 
 
