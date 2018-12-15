@@ -386,6 +386,21 @@
     </script>
     <hr>
 
+    <h2>Прокрутка страницы</h2>
+    <h3>Задача 17. Дана страница с горизонтальной и вертикальной полосами прокрутки.
+        По нажатию на кнопку прокрутите ее в точку 300px слева, 500px сверху.</h3>
+    <button class="btn17">click</button>
+    <script>
+        const getBtn17 = document.querySelector('.btn17');
+
+        getBtn17.addEventListener('click', func17);
+
+        function func17() {
+            window.scrollTo(300, 500);
+        };
+    </script>
+    <hr>
+
 
 
 
