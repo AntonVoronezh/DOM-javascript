@@ -294,6 +294,26 @@
     </script>
     <hr>
 
+    <h2>Прокрутка элемента</h2>
+
+    <h3>Задача 12. Дан элемент #elem с вертикальной полосой прокрутки.
+        По нажатию на кнопку выведите реальную высоту элемента с учетом прокрутки</h3>
+    <div class="task12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima sint est molestias porro
+        molestiae debitis, eum sapiente placeat odio quibusdam, nisi aperiam officiis dolorem asperiores earum nobis
+        blanditiis explicabo optio, eos alias. Quae deleniti quisquam ut ipsa sunt optio quaerat.
+    </div>
+    <button class="btn12">click</button>
+    <script>
+        const getDiv12 = document.querySelector('.task12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', func12);
+
+        function func12() {
+            alert(getDiv12.scrollHeight);
+        };
+    </script>
+    <hr>
 
 
 
