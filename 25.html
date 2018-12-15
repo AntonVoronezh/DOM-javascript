@@ -401,6 +401,20 @@
     </script>
     <hr>
 
+    <h3>Задача 18. Дана страница с вертикальной полосой прокрутки.
+        По нажатию на кнопку прокрутите на 300px вниз от текущего положения.</h3>
+    <button class="btn18">click</button>
+    <script>
+        const getBtn18 = document.querySelector('.btn18');
+
+        getBtn18.addEventListener('click', func18);
+
+        function func18() {
+            window.scrollBy(0, 300);
+        };
+    </script>
+    <hr>
+
 
 
 
