@@ -372,6 +372,20 @@
     </script>
     <hr>
 
+    <h3>Задача 16. ана страница с горизонтальной полосой прокрутки.
+        По нажатию на кнопку узнайте на сколько страница прокручена по горизонтали. </h3>
+    <button class="btn16">click</button>
+    <script>
+        const getBtn16 = document.querySelector('.btn16');
+
+        getBtn16.addEventListener('click', func16);
+
+        function func16() {
+            alert(window.pageYOffset);
+        };
+    </script>
+    <hr>
+
 
 
 
