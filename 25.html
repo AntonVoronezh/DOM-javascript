@@ -169,6 +169,22 @@
     </script>
     <hr>
 
+    <h2>На размер элемента без границ, но с padding</h2>
+    <h3>Задача 5. По нажатию на кнопку выведите его полную ширину без учета границы, но с padding.</h3>
+    <div class="task3"></div>
+    <button class="btn5">click</button>
+    <script>
+        const getDiv5 = document.querySelector('.task3');
+        const getBtn5 = document.querySelector('.btn5');
+
+        getBtn5.addEventListener('click', func5);
+
+        function func5() {
+            alert(getDiv5.clientWidth);
+        };
+    </script>
+    <hr>
+
 
 
 
