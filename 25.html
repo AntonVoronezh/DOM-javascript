@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .task1 {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #ccc;
+
+        }
+
+        .task2 {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #ccc;
+            border-left: 9px solid #ccc;
+        }
+
+        .task3, .task22 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+        }
+
+        .task8 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task9 {
+            width: 40px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task10 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task11 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task12 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task13 {
+            width: 10px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task14 {
+            width: 100px;
+            height: 90px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+
+        .task15 {
+            min-width: 2000px;
+            height: 10px;
+            border: 2px solid #ccc;
+            padding: 5px;
+            overflow: scroll;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на работу с метриками в JavaScript</h2>
+    <h2>На величину границы</h2>
+    <h3>Задача 1. Дан элемент #elem с границами.
+        По нажатию на кнопку выведите толщину его верхней границы</h3>
+    <div class="task1"></div>
+    <button class="btn1">click</button>
+
+    <script>
+        const getDiv1 = document.querySelector('.task1');
+        const getBtn1 = document.querySelector('.btn1');
+
+        getBtn1.addEventListener('click', func1);
+
+        function func1() {
+            alert(getDiv1.clientTop);
+        };
+    </script>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+</body>
+
+</html>
