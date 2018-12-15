@@ -458,7 +458,21 @@
     </script>
     <hr>
 
-
+    <h3>Задача 22. Дан элемент #elem. По клику на него увеличьте его ширину и высоту в 2 раза</h3>
+        <div class="task22"></div>
+        <button class="btn22">click</button>
+        <script>
+            const getDiv22 = document.querySelector('.task22');
+            const getBtn22 = document.querySelector('.btn22');
+    
+            getBtn22.addEventListener('click', func22);
+    
+            function func22() {
+                getDiv22.style.width = getDiv22.offsetWidth * 2 + 'px';
+                getDiv22.style.height = getDiv22.offsetHeight * 2 + 'px';
+            };
+        </script>
+        <hr>
 
 
 
