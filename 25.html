@@ -136,7 +136,22 @@
     </script>
     <hr>
 
+    <h2>На полный размер элемента</h2>
+    <h3>Задача 3. Дан элемент #elem с границами.
+        По нажатию на кнопку выведите его полную ширину с учетом границы и padding.</h3>
+    <div class="task3"></div>
+    <button class="btn3">click</button>
+    <script>
+        const getDiv3 = document.querySelector('.task3');
+        const getBtn3 = document.querySelector('.btn3');
 
+        getBtn3.addEventListener('click', func3);
+
+        function func3() {
+            alert(getDiv3.offsetWidth);
+        };
+    </script>
+    <hr>
 
 
 
