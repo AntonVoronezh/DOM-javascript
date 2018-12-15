@@ -334,6 +334,25 @@
     </script>
     <hr>
 
+    <h3>Задача 14. Дан элемент #elem с вертикальной полосой прокрутки.
+        По нажатию на кнопку прокрутите его до позиции 100px от нижнего края элемента. </h3>
+    <div class="task14">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima sint est molestias porro
+        molestiae debitis, eum sapiente placeat odio quibusdam, nisi aperiam officiis dolorem asperiores earum nobis
+        blanditiis explicabo optio, eos alias. Quae deleniti quisquam ut ipsa sunt optio quaerat.
+    </div>
+    <button class="btn14">click</button>
+    <script>
+        const getDiv14 = document.querySelector('.task14');
+        const getBtn14 = document.querySelector('.btn14');
+
+        getBtn14.addEventListener('click', func14);
+
+        function func14() {
+            getDiv14.scrollTop = getDiv14.scrollHeight - 200;
+        };
+    </script>
+    <hr>
+
 
 
 
