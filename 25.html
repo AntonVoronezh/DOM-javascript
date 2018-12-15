@@ -415,6 +415,18 @@
     </script>
     <hr>
 
+    <h3>Задача 19. По нажатию на кнопку прокрутите страницу до самого низа.</h3>
+    <button class="btn19">click</button>
+    <script>
+        const getBtn19 = document.querySelector('.btn19');
+
+        getBtn19.addEventListener('click', func19);
+
+        function func19() {
+            window.scrollTo(0, document.body.clientHeight);
+        };
+    </script>
+    <hr>
 
 
 
