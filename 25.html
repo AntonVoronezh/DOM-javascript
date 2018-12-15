@@ -200,6 +200,24 @@
     </script>
     <hr>
 
+    <h2>Работа с getComputedStyle</h2>
+    <h3>Задача 7. Дан элемент #elem. Получите его ширину и высоту, без учета границы и padding.</h3>
+    <div class="task3"></div>
+    <button class="btn7">click</button>
+    <script>
+        const getDiv7 = document.querySelector('.task3');
+        const getBtn7 = document.querySelector('.btn7');
+
+        getBtn7.addEventListener('click', func7);
+
+        function func7() {
+            alert(getComputedStyle(getDiv7).width);
+            alert(getComputedStyle(getDiv7).height);
+        };
+    </script>
+    <hr>
+
+
 
 
 
