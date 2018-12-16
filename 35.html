@@ -192,6 +192,41 @@
     </script>
     <hr>
 
+    <h3>Задача 8. Даны кнопки. Привяжите к каждой кнопке событие по клику,
+        которое будет считать количество нажатий по кнопке и выводить его в
+        текст кнопки. Количество нажатий для каждой кнопки должно хранится в замыкании. </h3>
+    <div class="div8">
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+
+    <script>
+        const getDiv8 = document.querySelector('.div8');
+        const getAllBtn = getDiv8.querySelectorAll('button');
+
+        getAllBtn.forEach(elem => {
+
+            const func8 = (function () {
+
+                let num = 1;
+
+                return () => num++;
+            })();
+
+            elem.addEventListener('click', function () {
+
+                this.innerHTML = func8();
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
+
+
 
 
 
