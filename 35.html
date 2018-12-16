@@ -171,6 +171,27 @@
     </script>
     <hr>
 
+    <h2>На замыкания</h2>
+    <h3>Задача 7. Сделайте функцию, которая считает и выводит количество своих вызовов.</h3>
+    <script>
+
+        const funcWrap7 = () => {
+
+            let num = 0;
+
+            return () => num++;
+
+        };
+
+        const func7 = funcWrap7();
+
+        console.log('7 -> ' + func7());
+        console.log('7 -> ' + func7());
+        console.log('7 -> ' + func7());
+
+    </script>
+    <hr>
+
 
 
 
