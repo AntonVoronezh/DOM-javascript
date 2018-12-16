@@ -49,6 +49,22 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Функция ggg принимает 2 параметра: число и анонимную функцию,
+        которая возводит число в квадрат. Возведите число в 4-тую степень с помощью ggg.</h3>
+
+    <script>
+
+        const ggg = (argNum, funcArg) => {
+
+            return funcArg(argNum);
+
+        };
+
+        console.log('2 -> ' + ggg(ggg(2, argNum => argNum * argNum), argNum => argNum * argNum));
+
+
+    </script>
+    <hr>
 
 
 
