@@ -104,6 +104,31 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Сделайте функцию each, которая первым параметром принимает массив,
+        а вторым - функцию, которая применится к каждому элементу массива. Функция
+        each должна вернуть измененный массив</h3>
+    <script>
+
+        const arr5 = [1, 2, 3, 4, 5];
+
+        const plusOne = argNum => argNum + 1;
+
+        const ggg5 = (argArr, argFunc) => {
+
+            return argArr.forEach((elem, num) => {
+                argArr[num] = argFunc(argArr[num]);
+            });
+
+        };
+
+        ggg5(arr5, plusOne);
+
+        console.log('5 -> ' + arr5);
+
+    </script>
+    <hr>
+
+
 
 
 
