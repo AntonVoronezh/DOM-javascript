@@ -316,6 +316,105 @@
     </script>
     <hr>
 
+    <h3>Задача 11. Даны инпуты. Сделайте так, чтобы каждый инпут хранил
+        историю своих изменений. Каждый инпут свою. Изменением считается
+        событие onchange. История должна хранится в замыкании. Над каждым инпутом
+        должны быть стрелочки назад и вперед, с помощью которых можно передвигаться по истории.</h3>
+
+    <div class="div11">
+        <span class="prev">
+            <-</span> <input type="text">
+                <span class="next">-></span>
+                <br>
+                <span class="prev">
+                    <-</span> <input type="text">
+                        <span class="next">-></span>
+                        <br>
+                        <span class="prev">
+                            <-</span> <input type="text">
+                                <span class="next">-></span>
+    </div>
+
+    <script>
+        const getDiv11 = document.querySelector('.div11');
+        const getAllInput11 = getDiv11.querySelectorAll('input');
+
+        getAllInput11.forEach(elem => {
+
+            const func11 = (function () {
+
+                const arr11 = [];
+                // const arr11 = ['1=', '2=', '3=', '4=', '5=', '6=', '7='];
+
+                return (arg) => {
+
+                    arr11.push(arg);
+                    console.log(arr11);
+                    return arr11;
+
+                };
+
+            })();
+
+            const func11Index = (function () {
+
+                let num = 0;
+
+                let count = func11(this.value).length - 1;
+
+                return (argFrom) => {
+
+
+                    if (argFrom === 'left') {
+                        if (num === 0) {
+                            num = count - 1;
+                        } else {
+                            num -= 1;
+                        }
+                        return num;
+
+                    }
+                    if (argFrom === 'right') {
+                        if (num === 0) {
+                            num = count + 1;
+                        } else {
+                            num += 1;
+                        }
+                        return num;
+                    }
+
+                };
+            })();
+
+            elem.addEventListener('change', function () {
+
+                const getArrResult = func11(this.value);
+
+                elem.previousElementSibling.addEventListener('click', function () {
+
+                    const getIndex = func11Index('left');
+
+                    elem.value = getArrResult[getIndex];
+
+                });
+
+
+                elem.nextElementSibling.addEventListener('click', function () {
+
+                    const getIndex = func11Index('right');
+
+                    elem.value = getArrResult[getIndex];
+
+
+                });
+
+            });
+
+
+        });
+
+    </script>
+    <hr>
 
 
 
