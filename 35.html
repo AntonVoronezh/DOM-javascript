@@ -275,7 +275,46 @@
     </script>
     <hr>
 
+    <h3>Задача 10. Даны кнопки. Каждая кнопка по нажатию на нее
+        выводить следующее число Фибоначчи. Кнопки работают независимо.
+        Решить через замыкания. </h3>
 
+
+    <div class="div10">
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+
+    <script>
+        const getDiv10 = document.querySelector('.div10');
+        const getAllBtn10 = getDiv10.querySelectorAll('button');
+
+        getAllBtn10.forEach(elem => {
+
+            const func10 = (function () {
+
+                let num1 = 1;
+                let num2 = 1;
+
+                return () => {
+                    let last = num1 + num2;
+                    num1 = num2;
+                    num2 = last;
+                    return last;
+                };
+            })();
+
+            elem.addEventListener('click', function () {
+
+                this.innerHTML = func10();
+
+            });
+
+        });
+
+    </script>
+    <hr>
 
 
 
