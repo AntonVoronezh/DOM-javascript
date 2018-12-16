@@ -128,6 +128,49 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Сделайте функцию each, которая первым параметром принимает массив,
+        а вторым - массив функций, которые по очереди применятся к каждому элементу
+        массива: к первому элементу массива - первая функция, ко второму -
+        вторая и так далее пока функции в массиве не закончатся, после этого
+        возьмется первая функция, вторая и так далее по кругу.</h3>
+    <script>
+
+        const arr6 = [1, 2, 3, 4, 5, 6, 7];
+        // console.log('6 -> ' + arr6);
+        // console.log('6 -> 2-1-6-5-4-12-8');
+        const arrFunc = [argNum => argNum + 1, argNum => argNum - 1, argNum => argNum * 2];
+
+        const ggg6 = (argArrNum, argArrFunc) => {
+
+            let count = 0;
+
+            return argArrNum.forEach((elem, num) => {
+
+                // console.log(count,elem, num, argArrFunc[count], argArrFunc[count](elem));
+
+                arr6[num] = argArrFunc[count](elem);
+
+                if (count < argArrFunc.length - 1) {
+
+                    count += 1;
+
+                } else {
+
+                    count = 0;
+
+                }
+
+            });
+
+        };
+
+        ggg6(arr6, arrFunc);
+
+        console.log('6 -> ' + arr6);
+
+    </script>
+    <hr>
+
 
 
 
