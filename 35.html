@@ -83,6 +83,27 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Дана функция ggg. Она требует первым параметром число,
+        вторым функцию, которая возводит в квадрат, а третьим параметром
+        функцию, которая возводит в куб. Эти функции есть как Function Declaration -
+        kvadrat, kub. Пусть функция ggg вернет сумму квадрата и куба числа.</h3>
+    <script>
+
+        const kvadrat = argAnum => argAnum * argAnum;
+
+        const kub = argAnum => argAnum * argAnum * argAnum;
+
+        const ggg4 = (argNum, argFunc1, argFunc2) => {
+
+            return argFunc1(argNum) + argFunc2(argNum);
+
+        };
+
+        console.log('4 -> ' + ggg4(2, kvadrat, kub));
+
+    </script>
+    <hr>
+
 
 
 
