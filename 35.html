@@ -226,6 +226,54 @@
     </script>
     <hr>
 
+    <h3>Задача 9. Дан массив цветов. Даны абзацы. По первому нажатию на абзац он
+        должен покраситься в первый цвет из массива, по второму нажатию -
+        во второй и так далее. Все абзацы работают независимо</h3>
+    <div class="div9">
+        <p class="p91">..........</p>
+        <p class="p92">..........</p>
+        <p class="p93">..........</p>
+        <p class="p94">..........</p>
+    </div>
+    <script>
+        const getDiv9 = document.querySelector('.div9');
+        const getAllP = getDiv9.querySelectorAll('p');
+
+        const arr = ['red', 'green', 'blue', 'yellow'];
+
+        getAllP.forEach(elem => {
+
+            const func9 = (function () {
+
+                let num = -1;
+
+                return () => {
+
+                    if (num < arr.length - 1) {
+
+                        num += 1;
+
+                    } else {
+
+                        num = 0;
+                    }
+
+                    return arr[num];
+                };
+
+            })();
+
+            elem.addEventListener('click', function () {
+
+                this.style.backgroundColor = func9();
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
 
 
 
