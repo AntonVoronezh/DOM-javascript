@@ -416,6 +416,52 @@
     </script>
     <hr>
 
+    <h3>Задача 12. Сделайте функцию, каждый вызов который будет генерировать случайные
+        числа от 1 до 100, но так, чтобы они не повторялись, пока не будут перебраны
+        все числа из этого промежутка. Решите задачу через замыкания - в замыкании
+        должен хранится массив чисел, которые уже были сгенерированы функцией.</h3>
+
+    <p class="p12"></p>
+    <button class="btn12">hhh</button>
+    <script>
+        const getP12 = document.querySelector('.p12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', function () {
+
+            func12(getRandomInt(1, 100));
+
+        });
+
+        const func12 = (function () {
+
+            const arr12 = [];
+
+            return (arg) => {
+
+                if (arr12.some(n => arg === n)) {
+                    // console.log('---' + arg);
+                    func12(getRandomInt(1, 100));
+                } else {
+                    arr12.push(arg);
+                    getP12.innerHTML = '';
+                    getP12.innerHTML = arr12.sort();
+                }
+
+                return arr12.sort();
+
+            };
+
+        })();
+
+        function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        };
+
+
+    </script>
 
 
 
