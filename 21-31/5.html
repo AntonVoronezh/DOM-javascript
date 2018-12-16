@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>#1 AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>#1 AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на работу с элементами страницы в JavaScript</h2>
+    <br>
+    <h3>Задача 1. Изменение текста в span</h3>
+    <span id="test">1111</span>
+    <button onclick="btnClick1()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick1() {
+            const span = document.getElementById('test');
+            span.innerHTML = '22222';
+        }
+    </script>
+    <hr>
+    <h3>Задача 2. Замена span на тег i без изменения текста</h3>
+    <span id="test2">1111</span>
+    <button onclick="btnClick2()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick2() {
+            const span = document.getElementById('test2');
+            span.outerHTML = '<i>' + span.innerHTML + '</i>';
+        }
+    </script>
+    <hr>
+
+    <h3>Задача 3. Замена содержимого абзацев на их порядковый номер в коде.</h3>
+    <p>Абзац, поменяется.</p>
+    <p>Абзац, поменяется.</p>
+    <p>Абзац, поменяется.</p>
+    <button onclick="btnClick3()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick3() {
+            const pElems = document.getElementsByTagName('p');
+            for (let i = 0; i < pElems.length; i += 1) {
+                pElems[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+    <hr>
+
+    <h3>Задача 4. Замена содержимого элементов с классом zzz на их порядковый номер в коде.</h3>
+    <h2 class="zzz">Заголовок с классом zzz.</h2>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="btnClick4()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick4() {
+            const elems = document.getElementsByClassName('zzz');
+            for (let i = 0; i < elems.length; i += 1) {
+                elems[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+    <hr>
+
+    <h3>Задача . Замена содержимого абзацев с классом zzz на их порядковый номер в коде.</h3>
+    <h2 class="zzz">Заголовок с классом zzz.</h2>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p class="zzz">Абзац с классом zzz.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="btnClick4()">
+        нажми на меня
+    </button>
+    <script>
+        function btnClick4() {
+            const elems = document.querySelectorAll('p.zzz');
+            for (let i = 0; i < elems.length; i += 1) {
+                elems[i].innerHTML = i + 1;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

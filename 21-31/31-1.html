@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи для решения JavaScript</h2>
+    <h2>Урок #1</h2>
+
+    <h3>Задача 1. Даны 3 инпута и кнопка. По нажатию на кнопку
+        получите числа, стоящие в этих инпутах и запишите их
+        сумму в четвертый инпут.</h3>
+
+    <div class="div1">
+        <input type="text" class="inp1">
+        <input type="text" class="inp2">
+        <input type="text" class="inp3">
+        <button class="btn">ок</button>
+        <input type="text" class="inp4">
+    </div>
+    <script>
+        const getDiv1 = document.querySelector('.div1');
+        const getInp = getDiv1.querySelectorAll('input');
+        const getBtn = getDiv1.querySelector('.btn');
+
+        getBtn.addEventListener('click', func1);
+
+        function func1() {
+            let sum = 0;
+            for (let i = 0; i < getInp.length - 1; i += 1) {
+                sum += Number(getInp[i].value);
+            }
+
+            getDiv1.lastElementChild.value = sum;
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Даны N инпутов с классом .num и кнопка.
+        По нажатию на кнопку получите числа, стоящие в этих
+        инпутах и запишите их сумму в абзац с id="result"</h3>
+    <div class="div2">
+        <input type="text" class="num">
+        <input type="text" class="num">
+        <input type="text" class="num">
+        <button class="btn">ок</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getInp2 = getDiv2.querySelectorAll('.num');
+        const getBtn2 = getDiv2.querySelector('.btn');
+        const getP2 = document.getElementById('result');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+
+            let sum = 0;
+            for (let i = 0; i < getInp2.length; i += 1) {
+                sum += Number(getInp2[i].value);
+            }
+
+            getP2.innerHTML = sum;
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Дан инпут. В него вводится число.
+        По потери фокуса найдите сумму цифр этого числа.</h3>
+    <input type="text" class="task3">
+    <script>
+        const getInp3 = document.querySelector('.task3');
+
+        getInp3.addEventListener('blur', func3);
+
+        function func3() {
+            const arrFromValue = getInp3.value.split('');
+            let sum = 0;
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                sum += Number(arrFromValue[i]);
+            }
+            console.log('3 -> ' + sum);
+
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 4. Дан инпут. В него вводятся числа через запятую.
+        По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество). </h3>
+    <input type="text" class="task4">
+    <script>
+        const getInp4 = document.querySelector('.task4');
+
+        getInp4.addEventListener('blur', func4);
+
+        function func4() {
+            const arrFromValue = getInp4.value.split(',');
+            let sum = 0;
+            let result = 0;
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                sum += Number(arrFromValue[i]);
+            }
+
+            result = sum / arrFromValue.length;
+            console.log('3 -> ' + result);
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 5. Дан инпут. В него вводится ФИО через пробел.
+        По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты </h3>
+    <input type="text" class="task5">
+    <div class="div5"></div>
+    <script>
+        const getInp5 = document.querySelector('.task5');
+        const getDiv5 = document.querySelector('.div5');
+
+        getInp5.addEventListener('blur', func5);
+
+        function func5() {
+            const arrFromValue = getInp5.value.split(' ');
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                const createInput = document.createElement('input');
+                createInput.value = arrFromValue[i];
+                getDiv5.appendChild(createInput);
+            }
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 6. Дан инпут. В него вводится ФИО через пробел.
+        ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери
+        фокуса инпутом, введенные фамилия, имя и отчество автоматически
+        стали записанными с большой буквы (в том же инпуте)</h3>
+    <input type="text" class="task6">
+    <script>
+        const getInp6 = document.querySelector('.task6');
+
+        getInp6.addEventListener('blur', func6);
+
+        const makeFirstUpper = argStr => {
+            // const arrFromValue = argStr.split('');
+            const arrFromValue = [...argStr];
+            arrFromValue[0] = arrFromValue[0].toUpperCase();
+            return arrFromValue.join('');
+        };
+
+        function func6() {
+            const arrFromValue = getInp6.value.split(' ');
+
+            let result = '';
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                result += makeFirstUpper(arrFromValue[i]) + ' ';
+            }
+            console.log(result);
+
+        };
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 7. Дан инпут. В него вводится текст.
+        По потери фокуса узнайте количество слов в этом тексте.</h3>
+    <input type="text" class="task7">
+    <script>
+        const getInp7 = document.querySelector('.task7');
+
+        getInp7.addEventListener('blur', func7);
+
+        function func7() {
+            const arrFromValue = getInp7.value.split(' ');
+            console.log('7 -> ' + arrFromValue.length);
+        };
+    </script>
+    <hr>
+
+
+    <h3>Задача 8. Дан инпут. В него вводится текст. По потери фокуса узнайте
+        количество символов в самом длинном слове в этом тексте. </h3>
+    <input type="text" class="task8">
+    <script>
+        const getInp8 = document.querySelector('.task8');
+
+        getInp8.addEventListener('blur', func8);
+
+        const getSymbolsCount = argStr => {
+            const arrFromArg = [...argStr];
+            return arrFromArg.length;
+        };
+
+        function func8() {
+            const arrFromValue = getInp8.value.split(' ');
+
+            let result = 0;
+
+            for (let i = 0; i < arrFromValue.length; i += 1) {
+                const getsymbolsCount = getSymbolsCount(arrFromValue[i]);
+                if (getsymbolsCount > result) {
+                    result = getsymbolsCount;
+                }
+            }
+            console.log('8 -> ' + result);
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 9. Дан инпут. В него вводится дата в формате 31.12.2016.
+        По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31</h3>
+    <input type="text" class="task9">
+    <script>
+        const getInp9 = document.querySelector('.task9');
+
+        getInp9.addEventListener('blur', func9);
+
+        function func9() {
+            const arrFromValue = getInp9.value.split('.');
+            const out = `${arrFromValue[2]}-${arrFromValue[1]}-${arrFromValue[0]}`;
+            getInp9.value = out;
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 10. Дан инпут. В него вводится год рождения пользователя.
+        По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.</h3>
+    <input type="text" class="task10">
+    <p class="p10"></p>
+    <input type="submit" value="hhhhhh" class="sub10">
+    <script>
+        const getInp10 = document.querySelector('.task10');
+        const getP10 = document.querySelector('.p10');
+        const getSub10 = document.querySelector('.sub10');
+
+        getSub10.addEventListener('click', func10);
+
+        function func10() {
+            const date = new Date();
+            const year = +getInp10.value;
+            const result = date.getFullYear() - year;
+
+            getP10.innerHTML = result;
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 11. Дан инпут. В него вводится дата в формате 31.12.2016.
+        По потери фокуса узнайте день недели (словом), который приходится на эту дату.</h3>
+    <input type="text" class="task11">
+    <script>
+        const getInp11 = document.querySelector('.task11');
+
+        getInp11.addEventListener('blur', func11);
+
+        const addZero = argNum => {
+            if (argNum <= 9) {
+                argNum = '0' + argNum;
+            }
+            return argNum;
+        };
+
+        function func11() {
+            const arr = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+            const arrFromValue = getInp11.value.split('.');
+            const date = new Date(+arrFromValue[2], addZero(+arrFromValue[1] - 1), addZero(+arrFromValue[0]));
+
+            console.log('11 ->' + arr[date.getDay()]);
+        };
+    </script>
+    <hr>
+
+    <!-- ============================================================================================================= -->
+
+    <h3>Задача 12. Дан инпут. В него вводится слово. По нажатию на кнопку
+        проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).</h3>
+    <input type="text" class="task12">
+    <button class="btn12">kkkk</button>
+    <script>
+        const getInp12 = document.querySelector('.task12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', func12);
+
+        function func12() {
+            const arrFromStr = [...getInp12.value];
+
+            for (let i = 0; i < Math.ceil(arrFromStr.length / 2); i += 1) {
+                if (arrFromStr[i] !== arrFromStr.reverse()[i]) {
+                    console.log('не одинаково');
+                    return null;
+                }
+            }
+            console.log('одинаково');
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 13. Дан инпут. В него вводится число. Проверьте по вводу,
+        что это число содержит внутри себя цифру 3.</h3>
+    <input type="text" class="task13">
+    <script>
+        const getInp13 = document.querySelector('.task13');
+
+        getInp13.addEventListener('keypress', func13);
+
+        function func13(event) {
+            if (event.keyCode === 51) {
+                console.log('есть цифра 3');
+            }
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 14. Даны N абзацев и кнопка. По нажатию на кнопку
+        запишите в конец каждого абзаца его порядковый номер.</h3>
+
+    <div class="div14">
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+        <p>qqq</p>
+    </div>
+    <button class="btn14">kkkk</button>
+    <script>
+        const getDiv14 = document.querySelector('.div14');
+        const getBtn14 = document.querySelector('.btn14');
+
+        getBtn14.addEventListener('click', func14);
+
+        function func14() {
+            const getAllP = getDiv14.querySelectorAll('p');
+
+            getAllP.forEach((elem, num) => elem.innerHTML = elem.innerHTML + ' ' + num);
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 15. Даны N абзацев с числами. По нажатию на кнопку
+        выведите эти числа в инпут через запятую в порядке возрастания.</h3>
+    <div class="div15">
+        <p>1</p>
+        <p>5</p>
+        <p>2</p>
+        <p>4</p>
+        <p>3</p>
+    </div>
+    <button class="btn15">kkkk</button>
+    <input type="text" class="inp15">
+    <script>
+        const getDiv15 = document.querySelector('.div15');
+        const getBtn15 = document.querySelector('.btn15');
+        const getInp15 = document.querySelector('.inp15');
+
+        getBtn15.addEventListener('click', func15);
+
+        function func15() {
+            const getAllP = getDiv15.querySelectorAll('p');
+            const arr = [];
+
+            getAllP.forEach(elem => arr.push(+elem.innerHTML));
+            getInp15.value = arr.sort().join(', ');
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 16. Даны ссылки. По загрузке страницы добавьте в
+        конец каждой ссылки ее href в круглых скобках</h3>
+
+    <div class="div16">
+        <a href="http://1.com">1</a> <br>
+        <a href="http://2.com">2</a> <br>
+        <a href="http://3.com">3</a><br>
+    </div>
+    <script>
+        const getDiv16 = document.querySelector('.div16');
+
+        document.addEventListener('DOMContentLoaded', func16);
+
+        function func16() {
+            const getAllA = getDiv16.querySelectorAll('a');
+
+            getAllA.forEach(elem => elem.innerHTML = elem.innerHTML + ' ' + elem.href);
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 17. Даны ссылки. По загрузке страницы, если ссылка начинается
+        с http://, то добавьте ей в конец стрелку → (делается так: &rarr;). </h3>
+
+    <div class="div17">
+        <a href="http://1.com">1</a> <br>
+        <a href="2.com">2</a> <br>
+        <a href="http://3.com">3</a><br>
+        <a href="1.html">4</a> <br>
+        <a href="http://2.com">5</a> <br>
+        <a href="http://3.com">6</a><br>
+    </div>
+    <script>
+        const getDiv17 = document.querySelector('.div17');
+
+        document.addEventListener('DOMContentLoaded', func17);
+
+        function func17() {
+            const getAllA = getDiv17.querySelectorAll('a');
+
+            getAllA.forEach(elem => {
+                if (elem.href.substr(0, 7) === 'http://')
+                    elem.innerHTML = elem.innerHTML + '&rarr;';
+            });
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 18. Даны N абзацев с числами. По нажатию на любой
+        абзац запишите в него квадрат числа, которое в нем находится.</h3>
+    <div class="div18">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <script>
+        const getDiv18 = document.querySelector('.div18');
+
+        getDiv18.addEventListener('click', func18);
+
+        function func18(event) {
+            event.target.innerHTML = event.target.innerHTML * event.target.innerHTML;
+        };
+    </script>
+    <hr>
+
+
+    <h3>Задача 19. Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза</h3>
+    <div class="div19">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <script>
+        const getDiv19 = document.querySelector('.div19');
+
+        getDiv19.addEventListener('click', func19);
+
+        function func19(event) {
+            event.target.style.heigth = event.target.clientHeigth * 2 + 'px';
+            event.target.style.width = event.target.clientWidth * 2 + 'px';
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 20. Даны картинки. По первому нажатию на любую картинку
+        увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.</h3>
+
+    <div class="div20">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <script>
+        const getDiv20 = document.querySelector('.div20');
+
+        getDiv20.addEventListener('click', func20);
+
+        function func20(event) {
+            const height = event.target.clientHeigth;
+            const width = event.target.clientWidth;
+
+            event.target.style.heigth = height * 2 + 'px';
+            event.target.style.width = width * 2 + 'px';
+
+            event.target.addEventListener('click', function () {
+                this.style.heigth = height / 2 + 'px';
+                this.style.width = width / 2 + 'px';
+            });
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 21. Даны N картинок размера 30px. По нажатию на картинку под ними
+        эта картинка появляется размером в 50px. </h3>
+    <div class="div21">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png">
+        <img src="http://code.mu/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png">
+    </div>
+    <div class="div212"></div>
+    <script>
+        const getDiv21 = document.querySelector('.div21');
+        const getDiv212 = document.querySelector('.div212');
+
+        getDiv21.addEventListener('click', func21);
+
+        function func21(event) {
+            const createImg = document.createElement('img');
+            createImg.src = event.target.src;
+            createImg.style.width = '50px';
+
+            getDiv212.innerHTML = '';
+            getDiv212.appendChild(createImg);
+
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 22. Дан инпут. Реализуйте кнопочки +1, -1, которые будут
+        увеличивать или уменьшать на 1 значение инпута. Сделайте так,
+        чтобы это значение не могло стать меньше нуля. </h3>
+    <input type="text" class="inp22" value="0">
+    <br> <br>
+    <input type="submit" value="+1" class="sub22Plus">
+    <input type="submit" value="-1" class="sub22Minus">
+
+    <script>
+        const getInp22 = document.querySelector('.inp22');
+        const getInpPlus = document.querySelector('.sub22Plus');
+        const getMinus = document.querySelector('.sub22Minus');
+
+        getInpPlus.addEventListener('click', func221);
+        getMinus.addEventListener('click', func222);
+
+        function func221() {
+            getInp22.value = +getInp22.value + 1;
+        };
+
+        function func222() {
+            if (+getInp22.value > 0)
+                getInp22.value = +getInp22.value - 1;
+        };
+    </script>
+
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html

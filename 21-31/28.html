@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с объектом Event в JavaScript</h2>
+    <br>
+    <h3>Задача 1. Дан ul, в нем несколько li. Под ul сделайте кнопку,
+        по нажатию на которую в конец ul будет добавляться новый li с
+        текстом 'пункт'. Сделайте так, чтобы при клике на каждый li,
+        ему в конец добавлялся '!'. Это должно работать и для вновь добавленных li.
+        Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul).</h3>
+    <ul class="task1">
+        <li class="task11">111</li>
+        <li class="task11">222</li>
+        <li class="task11">333</li>
+    </ul>
+    <button class="btn1">
+        нажми на меня
+    </button>
+    <script>
+        const getUl1 = document.querySelector('.task1');
+        const getBtn1 = document.querySelector('.btn1');
+
+        getUl1.addEventListener('click', func1);
+        getBtn1.addEventListener('click', func11);
+
+        function func1(event) {
+            event.target.innerHTML = `${event.target.innerHTML} !`;
+        };
+
+        function func11() {
+            const createLi = document.createElement('li');
+            createLi.innerHTML = '+++';
+            getUl1.appendChild(createLi);
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 2. Дана таблица с юзерами с двумя колонками: имя и фамилия.
+        Под таблицей сделайте форму, с помощью которой можно будет добавить
+        нового юзера в таблицу. Сделайте так, чтобы при клике на любую ячейку
+        появлялся prompt, с помощью которого можно изменить текст ячейки.
+        Задачу решите с помощью делегирования (то есть событие должно быть
+        навешано на table).</h3>
+
+    <table class="task2">
+        <tr>
+            <td>Иван</td>
+            <td>Иванов</td>
+        </tr>
+        <tr>
+            <td>Петр</td>
+            <td>Петров</td>
+        </tr>
+    </table>
+    <br>
+    <form class="form2">
+        <input type="text" class="form2__firstname" name="firstname">
+        <input type="text" class="form2__lastname" name="lastname">
+        <input type="submit" value="добавить" name="submit">
+    </form>
+    <script>
+        const getForm2 = document.querySelector('.form2');
+        const getTable2 = document.querySelector('.task2');
+
+
+        getForm2.submit.addEventListener('click', func2);
+        getTable2.addEventListener('click', func22);
+
+        function func22(event) {
+            const newValue = prompt("Исправить " + event.target.innerHTML, '');
+            event.target.innerHTML = newValue;
+        };
+
+        function func2(event) {
+            event.preventDefault();
+
+            const createTdFirst = document.createElement('td');
+            createTdFirst.innerHTML = getForm2.firstname.value;
+
+            const createTdLast = document.createElement('td');
+            createTdLast.innerHTML = getForm2.lastname.value;
+
+            const createTr = document.createElement('tr');
+            createTr.appendChild(createTdFirst);
+            createTr.appendChild(createTdLast);
+
+            getTable2.appendChild(createTr);
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Дана таблица с колонками 'имя', 'фамилия', 'удалить'.
+        Сделайте под ней 2 инпута и кнопку. Если ввести в эти инпуты имя
+        и фамилию и нажать на кнопку - в таблицу должен добавиться новый ряд.
+        В каждом ряду должна быть кнопочка 'удалить' (третий столбец),
+        по нажатию на которую этот ряд удалится.
+
+        Также сделайте так, чтобы можно было поредактировать любую ячейку с
+        именем и фамилией - по клику на ячейку в ней должен появиться инпут
+        с текстом этой ячейки, этот текст можно поменять, нажать Enter -
+        и инпут исчезнет, а информация в ячейке обновится.</h3>
+
+    <table class="task3">
+        <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>удалить</td>
+        </tr>
+    </table>
+
+    <input type="text" class="name">
+    <input type="text" class="name2">
+    <input type="submit" class="submit3">
+
+    <script>
+        const getTable3 = document.querySelector('.task3');
+        const getInput3 = document.querySelector('.name');
+        const getInput32 = document.querySelector('.name2');
+        const getSubmit3 = document.querySelector('.submit3');
+
+        getSubmit3.addEventListener('click', func3);
+        getTable3.addEventListener('click', func32);
+        
+
+        function func33(event) {
+            if (event.keyCode === 13) {
+                event.target.closest('td').innerHTML = event.target.value;
+            }
+        };
+
+        function func32(event) {
+            const createInput = document.createElement('input');
+            createInput.type = 'text';
+            createInput.addEventListener('keypress', func33);
+
+            event.target.appendChild(createInput);
+        };
+
+        function func3() {
+            const createTr = document.createElement('tr');
+
+            const createBtn = document.createElement('button');
+            createBtn.innerHTML = 'delete';
+            createBtn.addEventListener('click', function (event) {
+                getTable3.removeChild(event.target.closest('tr'));
+            });
+
+            const createName = document.createElement('td');
+            createName.innerHTML = getInput3.value;
+
+            const createName2 = document.createElement('td');
+            createName2.innerHTML = getInput32.value;
+
+            createTr.appendChild(createName);
+            createTr.appendChild(createName2);
+            createTr.appendChild(createBtn);
+
+            getTable3.appendChild(createTr);
+        };
+
+
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/1/h.html</h2>
+
+    <h3>Задача 1. Сделайте функцию detElem, которая параметром будет принимать массив
+        и какое значение и возвращать массив, в котором все элементы с таким значением
+        будут удалены.</h3>
+
+    <script>
+        const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+
+        const delElem = (argArr, argNum) => {
+
+            const result = [];
+
+            argArr.forEach(elem => {
+
+                if (elem !== argNum) {
+
+                    result.push(elem);
+
+                }
+
+            });
+
+            return result;
+
+        };
+
+        console.log(delElem(arr1, 1));
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Сделайте функцию getDiff, которая параметром будет принимать
+        два массива и возвращать массив элементов, которые не присутствуют
+        одновременно в обоих массивах</h3>
+    <script>
+        const arr21 = [1, 2, 3, 4, 5, 6, 7, 8];
+        const arr22 = [1, 2, 3, 4];
+
+        const getDiff = (argArr1, argArr2) => {
+
+            const result = [];
+
+            argArr1.forEach(elem => {
+
+                if (!argArr2.some(item => item === elem)) {
+
+                    result.push(elem);
+
+                }
+
+            });
+
+            return result;
+
+        };
+
+        console.log(getDiff(arr21, arr22));
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Сделайте функцию arrayRand, которая параметром будет принимать
+        массив и возвращать случайный элемент из этого массива.</h3>
+    <script>
+        const arr3 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const arrayRand = argArr => {
+
+            const randNum = getRandomArbitary(0, argArr.length - 1);
+
+            return argArr[randNum];
+
+        };
+
+        function getRandomArbitary(min, max) {
+
+            return Math.ceil(Math.random() * (max - min) + min);
+
+        }
+
+        console.log(arrayRand(arr3));
+
+    </script>
+    <hr>
+
+    <h3>Задача 4. Сделайте функцию uniq, которая будет оставлять в массиве только
+        уникальные элементы (то есть будет удалять дубли).</h3>
+
+    <script>
+        const arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5];
+
+        const uniq = argArr => {
+
+            const result = [];
+
+            argArr.forEach(elem => {
+
+                if (!result.some(item => item === elem)) {
+
+                    result.push(elem);
+
+                }
+
+            });
+
+            return result;
+        };
+
+        console.log(uniq(arr4));
+
+    </script>
+    <hr>
+
+    <h3>Задача 5. Сделайте функцию shuffle, которая параметром будет принимать
+        массив и перемешивать его элементы в случайном порядке.</h3>
+    <script>
+        const arr5 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const shuffle = argArr => {
+
+            const result = [];
+            const techArr = [];
+
+            argArr.forEach(elem => {
+
+                const randNum = getRandomArbitary(0, 100);
+
+                if (randNum % 2 === 0) {
+
+                    result.unshift(elem)
+
+                } else {
+
+                    result.push(elem)
+
+                }
+
+            });
+
+            return result;
+        };
+
+        console.log(shuffle(arr5));
+
+    </script>
+    <hr>
+
+    <h3>Задача 6. Сделайте функцию, которая параметром будет принимать число,
+        а возвращать это же число прописью. Например, число 115 прописью это
+        сто пятнадцать. Пусть функция работает с числами до миллиона</h3>
+    <script>
+        const words = {
+            1: ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+            10: ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'],
+            20: ['', '', 'двадцать', 'тридцать', 'сорок', 'пятьдесять', 'шестдесять', 'семдесят', 'восемдесят', 'девяносто'],
+            100: ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'],
+            1000: ['', 'одна', 'две', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+            '1000var': ['', 'тысяча', 'тысячи', 'тысяч'],
+        };
+
+        const isPluralForm = (argNum) => {
+
+            const length = String(argNum).length;
+            console.log(length);
+
+            let first;
+            let secons;
+            let third;
+            let fourth;
+            let thousandVar;
+            let fift;
+            let six;
+            let result = '';
+            let resultFirst;
+            let resultSecond;
+
+            if (length === 1) {
+
+                result = num1(argNum);
+
+            } else if (length === 2 && argNum < 20) {
+
+                result = num2(argNum);
+
+            } else if (length === 2 && argNum > 19 && argNum < 100) {
+
+                result = num22(argNum);
+
+            } else if (length === 3 && argNum > 99 && argNum < 1000) {
+
+                result = num3(argNum);
+
+            } else if (length === 4 && argNum > 999 && argNum < 10000) {
+
+                result = num4(argNum);
+
+            } else if (length === 5 && argNum > 9999 && argNum < 99999) {
+
+                first = String(argNum)[0];
+                secons = String(argNum)[1];
+                third = String(argNum)[2];
+                fourth = String(argNum)[3];
+                fift = String(argNum)[4];
+
+                let firstNew = first + secons;
+                let SecondNew = third + fourth + fift;
+
+                const lengthFirstNew = String(+firstNew).length;
+
+                if (lengthFirstNew === 2 && +firstNew < 20) {
+
+                    resultFirst = num2(+firstNew) + ' тысяч ';
+
+                } else if (lengthFirstNew === 2 && +firstNew > 19 && +firstNew < 100) {
+
+                    resultFirst = num22(+firstNew) + ' тысяч ';
+
+                }
+
+                result = resultFirst + num3(SecondNew);
+
+            } else if (length === 6 && argNum > 99999 && argNum < 1000000) {
+
+                first = String(argNum)[0];
+                secons = String(argNum)[1];
+                third = String(argNum)[2];
+                fourth = String(argNum)[3];
+                fift = String(argNum)[4];
+                six = String(argNum)[5];
+
+                let firstNew = first + secons + third;
+                let SecondNew = fourth + fift + six;
+
+                resultFirst = num3(firstNew) + ' тысяч '
+                resultSecond = num3(SecondNew)
+
+                result = resultFirst + resultSecond;
+
+            }
+
+            return result;
+
+        };
+
+        console.log('-> ' + isPluralForm(893485));
+
+        function num1(argNum) {
+            return words['1'][argNum];
+        };
+
+        function num2(argNum) {
+            return words['10'][argNum - 10];
+        };
+
+        function num22(argNum) {
+            first = +String(argNum)[0];
+            secons = +String(argNum)[1];
+
+            return words['20'][first] + ' ' + words['1'][secons];
+        };
+
+
+        function num3(argNum) {
+            first = +String(argNum)[0];
+            secons = +String(argNum)[1];
+            third = +String(argNum)[2];
+
+            return words['100'][first] + ' ' + words['20'][secons] + ' ' + words['1'][third];
+        };
+
+        function num4(argNum) {
+            first = +String(argNum)[0];
+            secons = +String(argNum)[1];
+            third = +String(argNum)[2];
+            fourth = +String(argNum)[3];
+
+            if (first === 1) {
+
+                thousandVar = words['1000var'][1];
+
+            } else if (first > 1 && first < 5) {
+
+                thousandVar = words['1000var'][2];
+
+            } else if (first > 5 && first < 10) {
+
+                thousandVar = words['1000var'][3];
+            }
+
+            return words['1000'][first] + ' ' + thousandVar + ' ' + words['100'][secons] +
+                ' ' + words['20'][third] + ' ' + words['1'][fourth];
+
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 7. Сделайте функцию union, которая будет принимать два массива
+        и возвращать новый массив, в котором будут элементы из этих двух массивов,
+        но без дублей. Например, union([1, 2, 3], [3, 4, 5]) вернет [1, 2, 3, 4, 5]</h3>
+
+    <script>
+        const arr71 = [1, 2, 3, 4, 5, 6, 7];
+        const arr72 = [4, 5, 6, 7, 8, 9, 10];
+
+        const union = (argArr1, argArr2) => {
+
+            const arrConcat = argArr1.concat(argArr2);
+
+            const result = [];
+            const obj = {};
+
+            arrConcat.forEach(elem => {
+
+                obj[elem] = '+';
+
+            });
+
+            Object.keys(obj).forEach(elem => {
+
+                result.push(+elem);
+
+            });
+
+            return result;
+
+        };
+
+        console.log(union(arr71, arr72));
+
+
+
+    </script>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

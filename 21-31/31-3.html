@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи для решения JavaScript</h2>
+    <h2>Урок #3</h2>
+
+    <h3>Задача 36. Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте
+        состояние чекбокса с отмеченного на неотмеченное и наоборот.</h3>
+
+    <input type="checkbox" class="inp36">
+    <a href="#" class="link36">dddd</a>
+    <script>
+        const getInp36 = document.querySelector('.inp36');
+        const getA36 = document.querySelector('.link36');
+
+        getA36.addEventListener('click', func36);
+
+        function func36() {
+            if (getInp36.checked) {
+                getInp36.checked = false;
+
+            } else {
+                getInp36.checked = true;
+            }
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 37. Даны чекбокс. Дана кнопка. По нажатию на кнопку
+        сделайте все чекбоксы отмеченными.</h3>
+    <div class="div37">
+        <input type="checkbox" class="inp37">
+        <input type="checkbox" class="inp37">
+        <input type="checkbox" class="inp37">
+    </div>
+    <a href="#" class="link37">dddd</a>
+    <script>
+        const getDi37 = document.querySelector('.div37');
+        const getAllInp37 = getDi37.querySelectorAll('.inp37');
+        const getA37 = document.querySelector('.link37');
+
+        getA37.addEventListener('click', func37);
+
+        function func37() {
+            getAllInp37.forEach(elem => elem.checked = true);
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 38. Спросите у пользователя какой язык (html, css, js, php)
+        он знает с помощью радио кнопочек. Выведите этот язык в абзац. </h3>
+    <form class="div38">
+        html<input type="radio" name="radio38" value="html"> <br>
+        css <input type="radio" name="radio38" value="css"><br>
+        js<input type="radio" name="radio38" value="js"><br>
+        php<input type="radio" name="radio38" value="php">
+    </form>
+    <p class="p38"></p>
+    <script>
+        const getDiv38 = document.querySelector('.div38');
+        const getAllInp38 = getDiv38.querySelectorAll('input');
+        const getP38 = document.querySelector('.p38');
+
+        getDiv38.addEventListener('click', func38);
+
+        function func38(element) {
+            getAllInp38.forEach(elem => {
+                if (element.target.checked = true) {
+                    getP38.innerHTML = '';
+                    getP38.innerHTML = element.target.value;
+                }
+            });
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 39. Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов.
+        Выбранные языки должны выводится в абзац ниже через запятую</h3>
+
+    <div class="div39">
+        html<input type="checkbox" class="inp39" value="html" name="inp39">
+        css<input type="checkbox" class="inp39" value="css" name="inp39">
+        js <input type="checkbox" class="inp39" value="js" name="inp39">
+        php<input type="checkbox" class="inp39" value="php" name="inp39">
+    </div>
+    <p class="p39"></p>
+    <script>
+        const getDiv39 = document.querySelector('.div39');
+        const getAllInp39 = getDiv39.querySelectorAll('input');
+        const getP39 = document.querySelector('.p39');
+
+        getDiv39.addEventListener('click', func39);
+
+        function func39(element) {
+            getP39.innerHTML = getP39.innerHTML + ', ' + element.target.value;
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 40. Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс
+        отмечен - инпут видимый, если не отмечен - не видимый.</h3>
+    <input type="checkbox" class="inp40">
+    <input type="text" class="inp402">
+    <script>
+        const getInp40 = document.querySelector('.inp40');
+        const getInp402 = document.querySelector('.inp402');
+
+        getInp40.addEventListener('click', func40);
+        document.addEventListener('DOMContentLoaded', func402);
+
+        function func402() {
+
+            getInp402.style.display = 'none';
+
+        };
+
+        function func40() {
+
+            if (getInp40.checked) {
+                getInp402.style.display = 'inline-block';
+
+            } else {
+                getInp402.style.display = 'none';
+            }
+
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 41. Даны чекбоксы. Под каждым чекбоксом размещен абзац.
+        Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый,
+        а если не отмечен - не видимый</h3>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">1111</p>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">2222</p>
+    <input type="checkbox" class="inp41"> <br>
+    <p class="p41" style="display:none">3333</p>
+    <script>
+        const getAllInp41 = document.querySelectorAll('.inp41');
+
+        getAllInp41.forEach(elem => elem.addEventListener('click', func41));
+
+        function func41() {
+
+            getAllInp41.forEach(elem => {
+                if (elem.checked) {
+                    elem.nextElementSibling.nextElementSibling.style.display = 'block';
+                } else {
+                    elem.nextElementSibling.nextElementSibling.style.display = 'none';
+                }
+            });
+
+        }
+
+    </script>
+    <hr>
+
+    <h3>Задача 42. Дан инпут. Даны li. В инпут пишется номер. Сделайте так,
+        чтобы по вводу числа, li с заданным номером покрасился в красный цвет. </h3>
+
+    <ul class="ul42">
+        <li class="li42">001</li>
+        <li class="li42">002</li>
+        <li class="li42">003</li>
+        <li class="li42">004</li>
+        <li class="li42">005</li>
+        <li class="li42">006</li>
+    </ul>
+    <input type="text" class="inp42">
+    <script>
+        const getUl42 = document.querySelector('.ul42');
+        const getAllLi42 = getUl42.querySelectorAll('.li42');
+        const getInp42 = document.querySelector('.inp42');
+
+        getInp42.addEventListener('blur', func42);
+
+        function func42() {
+
+            const num = +getInp42.value;
+            getAllLi42[num].style.color = 'red';
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 43. Дан абзац. Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'.
+        Если соответствующий чекбокс отмечен - заданное действие происходит
+        с абзацем (становится красным, например). Если чекбоксу снять отметку - действие отменяется. </h3>
+    <p class="p43">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, reiciendis.</p>
+    перечеркнуть <input type="checkbox" class="inp431" value="s"> <br>
+    сделать жирным <input type="checkbox" class="inp432" value="b"> <br>
+    сделать красным <input type="checkbox" class="inp433" value="red"> <br>
+    <script>
+        const getP43 = document.querySelector('.p43');
+
+        const getInp431 = document.querySelector('.inp431');
+        const getInp432 = document.querySelector('.inp432');
+        const getInp433 = document.querySelector('.inp433');
+
+        getInp431.addEventListener('click', func431);
+        getInp432.addEventListener('click', func432);
+        getInp433.addEventListener('click', func433);
+
+
+        function func431() {
+            if (isChecked(getInp431)) {
+                getP43.innerHTML = `<s>${getP43.innerHTML}</s>`;
+            } else {
+                getP43.innerHTML = getP43.lastChild.innerHTML;
+            }
+        };
+
+        function func432() {
+            if (isChecked(getInp432)) {
+                getP43.innerHTML = `<b>${getP43.innerHTML}</b>`;
+            } else {
+                getP43.innerHTML = getP43.lastChild.innerHTML;
+            }
+        };
+
+        function func433() {
+            if (isChecked(getInp433)) {
+                getP43.style.color = `red`;
+            } else {
+                getP43.style.color = `black`;
+            }
+        };
+
+        function isChecked(argElem) {
+            return argElem.checked === true;
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 44. Дан блок с кнопкой 'закрыть блок'. По нажатию на эту кнопку
+        блок должен исчезнуть. Кнопка размещается внутри блока и должна исчезнуть
+        вместе с ним. Блоков может быть любое количество, каждый из них закрывает своя кнопка. </h3>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <div class="div44" style="border:1px solid black; padding:5px">
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Ad quod ex cupiditate saepe doloribus quisquam excepturi numquam corrupti odio delectus!
+        <input type="submit" value="закрыть блок">
+    </div>
+    <script>
+        const getAllDiv44 = document.querySelectorAll('.div44');
+
+        getAllDiv44.forEach(elem => {
+
+            const getInp44 = elem.querySelector('input');
+            getInp44.addEventListener('click', func44);
+
+        });
+
+        function func44() {
+            this.parentElement.style.display = 'none';
+        };
+
+    </script>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

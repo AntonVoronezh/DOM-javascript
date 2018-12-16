@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на разные полезные темы в JavaScript</h2>
+    <h2>Работа с формами</h2>
+    <h3>Задача 1. Дана форма с id="form". В ней даны инпуты, в них числа.
+        Дана кнопка. По нажатию на эту кнопку получите форму по ее id, затем
+        циклом переберите все инпуты в ней и найдите сумму чисел из этих инпутов.</h3>
+    <form class="form1">
+        <input type="text" class="input1" value="1">
+        <input type="text" class="input1" value="2">
+        <input type="text" class="input1" value="3">
+        <input type="text" class="input1" value="4">
+        <input type="text" class="input1" value="5">
+    </form>
+
+    <button class="btn1">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn1 = document.querySelector('.btn1');
+
+        getBtn1.addEventListener('click', () => {
+            const getForm1 = document.querySelector('.form1');
+
+            let sum = 0;
+            for (let i = 0; i < getForm1.elements.length; i += 1) {
+                sum += Number(getForm1.elements[i].value);
+            }
+            console.log(sum);
+        });
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. На странице расположено несколько форм.
+        В них есть инпуты, в инпутах числа. Дана кнопка. По нажатию на
+        эту кнопку циклом переберите все формы на странице, затем циклом переберите
+        все инпуты в каждой форме и найдите сумму чисел из всех этих инпутов.</h3>
+    <form class="form2">
+        <input type="text" class="input2" value="1">
+        <input type="text" class="input2" value="2">
+        <input type="text" class="input2" value="3">
+        <input type="text" class="input2" value="4">
+        <input type="text" class="input2" value="5">
+    </form>
+
+    <button class="btn2">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn2 = document.querySelector('.btn2');
+
+        getBtn2.addEventListener('click', () => {
+            const getForm2 = document.forms;
+            let sum = 0;
+
+            for (let j = 0; j < getForm2.length; j += 1) {
+                for (let i = 0; i < getForm2[j].elements.length; i += 1) {
+                    sum += Number(getForm2[j].elements[i].value);
+                    console.log(sum);
+                }
+            }
+        });
+
+
+    </script>
+    <hr>
+
+    <h2>Работа с селектами</h2>
+    <h3>Задача 3. Дан селект. Дан инпут. По изменению селекта выведите текст выбранного пункта в инпут.</h3>
+    <select name="sel3" id="" class="sel3">
+        <option value="1" class="opt3">select 1</option>
+        <option value="2" class="opt3">select 2</option>
+        <option value="3" class="opt3">select 3</option>
+        <option value="4" class="opt3">select 4</option>
+    </select>
+    <input type="text" class="inp3">
+    <script>
+        const getSelect3 = document.querySelector('.sel3');
+        const getInput3 = document.querySelector('.inp3');
+
+        getSelect3.addEventListener('change', func3);
+
+        function func3() {
+            for (let i = 0; i < getSelect3.options.length; i += 1) {
+                if (getSelect3.options[i].selected) {
+                    getInput3.value = getSelect3.options[i].text;
+                }
+            }
+        };
+
+    </script>
+    <hr>
+
+    <h3>Задача 4. Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно
+        было ввести число, нажать на кнопку и в селекте становился выбранным пункт с этим номером.</h3>
+    <select name="sel4" id="" class="sel4">
+        <option value="1" class="opt4">select 1</option>
+        <option value="2" class="opt4">select 2</option>
+        <option value="3" class="opt4">select 3</option>
+        <option value="4" class="opt4">select 4</option>
+    </select>
+    <input type="text" class="inp4">
+    <button class="btn4">
+        нажми на меня
+    </button>
+    <script>
+        const getSelect4 = document.querySelector('.sel4');
+        const getInput4 = document.querySelector('.inp4');
+        const getBtn4 = document.querySelector('.btn4');
+
+        getBtn4.addEventListener('click', func4);
+
+        function func4() {
+            const num = Number(getInput4.value);
+            if (num <= getSelect4.options.length - 1) {
+                getSelect4.options[num].selected = true;
+            }
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 5. (мой вариант) Дан селект со списком стран. Сделайте так, чтобы при
+        выборе страны рядом появлялся еще и селект со списком городов из этой страны.</h3>
+    <select name="sel5" id="" class="sel5">
+        <option value="1" class="opt5">Россия</option>
+        <option value="2" class="opt5">Германия</option>
+        <option value="3" class="opt5">Франция</option>
+    </select>
+    <p class="div5"></p>
+    <script>
+        const sity = {
+            0: ['москва', 'питер', 'воронеж'],
+            1: ['берлин', 'гамбург', 'ДРЕЗДЕН'],
+            2: ['париж', 'прованс', 'бургундия']
+        };
+
+        const getSelect5 = document.querySelector('.sel5');
+        const getDivt5 = document.querySelector('.div5');
+
+        getSelect5.addEventListener('change', func5);
+
+        function func5() {
+            getDivt5.innerHTML = '';
+            const getSity = sity[getSelect5.selectedIndex];
+
+            const makeSelect = document.createElement('select');
+
+            for (let i = 0; i < getSity.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = getSity[i];
+                makeSelect.appendChild(makeOption);
+            }
+
+            getDivt5.appendChild(makeSelect);
+        };
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 5-2. (вариант из видео) Дан селект со списком стран. Сделайте так, чтобы при
+        выборе страны рядом появлялся еще и селект со списком городов из этой страны.</h3>
+    <select class="sel61"></select>
+    <select class="sel62"></select>
+    <html>
+    <script>
+        const sity2 = {
+            'россия': ['москва', 'питер', 'воронеж'],
+            'германия': ['берлин', 'гамбург', 'ДРЕЗДЕН'],
+            'франция': ['париж', 'прованс', 'бургундия']
+        };
+
+        const getSelectForCountry = document.querySelector('.sel61');
+        const getSelectForSitys = document.querySelector('.sel62');
+
+        const countries = Object.keys(sity2);
+        const defaultSities = sity2[countries[0]];
+
+        makeSelectFromArray(getSelectForCountry, countries);
+        makeSelectFromArray(getSelectForSitys, defaultSities);
+
+        getSelectForCountry.addEventListener('change', func6);
+
+        function func6() {
+            getSelectForSitys.innerHTML = '';
+            const sities = sity2[this.value];
+            makeSelectFromArray(getSelectForSitys, sities);
+        };
+
+        function makeSelectFromArray(elem, arr) {
+            for (let i = 0; i < arr.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = arr[i];
+                elem.appendChild(makeOption);
+            }
+        };
+    </script>
+    <hr>
+
+    <h3>Задача 6. (мой вариант) Даны 3 селекта: с днем, с месяцем и годом.
+        Сделайте так, чтобы некорректную дату нельзя было выбрать.</h3>
+    <select class="sel71"></select>
+    <select class="sel72"></select>
+    <select class="sel73"></select>
+    <p class="task6"></p>
+
+    <script>
+        const getSelectForYear = document.querySelector('.sel71');
+        const getSelectForMonth = document.querySelector('.sel72');
+        const getSelectForDay = document.querySelector('.sel73');
+        const getP6 = document.querySelector('.task6');
+
+        const date = new Date();
+
+        const YearsArray = makeCustomArrayFromNumbers(date.getFullYear() - 10, date.getFullYear() + 10);
+        const MonthsArray = makeCustomArrayFromNumbers(1, 12);
+        const DaysArray = makeCustomArrayFromNumbers(1, 31);
+
+        const createYear = makeSelectFromArray(getSelectForYear, YearsArray, date.getFullYear());
+        const createMonth = makeSelectFromArray(getSelectForMonth, MonthsArray, date.getMonth());
+        const createDay = makeSelectFromArray(getSelectForDay, DaysArray, date.getDate());
+
+        getSelectForYear.addEventListener('change', eventHandle);
+        getSelectForMonth.addEventListener('change', eventHandle);
+        getSelectForDay.addEventListener('change', eventHandle);
+
+        function eventHandle() {
+            const isCon = checkDate(
+                Number(getSelectForYear.value),
+                Number(getSelectForMonth.value),
+                Number(getSelectForDay.value)
+            );
+            
+            if(!isCon){
+                getP6.innerHTML = 'Неcуществующая дата <br> Попробуйте заново';
+                this.value = '1';
+            } else {
+               getP6.innerHTML = ''; 
+            }
+        };
+
+        function makeCustomArrayFromNumbers(argFrom, argTo) {
+            let result = [];
+            for (let i = argFrom; i <= argTo; i += 1) {
+                result.push(i);
+            }
+            return result;
+        };
+
+        function makeSelectFromArray(argElem, argArr, argVar) {
+            for (let i = 0; i < argArr.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = argArr[i];
+                if (argArr[i] === argVar) {
+                    makeOption.selected = true;
+                }
+                argElem.appendChild(makeOption);
+            }
+        };
+
+        function checkDate(argYear, argMonth, argDay) {
+            const date = new Date(argYear, argMonth - 1, argDay);
+            return date.getFullYear() === argYear && date.getMonth() === argMonth - 1 && date.getDate() === argDay;
+        };
+    </script>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на работу с метриками для window в JavaScript</h2>
+    <br>
+    <h3>Задача 1. Дана кнопка. По нажатию на эту кнопку выведите высоту окна браузера.</h3>
+    <button class="btn1">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn1 = document.querySelector('.btn1');
+
+        getBtn1.addEventListener('click', func1);
+
+        function func1() {
+            alert(document.documentElement.clientHeight);
+        }
+    </script>
+    <hr>
+
+    <h3>Задача 2. Дана кнопка. По нажатию на эту кнопку прокрутите окно браузера до самого низа</h3>
+    <button class="btn2">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn2 = document.querySelector('.btn2');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+            let scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            window.scrollBy(0, scroll);
+        }
+    </script>
+    <hr>
+
+
+    <h3>Задача 3. Дана кнопка. По нажатию на эту кнопку узнайте, есть ли
+        у окна браузера вертикальная прокрутка. Показать решение.</h3>
+    <button class="btn3">
+        нажми на меня
+    </button>
+    <script>
+        const getBtn3 = document.querySelector('.btn3');
+
+        getBtn3.addEventListener('click', func3);
+
+        function func3() {
+            let scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (document.documentElement.scrollHeight === document.documentElement.clientHeight) {
+                alert('прокрутки нет');
+            } else {
+                alert('прокрутка есть');
+            }
+        }
+    </script>
+    <hr>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
