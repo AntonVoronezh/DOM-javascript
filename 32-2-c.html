@@ -175,7 +175,48 @@
     </script>
     <hr>
 
-  
+    <h3>Задача 6. Дан абзац с текстом. Сделайте так, чтобы по клику на
+        этот абзац рядом с ним появлялся инпут, с помощью которого можно
+        будет поредактировать текст нашего абзаца. По потери фокуса
+        инпут должен исчезнуть, а содержимое абзаца поменяться.</h3>
+    <p class="p6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, magni?</p>
+    <input type="text" class="inp6 dn">
+    <script>
+        const getP6 = document.querySelector('.p6');
+        const getInp6 = document.querySelector('.inp6');
+
+        getP6.addEventListener('click', func6);
+
+        function func6() {
+
+            const getText = getP6.innerHTML;
+
+            getInp6.value = getText;
+
+            getInp6.classList.remove('dn');
+
+        };
+
+        getInp6.addEventListener('blur', func62);
+
+        function func62() {
+
+            const getText = getInp6.value;
+
+            getP6.innerHTML = getText;
+
+            getInp6.classList.add('dn');
+
+        };
+
+
+    </script>
+    <hr>
+
+
+
+
+
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
 
