@@ -213,6 +213,44 @@
     </script>
     <hr>
 
+    <h3>Задача 7. Модифицируйте предыдущую задачу так, чтобы инпут появлялся
+        вместо абзаца, а не рядом с ним.</h3>
+    <p class="p7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, magni?</p>
+    <input type="text" class="inp7 dn">
+    <script>
+        const getP7 = document.querySelector('.p7');
+        const getInp7 = document.querySelector('.inp7');
+
+        getP7.addEventListener('click', func7);
+
+        function func7() {
+
+            const getText = getP7.innerHTML;
+
+            getInp7.value = getText;
+
+            getInp7.classList.remove('dn');
+            getP7.classList.add('dn');
+
+        };
+
+        getInp7.addEventListener('blur', func72);
+
+        function func72() {
+
+            const getText = getInp7.value;
+
+            getP7.innerHTML = getText;
+
+            getInp7.classList.add('dn');
+            getP7.classList.remove('dn');
+        };
+
+
+    </script>
+    <hr>
+
+
 
 
 
