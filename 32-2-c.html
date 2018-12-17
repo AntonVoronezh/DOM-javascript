@@ -126,6 +126,26 @@
     <hr>
 
 
+    <h3>Задача 4. Дан абзац и инпут. Сделайте так, чтобы по заходу на страницу
+        текст абзаца отображался в инпуте.</h3>
+    <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, magni?</p>
+    <input type="text" class="inp4">
+
+    <script>
+        const geP4 = document.querySelector('.p4');
+        const geInp4 = document.querySelector('.inp4');
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const getText = geP4.innerHTML;
+
+            geInp4.value = getText;
+
+        });
+
+    </script>
+    <hr>
+
 
   
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
