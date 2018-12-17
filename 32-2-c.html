@@ -89,6 +89,43 @@
     <hr>
 
 
+    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы по повторное нажатие
+        на li не приводило к добавлению второго '!'.</h3>
+    <ul class="ul3"></ul>
+
+    <script>
+        const arr3 = [1, 2, 3, 4, 5];
+        const getUl3 = document.querySelector('.ul3');
+
+        arr3.forEach(elem => {
+
+            const makeLi = document.createElement('li');
+
+            makeLi.innerHTML = elem;
+
+            getUl3.appendChild(makeLi);
+
+        });
+
+        getUl3.addEventListener('click', func3);
+
+        function func3(event) {
+
+            if (!event.target.classList.contains('check')) {
+
+                event.target.innerHTML = event.target.innerHTML + '!';
+
+                event.target.classList.add('check');
+
+            }
+
+        };
+
+
+    </script>
+    <hr>
+
+
 
   
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
