@@ -58,6 +58,35 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Модифицируйте предыдущую задачу так, чтобы по клику
+        на li ей в конец добавлялся '!'.</h3>
+    <ul class="ul2"></ul>
+
+    <script>
+        const arr2 = [1, 2, 3, 4, 5];
+        const getUl2 = document.querySelector('.ul2');
+
+        arr2.forEach(elem => {
+
+            const makeLi = document.createElement('li');
+
+            makeLi.innerHTML = elem;
+
+            getUl2.appendChild(makeLi);
+
+        });
+
+        getUl2.addEventListener('click', func2);
+
+        function func2(event) {
+
+            event.target.innerHTML = event.target.innerHTML + '!';
+
+        };
+
+
+    </script>
+    <hr>
 
 
 
