@@ -281,6 +281,63 @@
     </script>
     <hr>
 
+    <h3>Задача 9. Дан массив [1, 2, 3, 4, 5, 6, 7, 8, 9]. Выведите его элементы в
+        виде таблицы table размером 3 на 3</h3>
+    <table class="tbl9"></table>
+    <script>
+        const arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const getTbl9 = document.querySelector('.tbl9');
+
+        const arr92 = [];
+        let count = 0;
+        let ar = [];
+
+        for (let i = 0; i < arr9.length; i += 1) {
+
+            if (count < 4) {
+
+                ar.push(arr9[i]);
+
+                count += 1;
+
+                if (count === 3) {
+
+                    count = 0;
+
+                    arr92.push(ar);
+
+                    ar = [];
+
+                }
+
+            }
+
+        }
+
+
+        arr92.forEach(elem => {
+
+            const createTr = document.createElement('tr');
+
+            getTbl9.appendChild(createTr);
+
+            elem.forEach(item => {
+
+                const createTd = document.createElement('td');
+
+                createTd.innerHTML = item;
+
+                createTr.appendChild(createTd);
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
+
+
 
 
 
