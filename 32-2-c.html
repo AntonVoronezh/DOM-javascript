@@ -250,6 +250,37 @@
     </script>
     <hr>
 
+    <h2>Массивы</h2>
+    <h3>Задача 8. Дан массив [[1, 2, 3], [4, 5, 6], [7, 8, 9]].
+        Выведите его элементы в виде таблицы table размером 3 на 3</h3>
+
+    <table class="tbl8"></table>
+    <script>
+        const arr8 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        const getTbl8 = document.querySelector('.tbl8');
+
+        arr8.forEach(elem => {
+
+            const createTr = document.createElement('tr');
+
+            getTbl8.appendChild(createTr);
+
+            elem.forEach(item => {
+
+                const createTd = document.createElement('td');
+
+                createTd.innerHTML = item;
+
+                createTr.appendChild(createTd);
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
+
 
 
 
