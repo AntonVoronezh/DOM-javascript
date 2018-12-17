@@ -505,6 +505,41 @@
     </script>
     <hr>
 
+    <h3>Задача 14. Дан абзац и кнопка. Изначально в абзаце написано какое-то число, например 10.
+        Сделайте так, чтобы по нажатию на кнопку в абзаце начал тикать обратный отсчет.
+        Как только он дойдет до нуля - он должен закончится и под ним должна вывестись
+        фраза 'отсчет закончен'.</h3>
+    <p class="p14">10</p>
+    <button class="btn14">jjj</button>
+    <script>
+        const getP14 = document.querySelector('.p14');
+        const getBtn14 = document.querySelector('.btn14');
+
+        getBtn14.addEventListener('click', () => {
+
+            window.setTimeout(func14, 1000);
+
+        });
+
+        function func14() {
+
+            const num = +getP14.innerHTML;
+
+            if (num !== 0) {
+
+                getP14.innerHTML = '';
+
+                getP14.innerHTML = num - 1;
+
+                window.setTimeout(func14, 1000);
+
+            }
+
+        };
+
+
+    </script>
+
 
 
 
