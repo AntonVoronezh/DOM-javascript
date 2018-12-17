@@ -146,6 +146,34 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Модифицируйте предыдущую задачу так, чтобы можно
+        было поредактировать содержимое инпута - и содержимое абзаца
+        также поменялось.</h3>
+    <p class="p5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, magni?</p>
+    <input type="text" class="inp5">
+
+    <script>
+        const geP5 = document.querySelector('.p5');
+        const geInp5 = document.querySelector('.inp5');
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const getText = geP5.innerHTML;
+
+            geInp5.value = getText;
+
+        });
+
+        geInp5.addEventListener('keypress', () => {
+
+            const getText = geInp5.value;
+
+            geP5.innerHTML = getText;
+
+        });
+
+    </script>
+    <hr>
 
   
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
