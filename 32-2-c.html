@@ -338,6 +338,69 @@
     <hr>
 
 
+    <h2>Таблицы</h2>
+
+    <h3>Задача 10. Выведите на экран таблицу table размером 5 на 5 так,
+        чтобы в ее ячейках последовательно стояли числа от 1 до 25</h3>
+    <table class="tbl10"></table>
+
+    <script>
+        const getTbl10 = document.querySelector('.tbl10');
+
+
+        const arr10 = [];
+        let count10 = 0;
+        let ar10 = [];
+
+        for (let i = 1; i < 26; i += 1) {
+
+            if (count < 6) {
+
+                ar10.push(i);
+
+                count10 += 1;
+
+                if (count10 === 5) {
+
+                    count10 = 0;
+
+                    arr10.push(ar10);
+
+                    ar10 = [];
+
+                }
+
+            }
+
+        }
+
+        // console.log(arr10);
+
+        arr10.forEach(elem => {
+
+            const createTr = document.createElement('tr');
+
+            getTbl10.appendChild(createTr);
+
+            elem.forEach(item => {
+
+                const createTd = document.createElement('td');
+
+                createTd.innerHTML = item;
+
+                createTr.appendChild(createTd);
+
+            });
+
+        });
+
+
+
+
+    </script>
+    <hr>
+
+
 
 
 
