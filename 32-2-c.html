@@ -430,6 +430,39 @@
     <hr>
 
 
+    <h2>Таймеры</h2>
+    <h3>Задача 12. Дан абзац и кнопка. Сделайте так, чтобы по нажатию на кнопку
+        в абзаце начал тикать таймер от 1 до бесконечности. Чтобы предотвратить
+        повторное нажатие на кнопку она должна переходить в состояние disabled</h3>
+    <p class="p12">0</p>
+    <button class="btn12">jjj</button>
+
+    <script>
+        const getP12 = document.querySelector('.p12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', () => {
+
+            window.setInterval(func12, 1000);
+
+        });
+
+
+
+        function func12() {
+
+            const time = +getP12.innerHTML;
+
+            getP12.innerHTML = '';
+
+            getP12.innerHTML = time + 1;
+
+        };
+
+
+
+    </script>
+    <hr>
 
 
 
