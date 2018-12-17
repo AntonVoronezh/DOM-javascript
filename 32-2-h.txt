@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+
+        .dn {
+            display: none;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/2/h.html</h2>
+
+    <h3>Задача 1. Дан массив с числами. Выведите каждый элемент этого массива в своем инпуте.
+        Сделайте так, чтобы под всеми инпутами вывелась сумма элементов нашего массива.</h3>
+    <div class="div1"></div>
+    <p class="p1"></p>
+
+    <script>
+        const arr1 = [1, 2, 3, 4, 5];
+        const getDiv1 = document.querySelector('.div1');
+        const getP1 = document.querySelector('.p1');
+
+        let sum = 0;
+
+        arr1.forEach(elem => {
+
+            const makeInp = document.createElement('input');
+
+            makeInp.value = elem;
+
+            getDiv1.appendChild(makeInp);
+
+            sum += elem;
+
+        });
+
+        getP1.innerHTML = sum;
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Даны N инпутов. В них вводятся числа. Дана также кнопка.
+        Сделайте так, чтобы по нажатию на кнопку на экран вывелась сумма
+        введенных чисел</h3>
+    <div class="div2">
+        <input type="text" class="inp2">
+        <input type="text" class="inp2">
+        <input type="text" class="inp2">
+        <input type="text" class="inp2">
+    </div>
+    <button class="btn2"> clsss</button>
+    <p class="p2"></p>
+
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getBtn2 = document.querySelector('.btn2');
+        const getAllInp2 = getDiv2.querySelectorAll('input');
+        const getP2 = document.querySelector('.p2');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+
+            let sum = 0;
+
+            getAllInp2.forEach(elem => {
+
+                sum += +elem.value;
+
+            });
+
+            getP2.innerHTML = '';
+
+            getP2.innerHTML = sum;
+
+        };
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Дан массив. Выведите элементы этого массива в виде списка ul.</h3>
+    <ul class="ul3"></ul>
+
+    <script>
+        const arr3 = [1, 2, 3, 4];
+
+        const getUl3 = document.querySelector('.ul3');
+
+        arr3.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl3.appendChild(createLi);
+
+        });
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 4. Модифицируйте предыдущую задачу так, чтобы по клику на
+        любую li ее содержимое увеличивалось на 1.</h3>
+    <ul class="ul4"></ul>
+
+    <script>
+        const arr4 = [1, 2, 3, 4];
+
+        const getUl4 = document.querySelector('.ul4');
+
+        arr4.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl4.appendChild(createLi);
+
+        });
+
+        getUl4.addEventListener('click', func4);
+
+        function func4(event) {
+
+            const num = +event.target.innerHTML;
+
+            event.target.innerHTML = num + 1;
+
+        };
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 5. Модифицируйте предыдущую задачу так, чтобы по клику на любую li
+        вместо ее содержимого появлялся инпут, с помощью которого можно
+        будет поредактировать эту li.</h3>
+    <ul class="ul5"></ul>
+
+    <script>
+        const arr5 = [1, 2, 3, 4];
+
+        const getUl5 = document.querySelector('.ul5');
+
+        arr5.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl5.appendChild(createLi);
+
+        });
+
+        getUl5.addEventListener('click', func5);
+
+        function func5(event) {
+
+            const createInput = document.createElement('input');
+
+            createInput.value = event.target.innerHTML;
+
+            event.target.innerHTML = '';
+
+            event.target.appendChild(createInput);
+
+        };
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 6. Дан массив. Выведите элементы этого массива в виде таблицы table.
+        Сделайте так, чтобы если в последнем ряду таблицы не хватит элементов
+        массива, то пустые ячейки пусть заполнятся дефисами.</h3>
+    <table class="tbl6"></table>
+
+    <script>
+        const getTbl6 = document.querySelector('.tbl6');
+
+        const arr6 = [1, 2, 3, 4, 5, 6, 7];
+
+        const arr62 = [];
+        let count6 = 0;
+        let ar6 = [];
+
+        const mastNum = Math.ceil(arr6.length / 3) * 3;
+
+        for (let i = 0; i < mastNum; i += 1) {
+
+            if (!arr6[i]) {
+                arr6.push('-');
+            }
+
+        }
+
+        for (let i = 0; i < arr6.length; i += 1) {
+
+            if (count6 < 4) {
+
+                ar6.push(arr6[i]);
+
+                count6 += 1;
+
+                if (count6 === 3) {
+
+                    count6 = 0;
+
+                    arr62.push(ar6);
+
+                    ar6 = [];
+
+                }
+
+            }
+
+        }
+
+        arr62.forEach(elem => {
+
+            const createTr = document.createElement('tr');
+
+            getTbl6.appendChild(createTr);
+
+            elem.forEach(item => {
+
+                const createTd = document.createElement('td');
+
+                createTd.innerHTML = item;
+
+                createTr.appendChild(createTd);
+
+            });
+
+        });
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 7. Дан следующий массив с работниками:
+
+        var products = [
+        {name: 'Коля', age: 30, salary: 400},
+        {name: 'Вася', age: 31, salary: 500},
+        {name: 'Петя', age: 32, salary: 600},
+        ];
+        Выведите на экран столбец имен работников. своем теге li тега ul.
+
+    </h3>
+    <ul class="ul7">
+
+    </ul>
+    <script>
+        const getUl6 = document.querySelector('.ul7');
+
+        var products = [
+            { name: 'Коля', age: 30, salary: 400 },
+            { name: 'Вася', age: 31, salary: 500 },
+            { name: 'Петя', age: 32, salary: 600 },
+        ];
+
+        products.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl6.appendChild(createLi);
+
+        });
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 8. Модифицируйте предыдущую задачу так, чтобы под списком с работниками вывелась сумма их зарплат.
+
+    </h3>
+    <ul class="ul8"> </ul>
+    <p class="p8"></p>
+    <script>
+        const getUl8 = document.querySelector('.ul8');
+        const getP8 = document.querySelector('.p8');
+
+
+        var products8 = [
+            { name: 'Коля', age: 30, salary: 400 },
+            { name: 'Вася', age: 31, salary: 500 },
+            { name: 'Петя', age: 32, salary: 600 },
+        ];
+
+        let sum8 = 0;
+
+        products8.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl8.appendChild(createLi);
+
+            sum8 += elem.salary;
+
+        });
+
+        getP8.innerHTML = sum8;
+
+    </script>
+    <hr>
+
+    <h3>Задача 9. Модифицируйте предыдущую задачу так, чтобы суммировались
+        зарплаты только тех работников, возраст которых больше 30.</h3>
+    <ul class="ul9"> </ul>
+    <p class="p9"></p>
+    <script>
+        const getUl9 = document.querySelector('.ul9');
+        const getP9 = document.querySelector('.p9');
+
+
+        var products9 = [
+            { name: 'Коля', age: 30, salary: 400 },
+            { name: 'Вася', age: 31, salary: 500 },
+            { name: 'Петя', age: 32, salary: 600 },
+        ];
+
+        let sum9 = 0;
+
+        products9.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl9.appendChild(createLi);
+
+            if (elem.age > 30) {
+
+                sum9 += elem.salary;
+
+            }
+
+
+        });
+
+        getP9.innerHTML = sum9;
+
+    </script>
+    <hr>
+
+    <h3>Задача 10. Даны инпуты. В атрибуте data-length задается разрешенная
+        длина строки, которую можно ввести в инпут. Сделайте следующее:
+        если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
+        а если не правильной - в красный.</h3>
+
+    <div class="div10">
+        <input type="text" data-length="10">
+        <input type="text" data-length="10">
+        <input type="text" data-length="10">
+    </div>
+
+    <script>
+        const getDiv10 = document.querySelector('.div10');
+        const getAllInp10 = getDiv10.querySelectorAll('input');
+
+        getDiv10.addEventListener('keypress', func10);
+
+        function func10(event) {
+
+            if (event.target.value.length <= event.target.dataset.length) {
+
+                event.target.style.backgroundColor = 'green';
+
+            } else {
+
+                event.target.style.backgroundColor = 'red';
+
+            }
+
+        };
+
+    </script>
+    <hr>
+
+    <h2>Таймеры</h2>
+    <h3>Задача 11. Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер,
+        который будет по очереди записывать в абзац числа от 1 до 5 по кругу.</h3>
+    <p class="p12">1</p>
+    <button class="btn12">gggg</button>
+
+    <script>
+        const getP12 = document.querySelector('.p12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', () => {
+
+            window.setInterval(func12, 1000);
+
+        });
+
+        function func12() {
+
+            const getNum = +getP12.innerHTML;
+            let newNum;
+
+            if (getNum < 5) {
+
+                newNum = getNum + 1;
+
+            } else {
+
+                newNum = 1;
+
+            }
+
+            getP12.innerHTML = '';
+
+            getP12.innerHTML = newNum;
+
+        };
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 12. Дан абзац и кнопка. Дан также массив с какими-то текстами.
+        По нажатию на кнопку должен запуститься таймер, который будет по очереди
+        записывать в абзац элементы массива. Как только элементы в массиве закончатся,
+        все должно продолжится с начала.</h3>
+
+    <p class="p11"></p>
+    <button class="btn11">gggg</button>
+
+    <script>
+        const getP11 = document.querySelector('.p11');
+        const getBtn11 = document.querySelector('.btn11');
+        const arr11 = ['qqqq', 'wwww', 'eeeee', 'rrrrr'];
+
+        getBtn11.addEventListener('click', () => {
+
+            window.setInterval(func11, 1000);
+
+        });
+
+        let count = 0;
+
+        function func11() {
+
+
+            let out;
+
+            if (count < arr11.length - 1) {
+
+                out = arr11[count];
+
+                count += 1;
+
+
+            } else {
+
+                count = 0;
+
+            }
+
+            getP11.innerHTML = '';
+
+            getP11.innerHTML = out;
+
+        };
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 13. Дан тег img. Даны 3 файла с изображениями. Сделайте так,
+        чтобы каждую секунду изображения сменяли друг друга по очереди (по кругу).</h3>
+    <img src="" alt="" class="img13">
+    <script>
+
+        const getImg13 = document.querySelector('.img13');
+
+        const arr13 = ['https://c.dns-shop.ru/thumb/st4/fit/45/45/16496f71a842f2940c385e0758a8fc06/6ebe60be0a11f848fb3cc11135b457f7e25d203cfc61c53044e96acc4b6a6afe.jpg',
+            'https://c.dns-shop.ru/thumb/st4/fit/45/45/d5aea7bdd15253677e2a01bad24a523e/b1c29bf72d52d81a22c09a5beb18efe7c596c850d2c800eca21e91ae9ffa1761.jpg',
+            'https://c.dns-shop.ru/thumb/st1/fit/320/250/c9224033e0ea34d306627fa11280306c/3b3b480ec126cfc657a370d091bed7cb05c57511faf23bd5419647c3738922ad.jpg'];
+
+        window.setInterval(func13, 1000);
+
+        let count13 = 0;
+
+        function func13() {
+
+            let out;
+
+            if (count13 < arr13.length ) {
+
+                out = arr13[count13];
+
+                count13 += 1;
+
+
+            } else {
+
+                count13 = 0;
+
+            }
+
+            getImg13.src = out;
+
+
+        };
+
+
+
+    </script>
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

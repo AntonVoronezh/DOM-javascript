@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+        .dn {
+            display: none;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/2/c.html</h2>
+
+    <h3>Задача 1. Дан массив. Выведите его элементы в виде списка ul так,
+        чтобы каждый элемент попал в свою li.</h3>
+    <ul class="ul1"></ul>
+
+    <script>
+        const arr1 = [1, 2, 3, 4, 5];
+        const getUl1 = document.querySelector('.ul1');
+
+        arr1.forEach(elem => {
+
+            const makeLi = document.createElement('li');
+
+            makeLi.innerHTML = elem;
+
+            getUl1.appendChild(makeLi);
+
+        });
+
+
+    </script>
+    <hr>
+
+
+
+
+  
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
