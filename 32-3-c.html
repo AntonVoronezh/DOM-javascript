@@ -97,6 +97,33 @@
     <hr>
 
 
+    <h3>Задача 4. Дан массив. Выведите его элементы в виде списка ul.</h3>
+    <ul class="ul4"></ul>
+
+    <script>
+        const getUl4 = document.querySelector('.ul4');
+
+        const arr4 = [1, 2, 3, 4];
+
+
+        arr4.forEach(elem => {
+
+            getUl4.appendChild(makeLi(elem));
+
+        });
+
+        function makeLi(argForLi) {
+
+            const makeLi = document.createElement('li');
+
+            makeLi.innerHTML = argForLi;
+
+            return makeLi;
+
+        };
+
+    </script>
+    <hr>
 
 
 
