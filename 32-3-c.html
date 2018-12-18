@@ -126,6 +126,26 @@
     <hr>
 
 
+    <h3>Задача 5. Сделайте функцию appendElem, которая первым параметром будет
+        принимать текст, а вторым - ссылку DOM объект, в котором лежит тег ul.
+        Сделайте так, чтобы данная функция добавляла текст в конец этого элемента</h3>
+    <ul class="ul5"></ul>
+    <script>
+
+        const getUl5 = document.querySelector('.ul5');
+
+        appendElem('1!', getUl5);
+        appendElem('2!', getUl5);
+
+        function appendElem(argForAppend, argElem) {
+
+            argElem.appendChild(makeLi(argForAppend));
+
+        };
+
+    </script>
+    <hr>
+
 
 
 
