@@ -58,6 +58,25 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Сделайте функцию addText, которая первым параметром будет
+        принимать текст, а вторым - DOM элемент. Сделайте так, чтобы данная
+        функция добавляла текст в конец этого элемента.</h3>
+
+    <p id="elem">текст</p>
+
+    <script>
+        var elem = document.getElementById('elem');
+
+        addText('!', elem);
+
+        function addText(argStr, argElem) {
+
+            argElem.innerHTML = argElem.innerHTML + argStr;
+
+        };
+
+    </script>
+    <hr>
 
 
 
