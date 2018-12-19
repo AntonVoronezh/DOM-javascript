@@ -179,7 +179,81 @@
     <hr>
 
 
+    <h3>Задача 4. Дан инпут. В него через запятую вводятся числа.
+        По потери фокуса проверьте, что каждое введенное число
+        является квадратом предыдущего. Если это так, сделайте
+        границу инпута зеленого цвета, если не так - красного.</h3>
+    <input type="text" class="inp4">
 
+    <script>
+        const getInp4 = document.querySelector('.inp4');
+
+        makeBorderDependArr(getInp4);
+
+
+        function makeBorderDependArr(argElem) {
+
+            argElem.addEventListener('blur', function () {
+
+                const arrFromValue = makeArrFromValue4(argElem);
+
+                 let flag;
+
+                arrFromValue.forEach((elem, n) => {
+
+                    if (n > 0) {
+
+                        if (isSquare(+arrFromValue[n - 1], +arrFromValue[n])) {
+
+                            flag = true;
+                            
+                        } else {
+
+                            flag = false;
+
+                        }
+
+                        makeColorBorder(flag, argElem);
+
+                    }
+
+                });
+
+            });
+
+        };
+
+        function makeColorBorder(argFlag, argElem) {
+
+            if (argFlag) {
+
+                argElem.style.borderColor = 'green';
+
+            }
+
+            if (!argFlag) {
+
+                argElem.style.borderColor = 'red';
+
+            }
+        };
+
+
+        function makeArrFromValue4(argElem) {
+
+            return argElem.value.split(',');
+
+        };
+
+        function isSquare(argNum1, argNum2) {
+
+            return argNum1 * argNum1 === argNum2;
+
+        };
+
+
+
+    </script>
 
 
 
