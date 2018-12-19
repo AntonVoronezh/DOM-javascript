@@ -228,6 +228,56 @@
     </script>
     <hr>
 
+    <h3>Задача 3 (после видео). Модифицируйте предыдущую задачу так, чтобы по клику
+        на любую li в ней появлялся инпут, с помощью которого ее можно
+        будет поредактировать</h3>
+    <ul class="ul3v"></ul>
+    <script>
+        const getUl3v = document.querySelector('.ul3v');
+
+        const arr3v = [1, 2, 3, 4];
+
+        createLiFromArr(getUl3v, arr3v);
+
+        const getAllLiv = getUl3v.querySelectorAll('li');
+
+        getAllLiv.forEach(elem => {
+
+            editElem(elem);
+
+        });
+
+        function editElem(argElem) {
+
+            argElem.addEventListener('click', function func1v() {
+
+                const createInput = document.createElement('input');
+
+                createInput.value = this.innerHTML;
+
+                this.innerHTML = '';
+
+                argElem.appendChild(createInput);
+
+                argElem.removeEventListener('click', func1v);
+
+                const self = this;
+
+                createInput.addEventListener('blur', function () {
+
+                    self.innerHTML = this.value;
+
+                    self.addEventListener('click', func1v);
+
+                });
+
+            });
+
+        };
+
+    </script>
+    <hr>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
