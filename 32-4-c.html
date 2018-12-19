@@ -202,6 +202,32 @@
     </script>
     <hr>
 
+    <h3>Задача 2 (после видео). Дан массив. Выведите его элементы в виде списка ul</h3>
+    <ul class="ul2v"></ul>
+    <script>
+        const getUl2v = document.querySelector('.ul2v');
+
+        const arr2v = [1, 2, 3, 4];
+
+        createLiFromArr(getUl2v, arr2v);
+
+        function createLiFromArr(argElem, argArr) {
+
+            argArr.forEach(elem => {
+
+                const createLi = document.createElement('li');
+
+                createLi.innerHTML = elem;
+
+                argElem.appendChild(createLi);
+
+            });
+
+        };
+
+    </script>
+    <hr>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
