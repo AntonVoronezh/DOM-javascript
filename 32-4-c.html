@@ -165,6 +165,43 @@
 
     </script>
 
+    <h3>Задача 1 (после видео). Дан абзац. Сделайте так, чтобы по клику на него его текст
+        становился в инпуте, с помощью которого можно будет поредактировать
+        текст этого абзаца. По потери фокуса инпут должен исчезать, а в
+        абзаце оставаться новый текст</h3>
+    <p class="p1v">ggggg</p>
+    <script>
+        const getP1v = document.querySelector('.p1v');
+
+        getP1v.addEventListener('click', function func1v() {
+
+            const createInput = document.createElement('input');
+
+            createInput.value = this.innerHTML;
+
+            this.innerHTML = '';
+
+            getP1v.appendChild(createInput);
+
+            getP1v.removeEventListener('click', func1v);
+
+            const self = this;
+
+            createInput.addEventListener('blur', function () {
+
+                self.innerHTML = this.value;
+
+                self.addEventListener('click', func1v);
+
+            });
+
+        });
+
+
+
+    </script>
+    <hr>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
