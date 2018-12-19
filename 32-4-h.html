@@ -141,6 +141,43 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы под списком
+        в инпут можно было много раз вводить числа через запятую и терять
+        фокус и все новые числа будут записываться в конец ul, а также
+        динамически будет меняться выводимая сумма</h3>
+
+    <ul class="ul3"></ul>
+    <input type="text" class="inp3">
+    <p class="p3"></p>
+
+    <script>
+        const getUl3 = document.querySelector('.ul3');
+        const getInp3 = document.querySelector('.inp3');
+        const getP3 = document.querySelector('.p3');
+
+        makeLiFromInput3(getInp3, getUl3);
+
+
+        function makeLiFromInput3(argInp, argUl) {
+
+            argInp.addEventListener('blur', function () {
+
+                const getArr = makeArrFromValue(this);
+
+                const sumAllLi = getSumFromArr(getArr);
+
+                createLiFromArr(argUl, getArr);
+
+                putTextInElem(getP3, sumAllLi);
+
+            });
+
+        };
+
+
+    </script>
+    <hr>
+
 
 
 
