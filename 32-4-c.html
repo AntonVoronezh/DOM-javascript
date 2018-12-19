@@ -72,6 +72,26 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дан массив. Выведите его элементы в виде списка ul</h3>
+    <ul class="ul2"></ul>
+    <script>
+        const getUl2 = document.querySelector('.ul2');
+
+        const arr2 = [1, 2, 3, 4];
+
+        arr2.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl2.appendChild(createLi);
+
+        });
+
+    </script>
+    <hr>
+
 
 
 
