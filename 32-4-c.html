@@ -129,6 +129,42 @@
     <hr>
 
 
+    <h3>Задача 4. Модифицируйте предыдущую задачу так, чтобы под списком
+        был инпут, с помощью которого можно будет добавить новый элемент
+        в конец списка ul.</h3>
+    <ul class="ul4"></ul>
+    <input type="text" class="inp4">
+    <script>
+        const getUl4 = document.querySelector('.ul4');
+        const getInp4 = document.querySelector('.inp4');
+
+        const arr4 = [1, 2, 3, 4];
+
+        arr4.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl4.appendChild(createLi);
+
+        });
+
+        getInp4.addEventListener('blur', func4);
+
+        function func4() {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = getInp4.value;
+
+            getUl4.appendChild(createLi);
+
+        };
+
+
+    </script>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
