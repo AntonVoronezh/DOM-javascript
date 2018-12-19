@@ -85,6 +85,62 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Модифицируйте предыдущую задачу так, чтобы под списком выводилась сумма этих чисел.</h3>
+
+    <ul class="ul2"></ul>
+    <input type="text" class="inp2">
+    <p class="p2"></p>
+
+    <script>
+        const getUl2 = document.querySelector('.ul2');
+        const getInp2 = document.querySelector('.inp2');
+        const getP2 = document.querySelector('.p2');
+
+        makeLiFromInput2(getInp2, getUl2);
+
+
+        function makeLiFromInput2(argInp, argUl) {
+
+            argInp.addEventListener('blur', function () {
+
+                const getArr = makeArrFromValue(this);
+
+                const sumAllLi = getSumFromArr(getArr);
+
+                createLiFromArr(argUl, getArr);
+
+                putTextInElem(getP2, sumAllLi);
+
+            });
+
+        };
+
+        function putTextInElem(argElem, argText) {
+
+            argElem.innerHTML = '';
+
+            argElem.innerHTML = argText;
+
+        };
+
+        function getSumFromArr(argArr) {
+
+            let sum = 0;
+
+            argArr.forEach(elem => {
+
+                sum += +elem;
+
+            });
+
+            return sum;
+
+        };
+
+
+    </script>
+    <hr>
+
 
 
 
