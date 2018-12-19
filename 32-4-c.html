@@ -278,6 +278,60 @@
     </script>
     <hr>
 
+    <h3>Задача 4 (после видео). Модифицируйте предыдущую задачу так, чтобы под списком
+        был инпут, с помощью которого можно будет добавить новый элемент
+        в конец списка ul.</h3>
+    <ul class="ul4v"></ul>
+    <input type="text" class="inp4v">
+    <script>
+        const getUl4v = document.querySelector('.ul4v');
+        const getInp4v = document.querySelector('.inp4v');
+
+        const arr4v = [1, 2, 3, 4];
+
+
+        createLiFromArr(getUl4v, arr4v);
+
+        getAllLI(getUl4v);
+
+        bindInputWidthUl(getInp4v, getUl4v)
+
+
+
+        function getAllLI(argElem) {
+
+            const getAllLiv = argElem.querySelectorAll('li');
+
+            getAllLiv.forEach(elem => {
+
+                editElem(elem);
+
+            });
+
+        };
+
+        function addNewLi(argElem, argText) {
+
+                const createLi = document.createElement('li');
+
+                createLi.innerHTML = argText;
+
+                argElem.appendChild(createLi);
+
+
+        };
+
+        function bindInputWidthUl(argInp, argUl) {
+
+            argInp.addEventListener('blur', function() {
+
+                addNewLi(argUl, this.value);
+
+            });
+
+        };
+
+    </script>
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
