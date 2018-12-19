@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+
+        .dn {
+            display: none;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/4/c.html</h2>
+
+    <h3>Задача 1. Дан абзац. Сделайте так, чтобы по клику на него его текст
+        становился в инпуте, с помощью которого можно будет поредактировать
+        текст этого абзаца. По потери фокуса инпут должен исчезать, а в
+        абзаце оставаться новый текст</h3>
+    <p class="p1">ggggg</p>
+    <script>
+        const getP1 = document.querySelector('.p1');
+
+        getP1.addEventListener('click', func1);
+
+        function func1() {
+
+            const createInput = document.createElement('input');
+
+            createInput.value = getP1.innerHTML;
+
+            createInput.addEventListener('blur', func11);
+
+            getP1.innerHTML = '';
+
+            getP1.appendChild(createInput);
+
+        };
+
+        function func11() {
+
+            getP1.innerHTML = '';
+
+            getP1.innerHTML = this.value;
+
+        };
+
+    </script>
+    <hr>
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
