@@ -92,6 +92,42 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы по клику
+        на любую li в ней появлялся инпут, с помощью которого ее можно
+        будет поредактировать</h3>
+    <ul class="ul3"></ul>
+    <script>
+        const getUl3 = document.querySelector('.ul3');
+
+        const arr3 = [1, 2, 3, 4];
+
+        arr3.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            createLi.addEventListener('click', func2);
+
+            getUl3.appendChild(createLi);
+
+        });
+
+        function func2() {
+
+            const createInput = document.createElement('input');
+
+            createInput.value = this.innerHTML;
+
+            this.innerHTML = '';
+
+            this.appendChild(createInput);
+
+        };
+
+    </script>
+    <hr>
+
 
 
 
