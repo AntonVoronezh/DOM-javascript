@@ -43,6 +43,49 @@
     <ul class="ul1"></ul>
     <input type="text" class="inp1">
 
+    <script>
+        const getUl1 = document.querySelector('.ul1');
+        const getInp1 = document.querySelector('.inp1');
+
+        makeLiFromInput(getInp1, getUl1);
+
+
+        function makeLiFromInput(argInp, argUl) {
+
+            argInp.addEventListener('blur', function () {
+
+                const getArr = makeArrFromValue(this);
+
+                createLiFromArr(argUl, getArr);
+
+            });
+
+        };
+
+        function makeArrFromValue(argElem) {
+
+            return argElem.value.split(',');
+
+        };
+
+        function createLiFromArr(argElem, argArr) {
+
+            argArr.forEach(elem => {
+
+                const createLi = document.createElement('li');
+
+                createLi.innerHTML = elem;
+
+                argElem.appendChild(createLi);
+
+            });
+
+        };
+
+    </script>
+    <hr>
+
+
 
 
 
