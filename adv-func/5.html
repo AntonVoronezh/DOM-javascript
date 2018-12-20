@@ -61,6 +61,34 @@
     <hr>
 
 
+    <h3>Задача 2. Даны абзацы. Переберите их циклом. В этом цикле каждому
+        абзацу привяжите функцию, которая будет срабатывать по клику на абзац.
+        Пусть эта функция выводит текст того абзаца, на котором произошел клик.</h3>
+
+    <div class="div2">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getAllP = getDiv2.querySelectorAll('p');
+
+        getAllP.forEach(elem => {
+
+            elem.addEventListener('click', function() {
+
+                console.log(this.innerHTML);
+
+            });
+
+        });
+
+
+
+    </script>
+    <hr>
 
 
 
