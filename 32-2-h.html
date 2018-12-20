@@ -292,6 +292,19 @@
             { name: 'Петя', age: 32, salary: 600 },
         ];
 
+        products.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl6.appendChild(createLi);
+
+        });
+
+
+    </script>
+    <hr>
 
 
 
