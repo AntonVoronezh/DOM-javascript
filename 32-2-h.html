@@ -134,6 +134,34 @@
         любую li ее содержимое увеличивалось на 1.</h3>
     <ul class="ul4"></ul>
 
+    <script>
+        const arr4 = [1, 2, 3, 4];
+
+        const getUl4 = document.querySelector('.ul4');
+
+        arr4.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl4.appendChild(createLi);
+
+        });
+
+        getUl4.addEventListener('click', func4);
+
+        function func4(event) {
+
+            const num = +event.target.innerHTML;
+
+            event.target.innerHTML = num + 1;
+
+        };
+
+
+    </script>
+    <hr>
 
 
 
