@@ -324,6 +324,25 @@
 
         let sum8 = 0;
 
+        products8.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl8.appendChild(createLi);
+
+            sum8 += elem.salary;
+
+        });
+
+        getP8.innerHTML = sum8;
+
+    </script>
+    <hr>
+
+
+
 
 
 
