@@ -414,7 +414,45 @@
     </script>
     <hr>
 
+    <h2>Таймеры</h2>
+    <h3>Задача 11. Дан абзац и кнопка. По нажатию на кнопку должен запуститься таймер,
+        который будет по очереди записывать в абзац числа от 1 до 5 по кругу.</h3>
+    <p class="p12">1</p>
+    <button class="btn12">gggg</button>
 
+    <script>
+        const getP12 = document.querySelector('.p12');
+        const getBtn12 = document.querySelector('.btn12');
+
+        getBtn12.addEventListener('click', () => {
+
+            window.setInterval(func12, 1000);
+
+        });
+
+        function func12() {
+
+            const getNum = +getP12.innerHTML;
+            let newNum;
+
+            if (getNum < 5) {
+
+                newNum = getNum + 1;
+
+            } else {
+
+                newNum = 1;
+
+            }
+
+            getP12.innerHTML = '';
+
+            getP12.innerHTML = newNum;
+
+        };
+
+    </script>
+    <hr>
 
 
 
