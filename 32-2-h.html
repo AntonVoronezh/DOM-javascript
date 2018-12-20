@@ -504,6 +504,46 @@
     <hr>
 
 
+    <h3>Задача 13. Дан тег img. Даны 3 файла с изображениями. Сделайте так,
+        чтобы каждую секунду изображения сменяли друг друга по очереди (по кругу).</h3>
+    <img src="" alt="" class="img13">
+    <script>
+
+        const getImg13 = document.querySelector('.img13');
+
+        const arr13 = ['https://c.dns-shop.ru/thumb/st4/fit/45/45/16496f71a842f2940c385e0758a8fc06/6ebe60be0a11f848fb3cc11135b457f7e25d203cfc61c53044e96acc4b6a6afe.jpg',
+            'https://c.dns-shop.ru/thumb/st4/fit/45/45/d5aea7bdd15253677e2a01bad24a523e/b1c29bf72d52d81a22c09a5beb18efe7c596c850d2c800eca21e91ae9ffa1761.jpg',
+            'https://c.dns-shop.ru/thumb/st1/fit/320/250/c9224033e0ea34d306627fa11280306c/3b3b480ec126cfc657a370d091bed7cb05c57511faf23bd5419647c3738922ad.jpg'];
+
+        window.setInterval(func13, 1000);
+
+        let count13 = 0;
+
+        function func13() {
+
+            let out;
+
+            if (count13 < arr13.length ) {
+
+                out = arr13[count13];
+
+                count13 += 1;
+
+
+            } else {
+
+                count13 = 0;
+
+            }
+
+            getImg13.src = out;
+
+
+        };
+
+
+
+    </script>
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
