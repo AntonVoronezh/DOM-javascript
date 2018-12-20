@@ -201,6 +201,23 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Дан массив. Выведите элементы этого массива в виде таблицы table.
+        Сделайте так, чтобы если в последнем ряду таблицы не хватит элементов
+        массива, то пустые ячейки пусть заполнятся дефисами.</h3>
+    <table class="tbl6"></table>
+
+    <script>
+        const getTbl6 = document.querySelector('.tbl6');
+
+        const arr6 = [1, 2, 3, 4, 5, 6, 7];
+
+        const arr62 = [];
+        let count6 = 0;
+        let ar6 = [];
+
+        const mastNum = Math.ceil(arr6.length / 3) * 3;
+
+        for (let i = 0; i < mastNum; i += 1) {
 
 
 
