@@ -78,6 +78,37 @@
     <button class="btn2"> clsss</button>
     <p class="p2"></p>
 
+    <script>
+        const getDiv2 = document.querySelector('.div2');
+        const getBtn2 = document.querySelector('.btn2');
+        const getAllInp2 = getDiv2.querySelectorAll('input');
+        const getP2 = document.querySelector('.p2');
+
+        getBtn2.addEventListener('click', func2);
+
+        function func2() {
+
+            let sum = 0;
+
+            getAllInp2.forEach(elem => {
+
+                sum += +elem.value;
+
+            });
+
+            getP2.innerHTML = '';
+
+            getP2.innerHTML = sum;
+
+        };
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Дан массив. Выведите элементы этого массива в виде списка ul.</h3>
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
