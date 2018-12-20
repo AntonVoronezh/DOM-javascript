@@ -455,6 +455,53 @@
     <hr>
 
 
+    <h3>Задача 12. Дан абзац и кнопка. Дан также массив с какими-то текстами.
+        По нажатию на кнопку должен запуститься таймер, который будет по очереди
+        записывать в абзац элементы массива. Как только элементы в массиве закончатся,
+        все должно продолжится с начала.</h3>
+
+    <p class="p11"></p>
+    <button class="btn11">gggg</button>
+
+    <script>
+        const getP11 = document.querySelector('.p11');
+        const getBtn11 = document.querySelector('.btn11');
+        const arr11 = ['qqqq', 'wwww', 'eeeee', 'rrrrr'];
+
+        getBtn11.addEventListener('click', () => {
+
+            window.setInterval(func11, 1000);
+
+        });
+
+        let count = 0;
+
+        function func11() {
+
+
+            let out;
+
+            if (count < arr11.length - 1) {
+
+                out = arr11[count];
+
+                count += 1;
+
+
+            } else {
+
+                count = 0;
+
+            }
+
+            getP11.innerHTML = '';
+
+            getP11.innerHTML = out;
+
+        };
+
+    </script>
+    <hr>
 
 
 
