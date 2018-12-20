@@ -358,6 +358,27 @@
 
         let sum9 = 0;
 
+        products9.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem.name;
+
+            getUl9.appendChild(createLi);
+
+            if (elem.age > 30) {
+
+                sum9 += elem.salary;
+
+            }
+
+
+        });
+
+        getP9.innerHTML = sum9;
+
+    </script>
+    <hr>
 
 
 
