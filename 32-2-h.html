@@ -183,7 +183,25 @@
 
         });
 
- 
+        getUl5.addEventListener('click', func5);
+
+        function func5(event) {
+
+            const createInput = document.createElement('input');
+
+            createInput.value = event.target.innerHTML;
+
+            event.target.innerHTML = '';
+
+            event.target.appendChild(createInput);
+
+        };
+
+
+    </script>
+    <hr>
+
+
 
 
 
