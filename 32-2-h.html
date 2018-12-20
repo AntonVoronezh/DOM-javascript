@@ -380,6 +380,39 @@
     </script>
     <hr>
 
+    <h3>Задача 10. Даны инпуты. В атрибуте data-length задается разрешенная
+        длина строки, которую можно ввести в инпут. Сделайте следующее:
+        если в инпут введена строка правильной длины, покрасьте его в зеленый цвет,
+        а если не правильной - в красный.</h3>
+
+    <div class="div10">
+        <input type="text" data-length="10">
+        <input type="text" data-length="10">
+        <input type="text" data-length="10">
+    </div>
+
+    <script>
+        const getDiv10 = document.querySelector('.div10');
+        const getAllInp10 = getDiv10.querySelectorAll('input');
+
+        getDiv10.addEventListener('keypress', func10);
+
+        function func10(event) {
+
+            if (event.target.value.length <= event.target.dataset.length) {
+
+                event.target.style.backgroundColor = 'green';
+
+            } else {
+
+                event.target.style.backgroundColor = 'red';
+
+            }
+
+        };
+
+    </script>
+    <hr>
 
 
 
