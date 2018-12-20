@@ -163,7 +163,27 @@
     </script>
     <hr>
 
+    <h3>Задача 5. Модифицируйте предыдущую задачу так, чтобы по клику на любую li
+        вместо ее содержимого появлялся инпут, с помощью которого можно
+        будет поредактировать эту li.</h3>
+    <ul class="ul5"></ul>
 
+    <script>
+        const arr5 = [1, 2, 3, 4];
+
+        const getUl5 = document.querySelector('.ul5');
+
+        arr5.forEach(elem => {
+
+            const createLi = document.createElement('li');
+
+            createLi.innerHTML = elem;
+
+            getUl5.appendChild(createLi);
+
+        });
+
+ 
 
 
 
