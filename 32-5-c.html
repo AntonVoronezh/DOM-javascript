@@ -262,6 +262,19 @@
 
             argElem.addEventListener('click', function () {
 
+                const productObj = makeProductObj(getInp31, getInp32, getInp33);
+
+                const tr = createTr();
+
+                Object.values(productObj).forEach(item => {
+
+                    const td = createTd();
+
+                    setTetx(td, item);
+
+                    appElem(tr, td);
+
+                });
 
 
             });
