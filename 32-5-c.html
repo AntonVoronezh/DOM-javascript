@@ -168,6 +168,15 @@
 
                 const tr = createTr();
 
+                Object.values(productObj).forEach(item => {
+
+                    const td = createTd();
+
+                    setTetx(td, item);
+
+                    appElem(tr, td);
+
+                });
 
 
             });
