@@ -276,6 +276,17 @@
 
                 });
 
+                const tdTotal = createTd();
+
+                tdTotal.classList.add('total');
+
+                setTetx(tdTotal, getSum(productObj.cost, productObj.quant));
+
+                appElem(tr, tdTotal);
+
+                appElem(argTabl, tr);
+
+                getP3.innerHTML = getTotal(getPTbl3);
 
             });
 
