@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+
+        .dn {
+            display: none;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/5/h.html</h2>
+
+    <h3>Задача 1. Сделайте вручную в HTML коде таблицу table, ячейки
+        которой будут заполненными какими-либо числами. </h3>
+
+    <table class="tbl1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <button class="btn2">dddd</button>
+
+    <hr>
+
+
+    <h3>Задача 2. Модифицируйте предыдущую задачу так, чтобы под таблицей
+        размещалась кнопка, по нажатию на которую выводилась сумма чисел
+        из ячеек этой таблицы.</h3>
+
+    <script>
+        const getBtn2 = document.querySelector('.btn2');
+        const getTbl2 = document.querySelector('.tbl1');
+
+
+        getSumFromTbl(getBtn2, getTbl2);
+
+
+        function getSumFromTbl(argBtn, argTbl) {
+
+            argBtn.addEventListener('click', function () {
+
+                getTdSum(argTbl);
+
+            });
+
+        };
+
+
+        function getTdSum(argTable) {
+
+            const getArrForSum = makeArrFromNodelist(getAllTd(getTbl2));
+
+            console.log(calcSumFromArr(getArrForSum));
+
+        };
+
+
+        function getAllTd(argTable) {
+
+            return argTable.querySelectorAll('td');
+
+        };
+        // console.log(getAllTd(getTbl2) );
+
+
+        function makeArrFromNodelist(argList) {
+
+            const result = [];
+
+            argList.forEach(element => {
+
+                result.push(+element.innerHTML);
+
+            });
+
+            return result;
+
+        };
+
+        // console.log(makeArrFromNodelist(getAllTd(getTbl2)) );
+
+        function calcSumFromArr(argArr) {
+
+            let sum = 0;
+
+            argArr.forEach(elem => {
+
+                sum += elem;
+
+            });
+
+            return sum;
+
+        };
+
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы по клику
+        на любую ячейку, число в ней увеличивалось на 1. Сделайте так,
+        чтобы по нажатию на кнопку, выводилась обновленная сумма ячеек таблицы.</h3>
+
+    <button class="btn3">dddd</button>
+
+    <script>
+        const getBtn3 = document.querySelector('.btn3');
+
+
+
+        addOneToTd(getTbl2);
+
+
+        function addOneToTd(argtbl) {
+
+            const allTd = getAllTd(argtbl);//NodeList
+
+            allTd.forEach(elem => {
+
+                elem.addEventListener('click', function() {
+
+                    this.innerHTML = plusOne(+this.innerHTML);
+
+                });
+
+            });
+
+
+        };
+
+        function plusOne(argNum) {
+
+            return argNum + 1;
+
+        };
+
+
+    </script>
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
