@@ -208,6 +208,24 @@
         };
 
 
+        function getTotal(argTabl) {
+
+            const getAll = argTabl.querySelectorAll('.total');
+
+            if (getAll.length > 0) {
+
+                let sum = 0;
+
+                getAll.forEach(elem => {
+
+                    sum += +elem.innerHTML;
+
+                });
+
+                return sum;
+            }
+
+        };
 
 
 
