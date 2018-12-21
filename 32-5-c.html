@@ -68,7 +68,31 @@
 
             let allSum = 0;
 
-  
+            argObj.forEach(elem => {
+
+                const sum = getSum(elem.price, elem.quantity);
+
+                const arr = [elem.name, elem.price, elem.quantity, sum];
+
+                const tr = createTr();
+
+                arr.forEach(item => {
+
+                    const td = createTd();
+
+                    setTetx(td, item);
+
+                    appElem(tr, td);
+
+
+                });
+
+                appElem(argTbl, tr);
+
+                allSum += sum;
+
+
+
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
