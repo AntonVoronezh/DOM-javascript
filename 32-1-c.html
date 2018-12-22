@@ -170,7 +170,15 @@
 
             let flag = true;
 
+            for (let i = 2; i < argNum; i += 1) {
 
+                if (argNum % i === 0) {
+
+                    flag = false;
+
+                }
+
+            };
 
             return flag;
 
