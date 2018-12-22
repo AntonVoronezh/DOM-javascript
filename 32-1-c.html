@@ -218,7 +218,18 @@
 
             let str = '';
 
-    
+            if (argNum === 1) {
+
+                str = argArr[0];
+
+            } else if (argNum === 2 || argNum === 3 || argNum === 4) {
+
+                str = argArr[1];
+
+            } else {
+
+                str = argArr[2];
+
             }
 
             return argNum + ' ' + str;
