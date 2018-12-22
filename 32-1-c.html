@@ -92,6 +92,35 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дана строка. Сделайте заглавным первый символ каждого
+        слова этой строки. Для этого сделайте вспомогательную функцию ucfirst,
+        которая будет получать строку, делать первый символ этой строки заглавным
+        и возвращать обратно строку с заглавной первой буквой</h3>
+
+    <script>
+        const str = 'Lorem ipsum dolor sit amet consectetur adipisicing elit';
+
+        const makeUpperAllWord = (argStr) => {
+
+            const result = [];
+
+            str.split(' ').forEach(elem => {
+
+                result.push(makeUpperStr(elem));
+
+            });
+
+            return result.join(' ');
+
+        };
+        console.log(makeUpperAllWord(str));
+
+
+        // console.log(makeUpperStr('aaaaa'));
+
+    </script>
+
+    <hr>
 
 
 
