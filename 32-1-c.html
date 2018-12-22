@@ -251,7 +251,14 @@
 
             const arr = [];
 
+            for (let i = 0; i <= argNum; i += 1) {
 
+                if (argNum % i === 0) {
+
+                    arr.push(i);
+
+                }
+            }
 
             return arr;
         };
