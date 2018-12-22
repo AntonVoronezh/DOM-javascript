@@ -278,7 +278,15 @@
 
             const arrOut = [];
 
+            argArr1.forEach(elem => {
 
+                if (argArr2.some(item => elem === item)) { 
+
+                    arrOut.push(elem);
+
+                }
+
+            });
 
             return arrOut;
 
