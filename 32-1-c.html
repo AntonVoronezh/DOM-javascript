@@ -137,7 +137,15 @@
     <script>
         const str3 = 'lorem_ipsum_dolor_sit_amet';
 
+        const makeCamelNotationFromStr = argStr => {
 
+            const result = [];
+
+            str.split(' ').forEach(elem => {
+
+                result.push(makeUpperStr(elem));
+
+            });
 
             return result.join('');
 
