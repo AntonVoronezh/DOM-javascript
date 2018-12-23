@@ -129,6 +129,15 @@
 
             const result = [];
 
+            argArr.forEach(elem => {
+
+                if (!result.some(item => item === elem)) {
+
+                    result.push(elem);
+
+                }
+
+            });
 
             return result;
         };
