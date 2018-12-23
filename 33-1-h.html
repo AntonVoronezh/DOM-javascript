@@ -318,7 +318,13 @@
 
                 thousandVar = words['1000var'][2];
 
-            } 
+            } else if (first > 5 && first < 10) {
+
+                thousandVar = words['1000var'][3];
+            }
+
+            return words['1000'][first] + ' ' + thousandVar + ' ' + words['100'][secons] +
+                ' ' + words['20'][third] + ' ' + words['1'][fourth];
 
         };
 
