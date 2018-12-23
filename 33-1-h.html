@@ -181,6 +181,75 @@
     </script>
     <hr>
 
+    <h3>Задача 6. Сделайте функцию, которая параметром будет принимать число,
+        а возвращать это же число прописью. Например, число 115 прописью это
+        сто пятнадцать. Пусть функция работает с числами до миллиона</h3>
+    <script>
+        const words = {
+            1: ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+            10: ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'],
+            20: ['', '', 'двадцать', 'тридцать', 'сорок', 'пятьдесять', 'шестдесять', 'семдесят', 'восемдесят', 'девяносто'],
+            100: ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'],
+            1000: ['', 'одна', 'две', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
+            '1000var': ['', 'тысяча', 'тысячи', 'тысяч'],
+        };
+
+        const isPluralForm = (argNum) => {
+
+            const length = String(argNum).length;
+            console.log(length);
+
+            let first;
+            let secons;
+            let third;
+            let fourth;
+            let thousandVar;
+            let fift;
+            let six;
+            let result = '';
+            let resultFirst;
+            let resultSecond;
+
+            if (length === 1) {
+
+                result = num1(argNum);
+
+            } else if (length === 2 && argNum < 20) {
+
+                result = num2(argNum);
+
+            } else if (length === 2 && argNum > 19 && argNum < 100) {
+
+                result = num22(argNum);
+
+            } else if (length === 3 && argNum > 99 && argNum < 1000) {
+
+                result = num3(argNum);
+
+            } else if (length === 4 && argNum > 999 && argNum < 10000) {
+
+                result = num4(argNum);
+
+            } else if (length === 5 && argNum > 9999 && argNum < 99999) {
+
+                first = String(argNum)[0];
+                secons = String(argNum)[1];
+                third = String(argNum)[2];
+                fourth = String(argNum)[3];
+                fift = String(argNum)[4];
+
+
+            } 
+            return result;
+
+        };
+
+        console.log('-> ' + isPluralForm(893485));
+
+
+
+
+
 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
