@@ -238,6 +238,22 @@
                 fourth = String(argNum)[3];
                 fift = String(argNum)[4];
 
+                let firstNew = first + secons;
+                let SecondNew = third + fourth + fift;
+
+                const lengthFirstNew = String(+firstNew).length;
+
+                if (lengthFirstNew === 2 && +firstNew < 20) {
+
+                    resultFirst = num2(+firstNew) + ' тысяч ';
+
+                } else if (lengthFirstNew === 2 && +firstNew > 19 && +firstNew < 100) {
+
+                    resultFirst = num22(+firstNew) + ' тысяч ';
+
+                }
+
+                result = resultFirst + num3(SecondNew);
 
             } 
             return result;
