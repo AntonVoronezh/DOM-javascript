@@ -157,7 +157,24 @@
             const result = [];
             const techArr = [];
 
+            argArr.forEach(elem => {
 
+                const randNum = getRandomArbitary(0, 100);
+
+                if (randNum % 2 === 0) {
+
+                    result.unshift(elem)
+
+                } else {
+
+                    result.push(elem)
+
+                }
+
+            });
+
+            return result;
+        };
 
         console.log(shuffle(arr5));
 
