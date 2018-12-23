@@ -255,7 +255,25 @@
 
                 result = resultFirst + num3(SecondNew);
 
-            } 
+            } else if (length === 6 && argNum > 99999 && argNum < 1000000) {
+
+                first = String(argNum)[0];
+                secons = String(argNum)[1];
+                third = String(argNum)[2];
+                fourth = String(argNum)[3];
+                fift = String(argNum)[4];
+                six = String(argNum)[5];
+
+                let firstNew = first + secons + third;
+                let SecondNew = fourth + fift + six;
+
+                resultFirst = num3(firstNew) + ' тысяч '
+                resultSecond = num3(SecondNew)
+
+                result = resultFirst + resultSecond;
+
+            }
+
             return result;
 
         };
