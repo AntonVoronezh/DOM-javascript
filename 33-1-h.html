@@ -280,6 +280,22 @@
 
         console.log('-> ' + isPluralForm(893485));
 
+        function num1(argNum) {
+            return words['1'][argNum];
+        };
+
+        function num2(argNum) {
+            return words['10'][argNum - 10];
+        };
+
+        function num22(argNum) {
+            first = +String(argNum)[0];
+            secons = +String(argNum)[1];
+
+            return words['20'][first] + ' ' + words['1'][secons];
+        };
+
+
 
 
 
