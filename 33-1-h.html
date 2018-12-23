@@ -77,7 +77,11 @@
 
             argArr1.forEach(elem => {
 
-   
+                if (!argArr2.some(item => item === elem)) {
+
+                    result.push(elem);
+
+                }
 
             });
 
