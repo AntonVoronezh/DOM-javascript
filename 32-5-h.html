@@ -94,43 +94,13 @@
         };
 
 
-        function getAllTd(argTable) {
-
-            return argTable.querySelectorAll('td');
-
-        };
+ 
         // console.log(getAllTd(getTbl2) );
 
 
-        function makeArrFromNodelist(argList) {
-
-            const result = [];
-
-            argList.forEach(element => {
-
-                result.push(+element.innerHTML);
-
-            });
-
-            return result;
-
-        };
 
         // console.log(makeArrFromNodelist(getAllTd(getTbl2)) );
 
-        function calcSumFromArr(argArr) {
-
-            let sum = 0;
-
-            argArr.forEach(elem => {
-
-                sum += elem;
-
-            });
-
-            return sum;
-
-        };
 
 
 
@@ -138,46 +108,7 @@
     </script>
     <hr>
 
-    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы по клику
-        на любую ячейку, число в ней увеличивалось на 1. Сделайте так,
-        чтобы по нажатию на кнопку, выводилась обновленная сумма ячеек таблицы.</h3>
-
-    <button class="btn3">dddd</button>
-
-    <script>
-        const getBtn3 = document.querySelector('.btn3');
-
-
-
-        addOneToTd(getTbl2);
-
-
-        function addOneToTd(argtbl) {
-
-            const allTd = getAllTd(argtbl);//NodeList
-
-            allTd.forEach(elem => {
-
-                elem.addEventListener('click', function() {
-
-                    this.innerHTML = plusOne(+this.innerHTML);
-
-                });
-
-            });
-
-
-        };
-
-        function plusOne(argNum) {
-
-            return argNum + 1;
-
-        };
-
-
-    </script>
-
+ 
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
