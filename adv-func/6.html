@@ -53,6 +53,36 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Даны ссылки. Сделайте так, чтобы по клику на любую ссылку
+        ей в конец ее текста записывался ее href.</h3>
+
+    <a href="http://1.com">---</a> <br>
+    <a href="http://2.com">---</a> <br>
+    <a href="http://3.com">---</a> <br>
+    <a href="http://4.com">---</a> <br>
+    <a href="http://5.com">---</a> <br>
+
+    <script>
+        const getAllA = document.querySelectorAll('a');
+
+        getAllA.forEach(elem => {
+
+            elem.addEventListener('click', function (element) {
+
+                element.preventDefault();
+
+                this.innerHTML = this.innerHTML + this.href;
+
+            })
+
+        });
+
+
+
+    </script>
+    <hr>
+
+
 
 
 
