@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/7/</h2>
+    <h2>Массив с функциями</h2>
+
+    <h3>Задача 1. Сделайте массив arr с тремя функциями.
+        Пусть первая возвращает через return число 1, вторая - число 2, третья - число 3.</h3>
+
+    <script>
+        const arr = [
+
+            function () { return 1; },
+            function () { return 2; },
+            function () { return 3; }
+
+        ];
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Используя созданный вами массив arr выведите на экран число 3,
+        вызвав соответствующую функцию.</h3>
+
+    <script>
+
+        console.log(arr[2]());
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Используя созданный вами массив arr найдите сумму
+        результатов функций (без цикла).</h3>
+
+    <script>
+
+        const sum = (function(arg1 = arr[0](), arg2 = arr[1](), arg3 = arr[2]()) {
+
+            console.log(arg1 + arg2 + arg3);
+
+        })();
+
+    </script>
+    <hr>
+
+    <h3>Задача 4. Переберите созданный вами массив arr циклом и выведите 
+        результаты работы всех функций на экран.</h3>
+
+        <script>
+
+            arr.forEach(elem => console.log(elem));
+            arr.forEach(elem => console.log(elem()));
+        
+        </script>
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
