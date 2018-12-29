@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/6/</h2>
+    <h2>Анонимные функции</h2>
+
+    <h3>Задача 1. Дан инпут. Сделайте так, чтобы по потери фокуса на экран
+        выводилось value этого инпута. При решении задачи используйте
+        изученную теорию.</h3>
+    <input type="text" class="inp1">
+
+    <script>
+        const gerInp1 = document.querySelector('.inp1');
+
+
+        gerInp1.onblur = function () {
+
+            console.log(this.value);
+
+        };
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Даны ссылки. Сделайте так, чтобы по клику на любую ссылку
+        ей в конец ее текста записывался ее href.</h3>
+
+    <a href="http://1.com">---</a> <br>
+    <a href="http://2.com">---</a> <br>
+    <a href="http://3.com">---</a> <br>
+    <a href="http://4.com">---</a> <br>
+    <a href="http://5.com">---</a> <br>
+
+    <script>
+        const getAllA = document.querySelectorAll('a');
+
+        getAllA.forEach(elem => {
+
+            elem.addEventListener('click', function (element) {
+
+                element.preventDefault();
+
+                this.innerHTML = this.innerHTML + this.href;
+
+            })
+
+        });
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Дан абзац, в котором записано какое-то целое число.
+        Запустите таймер, который каждую секунду будет увеличивать
+        содержимое абзаца на единицу.</h3>
+
+    <p class="p3">2</p>
+    <script>
+        const getP3 = document.querySelector('.p3');
+
+        setInterval(function () {
+            
+            getP3.innerHTML = +getP3.innerHTML + 1;
+
+        }, 1000);
+
+    </script>
+
+
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

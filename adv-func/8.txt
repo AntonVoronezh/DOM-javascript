@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/8/</h2>
+    <h2>Объект с функциями</h2>
+
+    <h3>Задача 1. Сделайте объект с тремя функциями. Пусть первая возвращает через
+        return число 1, вторая - число 2, третья - число 3. С помощью созданных
+        функций выведите на экран сумму возвращаемых чисел.</h3>
+
+    <script>
+        const obj = {
+
+            func1: function () { return 1; },
+            func2: function () { return 2; },
+            func3: function () { return 3; }
+
+        };
+
+        console.log(obj.func1() + obj.func2() + obj.func3());
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. ереберите созданный объект циклом и выведите результаты работы функций на экран.</h3>
+
+    <script>
+
+        Object.values(obj).forEach(element => {
+
+            console.log(element());
+
+
+        });
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Сделайте объект с тремя функциями, каждая из которых будет
+        принимать параметром массив с числами. Сделайте так, чтобы первая
+        функция возвращала сумму элементов массива, вторая функция - сумму квадратов,
+        а третья - сумму кубов.</h3>
+
+    <script>
+
+        const arr3 = [1, 2, 3, 4];
+
+        const obj3 = {
+
+            func1: argArr => {
+
+                let sum = 0;
+
+                argArr.forEach(elem => sum += elem);
+
+                return sum;
+
+            },
+            func2: argArr => {
+
+                let sum = 0;
+
+                argArr.forEach(elem => sum += elem * elem);
+
+                return sum;
+
+            },
+            func3: argArr => {
+
+                let sum = 0;
+
+                argArr.forEach(elem => sum += elem * elem * elem);
+
+                return sum;
+
+            }
+
+        };
+
+        console.log(obj3.func1(arr3));
+        console.log(obj3.func2(arr3));
+        console.log(obj3.func3(arr3));
+
+    </script>
+    <hr>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
