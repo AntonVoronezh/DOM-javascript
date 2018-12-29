@@ -82,6 +82,23 @@
     </script>
     <hr>
 
+    <h3>Задача 3. Дан абзац, в котором записано какое-то целое число.
+        Запустите таймер, который каждую секунду будет увеличивать
+        содержимое абзаца на единицу.</h3>
+
+    <p class="p3">2</p>
+    <script>
+        const getP3 = document.querySelector('.p3');
+
+        setInterval(function () {
+            
+            getP3.innerHTML = +getP3.innerHTML + 1;
+
+        }, 1000);
+
+    </script>
+
+
 
 
 
