@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+
+        .dn {
+            display: none;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/6/h.html</h2>
+
+    <h3>Задача 1. Дан инпут. В него вводится температура в градусах Фарингейта.
+        Сделайте так, чтобы автоматически по мере ввода в абзац под инпутом
+        эта температура выводилась в градусах Цельсия.</h3>
+    <input type="text" class="inp1">
+    <p class="p1"></p>
+
+    <script>
+        const getInp1 = document.querySelector('.inp1');
+        const getP1 = document.querySelector('.p1');
+
+        makeFahrenheit(getInp1, getP1);
+
+        function makeFahrenheit(argElemIn, argElemOut) {
+
+            argElemIn.addEventListener('keypress', function () {
+
+                argElemOut.innerHTML = (+argElemIn.value - 32) / 1.8;
+
+            });
+
+        };
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 2. Дан инпут, кнопка и абзац. В инпут вводится число.
+        По нажатию на кнопку выведите в абзац факториал этого числа.</h3>
+    <input type="text" class="inp2">
+    <button class="btn2">factorial</button>
+    <p class="p2"></p>
+    <script>
+        const getInp2 = document.querySelector('.inp2');
+        const getP2 = document.querySelector('.p2');
+        const getBtn2 = document.querySelector('.btn2');
+
+        getFactorial(getInp2, getP2, getBtn2);
+
+        function getFactorial(argElemIn, argElemOut, argElemStart) {
+
+            argElemStart.addEventListener('click', function () {
+
+                argElemOut.innerHTML = makeFactorial(+argElemIn.value);
+
+            });
+
+        };
+
+        function makeFactorial(argNum) {
+
+            let fact = 1;
+
+            for (let i = 1; i <= argNum; i += 1) {
+
+                fact *= i;
+
+            }
+
+            return fact;
+
+        };
+                // console.log(makeFactorial(5));
+
+
+
+    </script>
+    <hr>
+
+    <h3>Задача 3. Реализуйте игру 'угадай число'. Суть: компьютер загадывает число от 1 до 100.
+        В инпут на экране игрок вводит число от 1 до 100, пытаясь угадать, что же загадал компьютер.
+        Если игрок ввел число, меньше загаданного, компьютер должен написать 'введите число побольше',
+        а если введено больше загаданного, то, соответственно, компьютер должен написать
+        'введите число поменьше'. Если же игрок угадал число, игра начинается сначала.</h3>
+    <input type="text" class="inp3">
+
+    <script>
+        const getInp3 = document.querySelector('.inp3');
+
+
+        let random = getRandomInt(1, 100);
+
+        getInp3.addEventListener('blur', function () {
+
+            if (this.value > random) {
+
+                console.log(this.value, 'число меньше');
+
+            } else if (this.value < random) {
+
+                console.log(this.value, 'число больше');
+
+            } else {
+
+                console.log(this.value, 'правильно конец игры');
+
+            }
+
+        });
+
+        // console.log(random);
+
+
+
+        function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        }
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 4. Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
+        Если игрок не успеет угадать число за отведенное время - он проиграл</h3>
+    <p class="p4"></p>
+    <input type="text" class="inp4">
+
+    <script>
+        const getInp4 = document.querySelector('.inp4');
+        const getP4 = document.querySelector('.p4');
+
+        let random4 = getRandomInt(1, 100);
+
+
+        const timerId = setInterval(function () {
+
+            if (+getP4.innerHTML < 120) {
+
+                getP4.innerHTML = +getP4.innerHTML + 1;
+
+            } else {
+                
+                clearInterval(timerId);
+
+                getP4.innerHTML = 'время вышло'
+
+            }
+
+        }, 1000);
+
+
+        getInp4.addEventListener('blur', function () {
+
+            if (this.value > random4) {
+
+                console.log(this.value, 'число меньше');
+
+            } else if (this.value < random4) {
+
+                console.log(this.value, 'число больше');
+
+            } else {
+
+                console.log(this.value, 'правильно конец игры');
+
+            }
+
+        });
+
+
+    </script>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
