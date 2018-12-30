@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/9/</h2>
+    <h2>Передача функций параметрами</h2>
+
+    <h3>Задача 1. Сделайте функцию test, параметрами принимающую 3 функции.
+        Передайте в нее первым параметром функцию, возвращающую 1, вторым -
+        функцию, возвращающую 2, третьим - функцию, возвращающую 3. Выведите
+        на экран сумму результатов функций.</h3>
+
+    <script>
+        test(
+            function () { return 1; },
+            function () { return 2; },
+            function () { return 3; }
+        );
+
+        function test(func1, func2, func3) {
+
+            console.log(func1() + func2() + func3());
+
+        };
+
+    </script>
+    <hr>
+
+
+    <h2>Именованные функции</h2>
+
+    <h3>Задача 3. Сделайте 3 функции, объявив их как Function Declaration
+        и дав им имена func1, func2 и func3. Пусть первая функция возвращает 1,
+        вторая - 2, а третья - 3. Передайте эти функции параметром в функцию
+        test из предыдущей задачи.</h3>
+
+
+    <script>
+
+        function func1() { return 1; };
+        function func2() { return 2; };
+        function func3() { return 3; };
+
+        test(func1, func2, func3)
+
+    </script>
+    <hr>
+
+    <h3>Задача 4. Модифицируйте предыдущую задачу так, чтобы функции были
+        объявлены как Function Expression с теми же именами.</h3>
+    <script>
+
+        const func11 = function () { return 1; };
+        const func22 = function () { return 2; };
+        const func33 = function () { return 3; };
+
+        test(func11, func22, func33)
+
+    </script>
+    <hr>
+
+    <h2>Параметры передаваемых функций</h2>
+
+    <h3>Задача 5. Скопируйте код моей функции test. Вызовите эту функцию,
+        передав ей параметром анонимную функцию, которая параметром будет
+        принимать число и возвращать его куб.</h3>
+
+    <script>
+
+        test(function (num) {
+
+            return num * num * num;
+
+        });
+
+        function test(func) {
+
+            console.log(func(3));
+
+        }
+    </script>
+    <hr>
+
+    <h3>Задача 6. Переделайте ваш код так, чтобы передаваемая функция
+        была не анонимной, а была определена как Function Declaration с именем func.</h3>
+
+    <script>
+
+        function func6(num) {
+
+            return num * num * num;
+
+        };
+
+        test(func6);
+
+    </script>
+    <hr>
+
+    <h3>Задача 7. Переделайте передаваемую функцию на Function Expression с тем же именем func.</h3>
+    <script>
+
+        const func7 = function (num) {
+
+            return num * num * num;
+
+        };
+
+        test(func7);
+
+    </script>
+
+    <h3>Задача 8. Пусть передаваемая функция теперь принимает два параметра и
+        возвращает их сумму. При вызове передаваемая функции внутри test
+        передайте в передаваемую функцию число 2 и число 3. Выведите алертом
+        результат.</h3>
+
+    <script>
+
+        const func8 = function (num1, num2) {
+
+            return num1 + num2;
+
+        };
+
+        function test2(func) {
+
+            console.log(func(3, 2));
+
+        };
+
+        test2(func8);
+
+    </script>
+    <hr>
+
+    <h3>Задача 9. Вызовите функцию test, первым параметром передав число 3,
+        вторым параметром функцию, возводящую число в квадрат, а третьим - функцию,
+        возводящую число в куб. Выведите результат работы на экран.</h3>
+
+    <script>
+
+        function test9(num, func1, func2) {
+
+            console.log(func1(num) + func2(num));
+
+        };
+
+        test9(2, num => num * num, num => num * num * num);
+
+    </script>
+    <hr>
+
+    <h3>Задача 10. Не подсматривая в мой код реализуйте такую же функцию test самостоятельно.</h3>
+
+    <script>
+
+        function test10(argArr, argFunc) {
+
+            return argArr.map(elem => argFunc(elem));
+
+        };
+
+        let tet = function (num) {
+            return num + 10;
+        };
+
+        console.log(test10([1, 2, 3], tet));
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 11. Вызовите созданную вами функцию test, передав ей
+        параметром массив с числами. Сделайте так, чтобы функция вернула
+        массив с кубами этих чисел.</h3>
+
+
+    <script>
+        const makeCube = num => Math.pow(num, 3);
+
+        console.log(test10([1, 2, 3], makeCube));
+
+    </script>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
