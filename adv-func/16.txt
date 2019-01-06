@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/16/</h2>
+    <h2>Замыкания</h2>
+
+    <h3>Задача 1. Самостоятельно, не подсматривая в мой код, реализуйте счетчик
+        вызова функции, работающий на замыканиях.</h3>
+
+    <script>
+
+        const func1 = () => {
+
+            let num = 0;
+
+            return function () {
+                
+                num++;
+                return num;
+
+                
+
+            };
+
+        };
+
+        const f = func1();
+
+        console.log(f(), f(), f(), f());
+        console.log(f(), f(), f(), f());
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 2. Пусть функция в замыкании хранит число 10. Сделайте так, чтобы каждый вызов функции
+         уменьшал это число на 1 и выводил на экран уменьшенное число.</h3>
+    
+        <script>
+    
+            const func2 = () => {
+    
+                let num = 10;
+    
+                return function () {
+                    
+                    num -= 1;
+                    return num;
+    
+                    
+    
+                };
+    
+            };
+    
+            const f2 = func2();
+    
+            console.log(f2(), f2(), f2(), f2());
+            console.log(f2(), f2(), f2(), f2());
+    
+    
+        </script>
+        <hr>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

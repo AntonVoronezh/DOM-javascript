@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/19/</h2>
+    <h2>Применение замыканий</h2>
+
+    <h3>Задача 1. Самостоятельно, не подсматривая в мой код, реализуйте такие же кнопочки, как у меня.</h3>
+    <button>0</button>
+    <button>0</button>
+    <button>0</button>
+
+    <script>
+
+        const getAllBtn = document.querySelectorAll('button');
+
+        getAllBtn.forEach(elem => {
+
+            elem.onclick = (function () {
+
+                let counter = 0;
+
+                return function () {
+
+                    counter += 1;
+
+                    this.innerHTML = counter;
+
+                };
+
+            })();
+
+        });
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 2. Даны инпуты, в которые вводятся числа. Сделайте так,
+        чтобы по потери фокуса каждый инпут сохранял введенное число
+        в специальный массив и при этом выводил на экран алертом
+        сумму всех введенных ранее чисел.
+
+        Пусть каждый инпут хранит массив своих чисел в замыкании.</h3>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <script>
+        const getAllInp = document.querySelectorAll('input');
+
+        getAllInp.forEach(elem => {
+
+            elem.onblur = (function () {
+
+                const sumFromArr = argArr => {
+
+                    let sum = 0;
+
+                    argArr.forEach(elem => {
+
+                        sum += elem;
+
+                    });
+
+                    return sum;
+
+                };
+
+                let arr = [];
+
+                return function () {
+
+                    arr.push(+this.value);
+
+                    this.value = sumFromArr(arr);
+
+                };
+
+            })();
+
+        });
+
+
+    </script>
+
+
+
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>

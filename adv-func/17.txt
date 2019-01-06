@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .tbl57 td {
+            border: 1px solid #000000;
+            width: 100px;
+            height: 50px;
+        }
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>http://new.code.mu/ru/javascript/book/advanced-functions/17/</h2>
+    <h2>Вызов функции на месте</h2>
+
+    <h3>Задача 12. Допишите следующий код так, чтобы его запуск алертом выводил '!':
+
+        (function() {
+        // какой-то код
+        })()()();</h3>
+
+    <script>
+
+        (function () {
+
+            return function () {
+
+                return function () {
+
+                    console.log('!');
+
+
+                }
+
+            }
+
+        })()()();
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 13. Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+
+        (function() {
+        // какой-то код
+        })(1)(2);</h3>
+
+    <script>
+
+        (function (num1) {
+
+            return function (num2) {
+
+                console.log(num1 + num2);
+
+            }
+
+        })(1)(2);
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 14. Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+
+        (function() {
+        // какой-то код
+        })(1)(2)(4);</h3>
+
+    <script>
+
+        (function (num1) {
+
+            return function (num2) {
+
+                return function (num3) {
+
+                    console.log(num1 + num2 + num3);
+
+                }
+
+            }
+
+        })(1)(2)(3);
+
+
+    </script>
+    <hr>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
