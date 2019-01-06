@@ -56,7 +56,33 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Сделайте функцию func, которая будучи вызвана вот так:
+        func()()()()(), вернет '!'.</h3>
 
+    <script>
+
+        const func2 = () => {
+
+            return function () {
+                return function () {
+                    return function () {
+                        return function () {
+
+                            return '!';
+
+                        };
+                    };
+                };
+            };
+
+        };
+
+        console.log(func2()()()()());
+
+
+
+    </script>
+    <hr>
 
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
