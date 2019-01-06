@@ -110,6 +110,39 @@
     </script>
     <hr>
 
+    <h3>Задача 4. Сделайте функцию func, которая будучи вызвана вот так:
+        func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.</h3>
+
+    <script>
+
+        const func4 = (num1) => {
+
+            return function (num2) {
+
+                return function (num3) {
+
+                    return function (num4) {
+
+                        return function () {
+
+                            return [num1, num2, num3, num4];
+
+                        };
+
+                    };
+
+                };
+
+            };
+
+        };
+
+        console.log(func4(2)(3)(4)(5)());
+
+
+
+    </script>
+    <hr>
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </body>
 
