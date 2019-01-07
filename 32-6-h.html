@@ -37,6 +37,32 @@
     <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
     <h2>http://theory.phphtml.net/courses/javascript/practice/6/h.html</h2>
 
+    <h3>Задача 1. Дан инпут. В него вводится температура в градусах Фарингейта.
+        Сделайте так, чтобы автоматически по мере ввода в абзац под инпутом
+        эта температура выводилась в градусах Цельсия.</h3>
+    <input type="text" class="inp1">
+    <p class="p1"></p>
+
+    <script>
+        const getInp1 = document.querySelector('.inp1');
+        const getP1 = document.querySelector('.p1');
+
+        makeFahrenheit(getInp1, getP1);
+
+        function makeFahrenheit(argElemIn, argElemOut) {
+
+            argElemIn.addEventListener('keypress', function () {
+
+                argElemOut.innerHTML = (+argElemIn.value - 32) / 1.8;
+
+            });
+
+        };
+
+
+    </script>
+    <hr>
+
 
 
 
