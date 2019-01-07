@@ -44,6 +44,44 @@
     <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
     <h2>http://theory.phphtml.net/courses/javascript/practice/6/c.html</h2>
 
+    <h3>Задача 1. Реализуйте экранную клавиатуру. На ней должны быть
+        кнопочки со всеми символами клавиатуры компьютера. Кликая мышкой по этим
+        кнопочкам мы сможем вводить данные, например, при неработающей клавиатуре.
+        Пусть эта экранная клавиатура будет привязана к какому-нибудь инпуту,
+        то есть кликая по ней, мы будем вводить данные в этот инпут.</h3>
+
+
+    <input type="text" class="inp1">
+    <div class="div1">
+        <div data-code="0" class="a">0</div>
+        <div data-code="1" class="a">1</div>
+        <div data-code="2" class="a">2</div>
+        <div data-code="3" class="a">3</div>
+        <div data-code="4" class="a">4</div>
+        <div data-code="5" class="a">5</div>
+        <div data-code="6" class="a">6</div>
+        <div data-code="7" class="a">7</div>
+        <div data-code="8" class="a">8</div>
+        <div data-code="9" class="a">9</div>
+
+    </div>
+
+    <script>
+        const getDib1 = document.querySelector('.div1');
+        const getAllDiv = getDib1.querySelectorAll('div');
+        const getInp1 = document.querySelector('.inp1');
+
+
+        getDib1.addEventListener('click', func1);
+
+        function func1(event) {
+
+            getInp1.value = getInp1.value + event.target.dataset.code;
+
+        };
+
+    </script>
+    <hr>
 
 
 
