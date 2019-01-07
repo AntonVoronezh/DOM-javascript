@@ -63,6 +63,29 @@
     </script>
     <hr>
 
+    <h3>Задача 2. Дан инпут, кнопка и абзац. В инпут вводится число.
+        По нажатию на кнопку выведите в абзац факториал этого числа.</h3>
+    <input type="text" class="inp2">
+    <button class="btn2">factorial</button>
+    <p class="p2"></p>
+    <script>
+        const getInp2 = document.querySelector('.inp2');
+        const getP2 = document.querySelector('.p2');
+        const getBtn2 = document.querySelector('.btn2');
+
+        getFactorial(getInp2, getP2, getBtn2);
+
+        function getFactorial(argElemIn, argElemOut, argElemStart) {
+
+            argElemStart.addEventListener('click', function () {
+
+                argElemOut.innerHTML = makeFactorial(+argElemIn.value);
+
+            });
+
+        };
+
+  
 
 
 
