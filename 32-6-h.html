@@ -136,10 +136,66 @@
 
         });
 
+        // console.log(random);
 
 
 
+        function getRandomInt(min, max) {
 
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        }
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 4. Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
+        Если игрок не успеет угадать число за отведенное время - он проиграл</h3>
+    <p class="p4"></p>
+    <input type="text" class="inp4">
+
+    <script>
+        const getInp4 = document.querySelector('.inp4');
+        const getP4 = document.querySelector('.p4');
+
+        let random4 = getRandomInt(1, 100);
+
+
+        const timerId = setInterval(function () {
+
+            if (+getP4.innerHTML < 120) {
+
+                getP4.innerHTML = +getP4.innerHTML + 1;
+
+            } else {
+                
+                clearInterval(timerId);
+
+                getP4.innerHTML = 'время вышло'
+
+            }
+
+        }, 1000);
+
+
+        getInp4.addEventListener('blur', function () {
+
+            if (this.value > random4) {
+
+                console.log(this.value, 'число меньше');
+
+            } else if (this.value < random4) {
+
+                console.log(this.value, 'число больше');
+
+            } else {
+
+                console.log(this.value, 'правильно конец игры');
+
+            }
+
+        });
 
 
     </script>
