@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding-left: 30px;
+        }
+
+        .ok {
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        .tbl1 td,
+        .tbl2 td,
+        .tbl3 td,
+        .tbl4 td {
+            border: 1px solid #000000;
+            width: 50px;
+            height: 50px;
+            /* margin-right: 10px; */
+            text-align: cnter;
+        }
+
+        /* td {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        } */
+
+
+        .next,
+        .prev {
+            cursor: pointer;
+        }
+
+        .dn {
+            display: none;
+        }
+
+        .a {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #000000;
+            margin: 10px;
+        }
+    </style>
+    <title>AntonVoronezh учеба по JavaScript DOM </title>
+</head>
+
+<body>
+    <h1>AntonVoronezh учеба по JavaScript DOM</h1>
+    <h2>Задачи на продвинутую работу с функциями JavaScript</h2>
+    <h2>http://theory.phphtml.net/courses/javascript/practice/7/c.html</h2>
+
+    <h3>Задача 1. С помощью цикла сделайте на экране таблицу table,
+        размером 3 на 3 с пустыми td-шками. Добавьте средствами CSS этим td-шкам
+        границу, а также ширину и высоту 50px.</h3>
+
+    <table class="tbl1"></table>
+
+    <script>
+        const getTbl1 = document.querySelector('.tbl1');
+
+        for (let i = 0; i < 3; i += 1) {
+
+            const makeTr = document.createElement('tr');
+
+            for (let j = 0; j < 3; j += 1) {
+
+                const makeTd = document.createElement('td');
+
+                makeTr.appendChild(makeTd)
+
+            }
+
+            getTbl1.appendChild(makeTr);
+
+        }
+
+    </script>
+    <hr>
+
+
+
+    <h3>Задача 2. Модифицируйте предыдущую задачу так, чтобы по нажатию на любую td-шку
+        в ней появлялось число 1</h3>
+
+    <table class="tbl2"></table>
+
+    <script>
+        const getTbl2 = document.querySelector('.tbl2');
+
+
+        for (let i = 0; i < 3; i += 1) {
+
+            const makeTr = document.createElement('tr');
+
+            for (let j = 0; j < 3; j += 1) {
+
+                const makeTd = document.createElement('td');
+
+                makeTr.appendChild(makeTd)
+
+            }
+
+            getTbl2.appendChild(makeTr);
+
+        }
+
+
+        const getAllTd = getTbl2.querySelectorAll('td');
+        // console.log(getAllTd.length);
+
+
+        getAllTd.forEach(elem => {
+
+            elem.addEventListener('click', function () {
+
+                elem.innerHTML = '1';
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
+
+
+    <h3>Задача 3. Модифицируйте предыдущую задачу так, чтобы когда мы жмем
+        на первую td-шку, в ней появлялось число 1, а когда ждем на следующую
+        td-шку - то число 2. Потом опять число 1, и затем число 2 и так далее.
+        При этом, если в td-шке уже есть число - новое число не должно вставляться.</h3>
+
+    <table class="tbl3"></table>
+
+    <script>
+        const getTbl3 = document.querySelector('.tbl3');
+
+
+        for (let i = 0; i < 3; i += 1) {
+
+            const makeTr = document.createElement('tr');
+
+            for (let j = 0; j < 3; j += 1) {
+
+                const makeTd = document.createElement('td');
+
+                makeTd.classList.add('ok');
+
+                makeTr.appendChild(makeTd)
+
+            }
+
+            getTbl3.appendChild(makeTr);
+
+        }
+
+
+        const getAllTd3 = getTbl3.querySelectorAll('td');
+        // console.log(getAllTd.length);
+
+        let flag = false;
+
+
+        getAllTd3.forEach(elem => {
+
+            elem.addEventListener('click', function addNumber() {
+
+                if (flag) {
+
+                    elem.innerHTML = '1';
+
+                    flag = false;
+
+                } else {
+
+                    elem.innerHTML = '2';
+
+                    flag = true;
+
+                }
+
+                elem.removeEventListener('click', addNumber);
+
+            });
+
+        });
+
+
+    </script>
+    <hr>
+    <hr>
+
+
+   
+
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+
+</html>
