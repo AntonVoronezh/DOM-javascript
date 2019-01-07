@@ -116,6 +116,25 @@
         const getInp3 = document.querySelector('.inp3');
 
 
+        let random = getRandomInt(1, 100);
+
+        getInp3.addEventListener('blur', function () {
+
+            if (this.value > random) {
+
+                console.log(this.value, 'число меньше');
+
+            } else if (this.value < random) {
+
+                console.log(this.value, 'число больше');
+
+            } else {
+
+                console.log(this.value, 'правильно конец игры');
+
+            }
+
+        });
 
 
 
