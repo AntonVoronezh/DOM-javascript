@@ -128,6 +128,19 @@
         const getInp4 = document.querySelector('.inp4');
 
 
+        getDib4.addEventListener('click', func4);
+
+        let result = '';
+
+        function func4(event) {
+
+            if (event.target.dataset.code !== '=') {
+                result += event.target.dataset.code;
+
+                getInp4.value = getInp4.value + event.target.dataset.code;
+
+            } 
+            
  
 
     </script>
